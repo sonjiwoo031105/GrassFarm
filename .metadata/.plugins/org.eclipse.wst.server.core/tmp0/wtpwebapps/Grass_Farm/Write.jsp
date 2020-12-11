@@ -10,7 +10,7 @@
 <meta name="viewport" content="width=device-width" initial-scale="1">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <style>
-        body { padding-top: 3%; }
+        body { padding-top: 4%; }
       	.navbar-fixed-top{
       		background-color: white;
       	}

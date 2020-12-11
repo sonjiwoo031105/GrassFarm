@@ -1,0 +1,89 @@
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="user.UserDAO" %>
+<%@ page import="user.User" %>
+<%@ page import="bbs.BbsDAO" %>
+<%@ page import="bbs.Bbs" %>
+<%@ page import="java.io.PrintWriter" %>
+<%@ page import="java.util.ArrayList" %>
+<%@ page import = "java.util.Calendar" %>
+<%@ include file="navbar.jsp" %>
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="viewport" content="width=device-width" initial-scale="1">
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+		<title>잔디공작소</title>
+        <style>
+        body { padding-top: 15%; }
+      	.navbar-fixed-top{
+      		background-color: white;
+      	}
+        .page-header{
+            font-family: 'Playfair Display', serif;
+            text-align: left;
+        }  
+       h1, #id, #ps{
+        	font-family: 'ImcreSoojin';
+        }
+        @font-face {
+            font-family: 'ImcreSoojin';
+            src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
+            font-weight: normal;
+            font-style: normal;
+        }
+        #id{
+        	font-size: 20pt;
+        }
+        #ps{
+        	font-size: 13pt;
+        }
+		</style>
+    </head>
+    <body>
+   	<%
+        if(userID==null){
+    %>
+       <div class="alert alert-success" role="alert" style="text-align:center">로그인 해주세요.</div>
+    <%}else{ %>
+  			<% 
+  		  	String id=request.getParameter("id");
+  			Calendar cal = Calendar.getInstance();
+ 			UserDAO userDAO=new UserDAO();
+  			BbsDAO bbsDAO=new BbsDAO();
+  			ArrayList<User> user=userDAO.user(id);
+  			int count=bbsDAO.getCount(id);
+  			int monthcount=bbsDAO.getmonthCount(id, String.valueOf((cal.get(Calendar.MONTH)+1)));
+			
+			%>
+<div class="container">
+    <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+  	<img class="img-circle" src="https://lh3.googleusercontent.com/proxy/Pf-LRe-UeZtGzXDQEdOWAvaCXOrYNk912t33nFAwnFjr1bRFgH8Ydvq5QfXiQUln7Gf-dsUdO71huNQnC9LiNWuRMoI925QTEiNLvYNkkpZDi5gQyykUcySwqek9EtGgYRj0Yg0-mQcrA_4DbdiBliAkedA8394hMCwQPwIa" id="img_click" style="float:left; width:20%; cursor:pointer;">
+  		<div class="col-md-3" style="padding-top:3%; padding-left:4%;">
+  			<p id="id"><%=id%>
+  			<button type="button" class="btn btn-default" onclick="return confirm('권한이 없습니다.')'">
+  			<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+			</button></p>
+  			<div class="form-group" style="padding-top:3%;">
+  				<span><i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;<%out.print(user.get(0).getUserName());%></span> <br><br>
+  				<span><i class="glyphicon glyphicon-envelope"></i>&nbsp;&nbsp;<%out.print(user.get(0).getUserEmail());%></span>	
+    		</div> 
+  		</div>
+  		<div class="col-md-6" style="padding-top:3%;">
+  		<p id="ps"><%= user.get(0).getUserName()%>님의 총 잔디 개수<br>
+  		<%for(int i = 0; i<count; i++){ %>
+  		  	<img src="./img/jandi.png" style="width:5%;">
+  		<%} %>
+		<p id="ps"><%= user.get(0).getUserName()%>님의 <%=cal.get(Calendar.MONTH)+1%>월의 잔디 개수<br>
+		<%for(int i = 0; i<monthcount; i++){ %>
+  		  	<img src="./img/jandi.png" style="width:5%;">
+  		<%} %>
+  		</div>
+    </div>
+    </div>
+    </div>			
+  			 		<%} %>
+
+</body>
+</html>

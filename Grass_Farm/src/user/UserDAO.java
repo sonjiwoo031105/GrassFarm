@@ -73,6 +73,27 @@ public class UserDAO {
 		}
 	}
 	
+	public int update(User user, String userID){	
+		if(!user.getUserPass().equals(user.getUserPassCheck())) {
+			return -2;
+		}else {
+		String SQL = "update user set userPass=?, userName=?, userEmail=? where userID=?;";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(4,userID);
+
+			pstmt.setString(2, user.getUserName());
+			pstmt.setString(1, user.getUserPass());
+			pstmt.setString(3, user.getUserEmail());
+			return pstmt.executeUpdate();
+			
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		return -1;
+		}
+	}
+	
 	public int joinfollow(User user){	
 		String SQL = "INSERT INTO follow(me,follow) VALUES (?, ?);";
 		try {

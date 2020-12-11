@@ -245,7 +245,7 @@ small, time, .small {
            			<div class="media-body">
            				<form method="post" action="Follow.jsp">
                 			<div class="mb-2">
-                				<span class="fs-20 pr-16" onclick="location.href='SearchUser.jsp?id=<%=list.get(i).getUserID()%>'" ><%=list.get(i).getUserName() %></span>
+                				<span style="cursor:pointer;"class="fs-20 pr-16" onclick="location.href='SearchUser.jsp?id=<%=list.get(i).getUserID()%>'" ><%=list.get(i).getUserName() %></span>
                				</div>
                			@<%=list.get(i).getUserID()%></input><br>
                			
@@ -255,13 +255,14 @@ small, time, .small {
         		</div>
         		<footer class="card-footer flexbox align-items-center">
             	<div>
-               		<strong>Applied on:</strong>
-                	<span><%= list.get(i).getUserDate()%></span>             
+               		<strong>Join on:</strong>
+               		<span><%= list.get(i).getUserDate().substring(0, 16) %></span>             
+               		
             	</div>
             	<div class="media-right text-right d-none d-md-block">
             	<input type="text" name="id" style="display:none" value=<%=list.get(i).getUserID()%>>
-            		<% if(list.get(i).getUserID().equals(userID)){%>  
-                	<%}else if(follow>0){%>
+            		<% if(list.get(i).getUserID().equals(userID)){%>
+                	<%  }else if(follow>0){%>
                 	<a href='Unfollow.jsp?id=<%=list.get(i).getUserID()%>' class="btn btn-success" value="UNFOLLOW">UNFOLLOW</a>
                 	<%}else{%>
                 	<a href='Follow.jsp?id=<%=list.get(i).getUserID()%>' class="btn btn-success" value="FOLLOW">FOLLOW</a>

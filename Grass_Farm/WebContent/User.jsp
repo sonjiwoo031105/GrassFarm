@@ -15,7 +15,7 @@
         <link rel="stylesheet" href="css/bootstrap.min.css">
 		<title>잔디공작소</title>
         <style>
-        body { padding-top: 30px; }
+        body { padding-top: 15%; }
       	.navbar-fixed-top{
       		background-color: white;
       	}
@@ -23,7 +23,7 @@
             font-family: 'Playfair Display', serif;
             text-align: left;
         }  
-       h1, #ps, #pss{
+       h1, #id, #ps{
         	font-family: 'ImcreSoojin';
         }
         @font-face {
@@ -32,19 +32,20 @@
             font-weight: normal;
             font-style: normal;
         }
-          #ps{
-          	text-align:center;
-        	font-size: 18pt;
+        #id{
+        	font-size: 20pt;
         }
-        #pss{
-          	text-align:center;
-        	font-size: 60pt;
+        #ps{
+        	font-size: 13pt;
         }
-        
 		</style>
     </head>
     <body>
-   		
+   	<%
+        if(userID==null){
+    %>
+       <div class="alert alert-success" role="alert" style="text-align:center">로그인 해주세요.</div>
+    <%}else{ %>
   			<% 
   			Calendar cal = Calendar.getInstance();
  			UserDAO userDAO=new UserDAO();
@@ -54,46 +55,36 @@
 			int monthcount=bbsDAO.getmonthCount((String)session.getAttribute("userID"), String.valueOf((cal.get(Calendar.MONTH)+1)));
 			
 			%>
-			
-  			 <div class="container">
-  			 	<div class="card" style="width:25%;margin-top:40px;display: inline-block;">
-  			 		<image class="card-img-top" src="./img/grass.png" id="img_click" style="width:100%">
-   			 			<div class="card-body">
-  			 				<h4 class="card-title"><%=(String)session.getAttribute("userID")%></h4>
-  			 				<span class="glyphicon glyphicon-user" aria-hidden="true"></span>
-  			 					<p class="card-text"><%out.print(user.get(0).getUserName());%></p> 			 				
-  			 				<span class="glyphicon glyphicon-envelope" aria-hidden="true">
-  			 					<p class="card-text"><%out.print(user.get(0).getUserEmail());%></p>		
-  			 				</span>
-  			 				<br><br>
-  			 				
-  			 				<a href="#" class="btn btn-success" style="width:100%">수정하기</a>
-  			 			</div>	
-  				 </div>
-  				
-  				
-  				
-  				
-  			 		<div class="p" style="width:35%;display: inline-block; ">
-  			 				<p id="ps"><%out.print(user.get(0).getUserName());%>님의 총 잔디 개수<br>
-  								<p id="pss"><%out.print(count);%>개</p>
-  							</p>	
-  			 		</div>
+	
+	<div class="container">
+    <div class="row">
+    <div class="col-md-10 col-md-offset-1">
+  	<img class="img-circle" src="https://lh3.googleusercontent.com/proxy/Pf-LRe-UeZtGzXDQEdOWAvaCXOrYNk912t33nFAwnFjr1bRFgH8Ydvq5QfXiQUln7Gf-dsUdO71huNQnC9LiNWuRMoI925QTEiNLvYNkkpZDi5gQyykUcySwqek9EtGgYRj0Yg0-mQcrA_4DbdiBliAkedA8394hMCwQPwIa" id="img_click" style="float:left; width:20%; cursor:pointer;">
+  		<div class="col-md-3" style="padding-top:3%; padding-left:4%;">
+  			<p id="id"><%=(String)session.getAttribute("userID")%>
+  			<button type="button" class="btn btn-default" onclick="location.href='ModifyUser.jsp'">
+  			<span class="glyphicon glyphicon-pencil" aria-hidden="true"></span>
+			</button></p>
+  			<div class="form-group" style="padding-top:3%;">
+  				<span><i class="glyphicon glyphicon-user"></i>&nbsp;&nbsp;<%out.print(user.get(0).getUserName());%></span> <br><br>
+  				<span><i class="glyphicon glyphicon-envelope"></i>&nbsp;&nbsp;<%out.print(user.get(0).getUserEmail());%></span>	
+    		</div> 
+  		</div>
+  		<div class="col-md-6" style="padding-top:3%;">
+  		<p id="ps"><%= user.get(0).getUserName()%>님의 총 잔디 개수<br>
+  		<%for(int i = 0; i<18; i++){ %>
+  		  	<img src="./img/jandi.png" style="width:5%;">
+  		<%} %>
+		<p id="ps"><%= user.get(0).getUserName()%>님의 <%=cal.get(Calendar.MONTH)+1%>월의 잔디 개수<br>
+		<%for(int i = 0; i<monthcount; i++){ %>
+  		  	<img src="./img/jandi.png" style="width:5%;">
+  		<%} %>
+  		</div>
+    </div>
+    </div>
+    </div>
+  			 		<%} %>
   			 		
-  			 		<div class="card" style="width:35%;display: inline-block; ">
-  						<div class="card-body">
-  			 				<p id="ps"><%out.print(user.get(0).getUserName());%>님의 <%=cal.get(Calendar.MONTH)+1%>월의 잔디 개수<br>
-  						<p id="pss"><%out.print(monthcount);%>개</p>
-  					</p>	
-  			 			</div>
-  			 		</div>
-  			 		
-  			 		
-  			 		
-  			 		
-  				 
-  				 
-  		
   			 			<div class="modal" id="myModal" tabindex="-1">
   							<div class="modal-dialog">
     						<div class="modal-content">

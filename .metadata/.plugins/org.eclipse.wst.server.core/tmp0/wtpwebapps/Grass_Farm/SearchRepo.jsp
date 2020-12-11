@@ -16,16 +16,16 @@
 
 <title>Repository</title>
    <style>
-        body { padding-top: 70px; 
+        body { padding-top: 4%; 
         text-align : center;}
       	.navbar-fixed-top{
       		background-color: white;
       	}
         .page-header{
             font-family: 'Playfair Display', serif;
-            text-align: center;
+            text-align: left;
         }  
-        h1{
+        h2{
         	font-family: 'ImcreSoojin';
         }
         @font-face {
@@ -47,31 +47,52 @@
     <%}else{ %>
     <div class="container">
     <div class="row">
-    <div class="col-sm-12">
+     
+     <!-- 테이블 -->
+    <div class="col-md-10 col-md-offset-1">
+        <div style="float:left;" class=".col-md-4"><h2>Repository</h2></div>  
+        	 <!-- 검색폼 -->
+  	 <form role="search" action="SearchRepo.jsp">
+     <div style="float:right;" class="col-md-4">
+     <div class="input-group" style="padding-top:7%">
+      <div class="input-group-btn">
+         <select style="width:80px" class="form-control" name="catgo" required="required">
+                    <option value=""  selected>선택</option>
+                    <option value="bbsTitle">제목</option>
+                    <option value="bbsContent">내용</option>
+                    <option value="bbsLanguage">언어</option>
+         </select>
+      </div><!-- /btn-group -->
+      <input type="text" name="search" class="form-control" required="required">
+       <span class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+      </span>
+    </div><!-- /input-group -->
+     </div>
+     </form> 
         <table class="table">
-    		<thead>
         		<tr>
             		<td>번호</td>
             		<td>제목</td>
+            		<td>언어</td>
             		<td>등록일</td>
         		</tr>
-    		</thead>
     		<%
-				BbsDAO bbsDAO=new BbsDAO();
-    			ArrayList<Bbs> result= bbsDAO.search(catgo, search);
-        		for(int i=0; i<result.size(); i++){
+			BbsDAO bbsDAO=new BbsDAO();
+    		ArrayList<Bbs> result= bbsDAO.searchRepo(userID, catgo, search);
+        	for(int i=0; i<result.size(); i++){
 			%>
-    		<tbody>
         		<tr>
         			<td><%=result.get(i).getBbsID()%></td>
         			<td><a href="Show.jsp?bbsID=<%=result.get(i).getBbsID()%>"><%=result.get(i).getBbsTitle()%></a></td>
+        			<td><%=result.get(i).getBbsLanguage()%></td>
         			<td><%=result.get(i).getBbsDate()%></td>
         	    </tr>
 			<%
-        		}
+    
+        	}
     }
 			%>
-    		</tbody>
 		</table>
 	</div>
 	<!--col-sm 끝~~ -->

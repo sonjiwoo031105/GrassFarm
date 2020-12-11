@@ -30,18 +30,19 @@ public class BbsDAO {
 		}
 	}
 	
-	public ArrayList<Bbs> getList(String follow,String userid) {
-		String SQL="select bbsID,bbsTitle,userID, date_format(bbsDate, '%Y-%m-%d'),bbsContent,bbsSource,bbsLanguage  from bbs where userID=? or userID=? order by bbsID desc";
+	public ArrayList<Bbs> getList(String follow) {
+		String SQL="select bbsID,bbsTitle,userID, date_format(bbsDate, '%Y-%m-%d'),bbsContent,bbsSource,bbsLanguage from "
+				+ "bbs where userID=? order by bbsDate desc";
 		ArrayList<Bbs> list=new ArrayList<Bbs>();
 		try {
 			pstmt=conn.prepareStatement(SQL);
 			pstmt.setString(1,follow);
-			pstmt.setString(2,userid);
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				Bbs bbs=new Bbs();
 				bbs.setBbsID(rs.getInt(1));
 				bbs.setBbsTitle(rs.getString(2));
+				bbs.setUserID(rs.getString(3));
 				bbs.setBbsDate(rs.getString(4));
 				bbs.setBbsContent(rs.getString(5));
 				bbs.setBbsSource(rs.getString(6));
@@ -84,6 +85,7 @@ public class BbsDAO {
 				bbs.setBbsID(rs.getInt(1));
 				bbs.setBbsTitle(rs.getString(2));
 				bbs.setBbsDate(rs.getString(4));
+				bbs.setBbsLanguage(rs.getString(7));
 				repo.add(bbs);
 			}
 		}catch(Exception e) {
@@ -115,17 +117,46 @@ public class BbsDAO {
 		return null;
 	}
 		
-	public ArrayList<Bbs> search(String catgo, String sear) {
-		String SQL="select * from bbs where " + catgo + " like ? order by bbsID desc"; 
+	public ArrayList<Bbs> search(String follow, String catgo, String sear) {
+		String SQL="select bbsID,bbsTitle,userID, date_format(bbsDate, '%Y-%m-%d'),bbsContent,bbsSource,bbsLanguage "
+				+ "from bbs where userID=? and " + catgo + " like ? order by bbsDate desc";
 		ArrayList<Bbs> search=new ArrayList<>();
 		try {
 			pstmt=conn.prepareStatement(SQL);
-			pstmt.setString(1, "%" + sear + "%");
+			pstmt.setString(1,follow);
+			pstmt.setString(2, "%" + sear + "%");
 			rs=pstmt.executeQuery();
 			while(rs.next()) {
 				Bbs bbs = new Bbs();
 				bbs.setBbsID(rs.getInt(1));
 				bbs.setBbsTitle(rs.getString(2));
+				bbs.setUserID(rs.getString(3));
+				bbs.setBbsDate(rs.getString(4));
+				bbs.setBbsContent(rs.getString(5));
+				bbs.setBbsSource(rs.getString(6));
+				bbs.setBbsLanguage(rs.getString(7));
+				search.add(bbs);
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+			return search;
+	}
+	
+	public ArrayList<Bbs> searchRepo(String userid, String catgo, String sear) {
+		String SQL="select bbsID,bbsTitle,userID, date_format(bbsDate, '%Y-%m-%d'),bbsContent,bbsSource,bbsLanguage "
+				+ "from bbs where userID=? and " + catgo + " like ? order by bbsID desc";
+		ArrayList<Bbs> search=new ArrayList<>();
+		try {
+			pstmt=conn.prepareStatement(SQL);
+			pstmt.setString(1,userid);
+			pstmt.setString(2, "%" + sear + "%");
+			rs=pstmt.executeQuery();
+			while(rs.next()) {
+				Bbs bbs = new Bbs();
+				bbs.setBbsID(rs.getInt(1));
+				bbs.setBbsTitle(rs.getString(2));
+				bbs.setUserID(rs.getString(3));
 				bbs.setBbsDate(rs.getString(4));
 				bbs.setBbsContent(rs.getString(5));
 				bbs.setBbsSource(rs.getString(6));

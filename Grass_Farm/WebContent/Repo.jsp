@@ -44,14 +44,34 @@
     <%}else{ %>
     <div class="container">
     <div class="row">
-    <div style="float:left;" class=".col-md-4"><h2>Repository</h2></div>  
      
      <!-- 테이블 -->
-    <div class="col-sm-12">
+    <div class="col-md-10 col-md-offset-1">
+        <div style="float:left;" class=".col-md-4"><h2>Repository</h2></div>  
+        	 <!-- 검색폼 -->
+  	 <form role="search" action="SearchRepo.jsp">
+     <div style="float:right;" class="col-md-4">
+     <div class="input-group" style="padding-top:7%">
+      <div class="input-group-btn">
+         <select style="width:80px" class="form-control" name="catgo" required="required">
+                    <option value=""  selected>선택</option>
+                    <option value="bbsTitle">제목</option>
+                    <option value="bbsContent">내용</option>
+                    <option value="bbsLanguage">언어</option>
+         </select>
+      </div><!-- /btn-group -->
+      <input type="text" name="search" class="form-control" required="required">
+       <span class="input-group-btn">
+        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
+      </span>
+    </div><!-- /input-group -->
+     </div>
+     </form> 
         <table class='table'>
         		<tr>
             		<td>번호</td>
             		<td>제목</td>
+            		<td>언어</td>
             		<td>등록일</td>
             		<td>수정</td>
             		<td>삭제</td>
@@ -65,36 +85,20 @@
         		<tr>
         			<td><%=getrepo.get(i).getBbsID()%></td>
         			<td><a href="Show.jsp?bbsID=<%=getrepo.get(i).getBbsID()%>"><%=getrepo.get(i).getBbsTitle()%></a></td>
+        			<td><%=getrepo.get(i).getBbsLanguage()%></td>
         			<td><%=getrepo.get(i).getBbsDate()%></td>
                 	<td><a href="Modify.jsp?bbsID=<%=getrepo.get(i).getBbsID()%>"  class="btn btn-default">수정</a></td>
-                	<td><a onclick="return confirm('정말로 삭제하시겠습니까?')" href="Delete.jsp?bbsID=<%= getrepo.get(i).getBbsID() %>" class="btn btn-default">삭제</a></td>
+                	<td><a onclick="return confirm('정말로 삭제하시겠습니까?')" href="Delete.jsp?bbsID=<%= getrepo.get(i).getBbsID() %>" class="btn btn-danger">삭제</a></td>
         		</tr>
 			<%
         		}
-    }
 			%>
-    		</tbody>
 		</table>
 		
-		 <!-- 검색폼 -->
-  	 <form role="search" action="Search1.jsp">
-     <div style="margin-bottom:1%" class="col-md-4 col-md-offset-4">
-     <div class="input-group">
-      <div class="input-group-btn">
-         <select style="width:80px" class="form-control" name="catgo" required="required">
-                    <option value=""  selected>선택</option>
-                    <option value="bbsTitle">제목</option>
-                    <option value="bbsContent">내용</option>
-         </select>
-      </div><!-- /btn-group -->
-      <input type="text" name="search" class="form-control">
-       <span class="input-group-btn">
-        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-      </span>
-    </div><!-- /input-group -->
-     </div>
-     </form> 
-     
+	
+     <%
+        }
+	%>
 	</div>
 	<!--col-sm 끝~~ -->
 	</div>

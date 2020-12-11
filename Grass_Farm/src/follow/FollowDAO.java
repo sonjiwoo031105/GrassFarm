@@ -57,9 +57,7 @@ public class FollowDAO {
 		}
 			return list;
 	}
-	
-	
-	
+
 	
 	public int SearchFollowing(String userid, String follow) {
 		String SQL="SELECT count(*) FROM follow where me=? and follow=?;";

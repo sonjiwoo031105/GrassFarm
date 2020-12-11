@@ -44,6 +44,7 @@
             	script.println("</script>");
         	}else{
         		session.setAttribute("userID", user.getUserID());
+        		userDAO.joinfollow(user);
         		PrintWriter script = response.getWriter();
             	script.println("<script>");
              	script.println("location.href = 'Index.jsp'");
