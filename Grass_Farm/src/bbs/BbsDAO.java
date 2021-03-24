@@ -231,5 +231,29 @@ public class BbsDAO {
 		}
 		return resultCount;
 	}
+	
+	public int comment(Bbs bbs) { 
+		int ref = bbs.getBbsID();
+		int number = 0;
+		try {
+			pstmt = conn.prepareStatement("select max(ref) from comment");
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				number = rs.getInt(1)+1;
+			}else {
+				number = 1;
+			}
+			String SQL = "INSERT INTO comment(userid, content, ref) VALUES (?,?,?);";
+
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, bbs.getUserID());
+			pstmt.setString(2, bbs.getBbsComment());
+			pstmt.setInt(3, bbs.getBbsID());
+			return pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return -1; //데이터베이스 오류
+	}
 }
 	

@@ -9,6 +9,8 @@ public class Bbs {
 	private String bbsContent;
 	private String bbsSource;
 	private String bbsLanguage;
+	private String bbsComment;
+
 	
 	public int getBbsID() {
 		return bbsID;
@@ -51,6 +53,12 @@ public class Bbs {
 	}
 	public void setBbsLanguage(String bbsLanguage) {
 		this.bbsLanguage = bbsLanguage;
+	}
+	public String getBbsComment() {
+		return bbsComment;
+	}
+	public void setBbsComment(String bbsComment) {
+		this.bbsComment = bbsComment;
 	}
 	
 }
