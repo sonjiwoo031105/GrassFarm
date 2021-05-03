@@ -4,8 +4,8 @@
 <head>
 <meta charset="UTF-8">
 <title>잔디공작소</title>
-<link rel="shortcut icon" href="img/grass_removebg_preview_wIP_icon.ico" type="image/x-icon">
-<link rel="icon" href="img/grass_removebg_preview_wIP_icon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="image/grass_removebg_preview_wIP_icon.ico" type="image/x-icon">
+<link rel="icon" href="image/grass_removebg_preview_wIP_icon.ico" type="image/x-icon">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <style>
         h1{ font-family: 'ImcreSoojin'}
@@ -37,7 +37,7 @@
     	<div class="container-fluid">
     		
 			<div class="navbar-header">
-            	<p id="jandi"><a href="Index.jsp" style="text-decoration:none; color:black;">🌱잔디공작소🌱</a><p>           
+        		<img alt="Brand" src="img/잔디공작소 logo.png">
 			</div>
           	<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
       			<ul class="nav navbar-nav">
@@ -47,7 +47,7 @@
             	</ul>
           <form class="navbar-form navbar-right" role="search" action="Search.jsp">
           	<div class="form-group">
-          		<input type="text" class="form-control" placeholder="Search" name="userName" required="required">
+          		<input type="text" class="form-control" placeholder="Search" name="userName">
         	</div>
         	<button type="submit" class="btn btn-success">SEARCH</button>
       	  </form>
