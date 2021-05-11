@@ -58,7 +58,7 @@
 			
   			 <div class="container">
   			 	<div class="card" style="width:25%;margin-top:40px;display: inline-block;">
-  			 		<image class="card-img-top" src="./image/grass.png" id="img_click" style="width:100%">
+  			 		<image class="card-img-top" src="./img/grass.png" id="img_click" style="width:100%">
    			 			<div class="card-body">
   			 				<h4 class="card-title"><%=(String)session.getAttribute("userID")%></h4>
   			 				<span class="glyphicon glyphicon-user" aria-hidden="true"></span>

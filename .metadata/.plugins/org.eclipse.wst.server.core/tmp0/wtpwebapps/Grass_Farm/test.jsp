@@ -4,85 +4,63 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<meta http-equiv="Content-Type" content="text/html";charset-UTF-8">
+<meta http-equiv="Content-Type" content="text/html";>
+<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
+<link rel="stylesheet" href="Index.css" type="text/css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>잔디공작소</title>
-<style>
-     
-        .login-form {
-    		width: 60%;
-    		margin: 10% auto;
-    		text-align:center;
-		}
-		
-		.login-btn {
-    		font-size: 15px;
-    		font-weight: bold;
-  			min-height: 40px;
-  			border-radius: 2px;
-  			background-color:#07ef7a;
-  			margin-top:3%;
-		}
-		
-		.form-control{
-			width:100%;
-			height:40px;
-			margin-bottom:3%;
-			border-radius: 2px;
-		}
-      
- 		div {
-        	width: 100%;
-        	height: 100vh;
-        }
-    	div.left {
-        	width: 60%;
-        	float: left;
-        	background-image:url(img/index.jpg);
-        	background-size:cover;
-    	}
-    	div.right {
-        	width: 40%;
-        	float: right;
-        	background: #ffffff;
-    	}
-    	h1.welcome{
-    		text-align: center;
-    		margin-top: 20%;
-    		color:#07ef7a
-    	}
-    	.fp{
-    		text-align:right;
-    	}
-     	body {
-     		overflow:hidden
-     	}
-     	
-    </style>
 </head>
- 
 <body>
-    <div>
-        <div class="left">
-        	<h1 class="hello">안녕하세요,</h1>
-        	<h2 class=>잔디공작소에 오신것을 환영합니다</h2>
-        </div>
-        
-        <div class="right">
-        	<h1 class="welcome">Welcome</h1>
-        	<div class="login-form">
-    			<form action="LoginAction.jsp" method="post">
-  					<input type="text" onfocus="" class="form-control" name="userID" placeholder="UserID" required="required">
-  					<input type="password" class="form-control" name="userPass" placeholder="Password" required="required">
-            		<div class="fp"><a href="#" style="color:#07ef7a">Forgot Password?</a></div>
-            		<button type="submit" class="btn login-btn btn-block">Login</button>
-    			</form>
-			</div>
-        </div>
-    </div>
+<div class="container">
+     <div class="row">
+       <div class="col-md-10.offset-md-1" style="max-width:100%;">
+       <div id="box">
+    	<!-- <a href="http://developers.kakao.com/logout">Logout</a> -->
+       	<div id="box1">
+       		<img id="logostyle" src="./img/Contents_Logo.png">
+       		<div id="hello">
+       		<p>안녕하세요. <br> 잔디공작소입니다.</p>
+       		</div>
+       		<p id="loginhe">회원 서비스 이용을 위해 로그인해주세요.</p>
+       		<img id="bannerstyle" src="./img/banner.png">       		
+       	</div>
+       	<div id="box2">
+       		<p id="welcome">Welcome</p>
+       		<span id="kakao"><a id="kakao-login-btn"></a></span>
+       		<hr id="one">
+       		<form action="LoginAction.jsp" method="post">
+  			<div class="form-group">
+    			<input type="text" class="form-control" id="inputstyle" name="userID" placeholder="아이디" required="required">
+  			</div>
+  			<div class="form-group">
+    			<input type="password" class="form-control" id="inputstyle" name="userPass" placeholder="비밀번호" required="required">
+  			</div>
+  			<div class="form-group form-check" id="check">
+    			<input type="checkbox" class="form-check-input" id="exampleCheck1">
+    			<label class="form-check-label" for="exampleCheck1">로그인 저장</label>
+  			</div>
+       		<button type="submit" id="btnstyle" class="btn btn-success login-btn btn-block">로그인하기</button>
+       		</form>
+       		<a id="find" href="Join.jsp">아이디/비밀번호 찾기</a>
+       		<hr id="one">
+       		<a id="gojoin" href="Join.jsp">회원가입하기</a>
+       	</div>
+       </div>         
+	   </div>
+     </div>
+</div>
 </body>
-
-
-
-</body>
+<script type='text/javascript'>
+        Kakao.init('34e3d1b796b4965a2caa3c8116d2492e');
+        // 카카오 로그인 버튼
+        Kakao.Auth.createLoginButton({
+            container: '#kakao-login-btn',
+            success: function (authObj) {
+                alert(JSON.stringify(authObj));
+            },
+            fail: function (err) {
+                alert(JSON.stringify(err));
+            }
+        });
+</script>
 </html>

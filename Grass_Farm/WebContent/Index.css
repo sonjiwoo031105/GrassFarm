@@ -1,0 +1,138 @@
+@charset "UTF-8";
+
+body {
+  background-image: url('./img/로그인 배경.png');
+}
+#box{
+	background-color: white;
+	border-radius: 15px;
+	margin-top: 5%;
+	height : 600px;
+	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
+}
+#box1{
+	float:left;
+	background-color: #f8f8f8;
+	border-top-left-radius: 15px;
+	border-bottom-left-radius: 15px;
+	height : 600px;
+	width: 55%;
+}
+#logostyle{
+	width:100px; 
+	height:100px;
+	margin-left: 4%;
+	margin-top: 4%;
+	margin-bottom: 3%;
+}
+#hello{
+	color: #3dab4a;
+	font-family: 'bold';
+	font-size: 20pt;
+	line-height: 35px;
+	margin-left: 6%;
+}
+
+@font-face {
+	font-family: 'bold';
+    src: url('./fonts/NotoSansCJKkr-Bold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+#loginhe{
+	color: #3dab4a;
+	font-family: 'regular';
+	margin-left: 6%;
+}
+
+#bannerstyle{
+	float: right;
+	margin-right: 8%;
+	margin-top: 6%;
+	width: 70%; 
+	height: 44%;
+}
+
+@font-face {
+	font-family: 'regular';
+    src: url('./fonts/NotoSansCJKkr-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+
+#box2{
+	float:right;
+	background-color: #ffffff;
+	border-top-right-radius: 15px;
+	border-bottom-right-radius: 15px;
+	height: 600px;
+	width: 45%;
+}
+#welcome{
+	float: left;
+	margin-left: 36.5%;
+	margin-top:10%;
+	color: #3dab4a;
+	font-family: 'medium';
+	font-size: 25pt;
+}
+@font-face {
+	font-family: 'medium';
+    src: url('./fonts/NotoSansCJKkr-Medium.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+#kakao{
+	float: left;
+	width: 60%;
+	margin-left:30%;	
+	margin-top: 5%;
+}
+#one{
+	float: left;
+	width: 60%;
+	color: #3dab4a;
+	border: thin solid #3dab4a;
+	margin-left: 20%;
+	margin-right: 20%;
+}
+#inputstyle{
+	float: left;
+	font-family: 'regular';
+	width: 60%;
+	height: 40px;
+	border-radius: 7px;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 2%;
+}
+#btnstyle{
+	float: left;
+	font-family: 'regular';
+	width: 60%;
+	height: 40px;
+	border-radius: 7px;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 2%;
+	background-color:#3dab4a;
+}
+#btnstyle:hover{
+	color:#ffffff;
+}
+#check{
+	float: left;
+	margin-left: 20%;
+	font-family: 'regular';
+}
+#find{
+	float: right;
+	margin-right: 20%;	
+	font-family: 'regular';
+}
+#gojoin{
+	float: left;	
+	font-family: 'regular';
+	margin-left: 43%;
+}
+           
