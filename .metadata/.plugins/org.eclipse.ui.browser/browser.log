@@ -43,3 +43,22 @@
 5월 11, 2021 08:35:02.779 [13580:15292:0511/083502.774:ERROR:device_event_log_impl.cc(214)] [08:35:02.775] USB: usb_device_handle_win.cc:1054 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
 5월 11, 2021 08:35:02.781 [13580:15292:0511/083502.776:ERROR:device_event_log_impl.cc(214)] [08:35:02.776] USB: usb_device_handle_win.cc:1054 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
 5월 11, 2021 08:35:02.862 [13580:18972:0511/083502.862:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+
+5월 12, 2021 09:16:22.510 NEW SESSION
+5월 12, 2021 09:16:22.511 [14444:14388:0512/091622.506:ERROR:device_event_log_impl.cc(214)] [09:16:22.507] USB: usb_device_handle_win.cc:1054 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+5월 12, 2021 09:16:22.513 [14444:14388:0512/091622.508:ERROR:device_event_log_impl.cc(214)] [09:16:22.508] USB: usb_device_handle_win.cc:1054 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+5월 12, 2021 09:52:49.709 [14444:14388:0512/095249.699:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/protocol_client/protocol_client.js (1)
+5월 12, 2021 09:52:49.711 [14444:14388:0512/095249.700:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/sdk/sdk.js (1)
+5월 12, 2021 09:52:49.712 [14444:14388:0512/095249.701:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/extensions/extensions.js (1)
+5월 12, 2021 17:41:46.631 [14444:17944:0512/174146.627:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+5월 12, 2021 17:41:46.637 [14444:20216:0512/174146.633:ERROR:get_updates_processor.cc(257)] PostClientToServerMessage() failed during GetUpdates with error 2
+5월 12, 2021 17:42:16.23 [14444:17944:0512/174216.022:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+5월 12, 2021 17:42:31.651 [14444:20216:0512/174231.650:ERROR:get_updates_processor.cc(257)] PostClientToServerMessage() failed during GetUpdates with error 2
+5월 12, 2021 17:43:02.271 [14444:17944:0512/174302.270:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+5월 12, 2021 17:43:39.164 [14444:18892:0512/174339.163:ERROR:get_updates_processor.cc(257)] PostClientToServerMessage() failed during GetUpdates with error 2
+5월 12, 2021 17:44:41.242 [14444:17944:0512/174441.241:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+5월 12, 2021 17:45:20.428 [14444:20216:0512/174520.420:ERROR:get_updates_processor.cc(257)] PostClientToServerMessage() failed during GetUpdates with error 2
+5월 12, 2021 17:48:14.578 [14444:17944:0512/174814.568:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+5월 12, 2021 17:49:33.562 [14444:14456:0512/174933.561:ERROR:get_updates_processor.cc(257)] PostClientToServerMessage() failed during GetUpdates with error 2
+5월 12, 2021 19:49:49.128 [14444:17944:0512/194949.127:ERROR:connection_factory_impl.cc(428)] Failed to connect to MCS endpoint with error -106
+5월 12, 2021 19:49:49.207 [14444:9752:0512/194949.206:ERROR:get_updates_processor.cc(257)] PostClientToServerMessage() failed during GetUpdates with error 2

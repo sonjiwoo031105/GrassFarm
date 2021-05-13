@@ -70,10 +70,10 @@ body {
 }
 #welcome{
 	float: left;
+	font-family: 'medium';
 	margin-left: 36.5%;
 	margin-top:10%;
 	color: #3dab4a;
-	font-family: 'medium';
 	font-size: 25pt;
 }
 @font-face {
@@ -92,11 +92,10 @@ body {
 	float: left;
 	width: 60%;
 	color: #3dab4a;
-	border: thin solid #3dab4a;
 	margin-left: 20%;
 	margin-right: 20%;
 }
-#inputstyle{
+.form-control{
 	float: left;
 	font-family: 'regular';
 	width: 60%;
@@ -105,6 +104,9 @@ body {
 	margin-left: 20%;
 	margin-right: 20%;
 	margin-top: 2%;
+}
+#inputstyle input:focus{
+	outline: 2px solid #3dab4a;
 }
 #btnstyle{
 	float: left;
@@ -116,9 +118,6 @@ body {
 	margin-right: 20%;
 	margin-top: 2%;
 	background-color:#3dab4a;
-}
-#btnstyle:hover{
-	color:#ffffff;
 }
 #check{
 	float: left;
