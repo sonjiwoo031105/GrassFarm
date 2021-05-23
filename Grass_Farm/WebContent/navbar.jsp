@@ -1,80 +1,71 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>잔디공작소</title>
-<link rel="shortcut icon" href="image/grass_removebg_preview_wIP_icon.ico" type="image/x-icon">
-<link rel="icon" href="image/grass_removebg_preview_wIP_icon.ico" type="image/x-icon">
+<link rel="shortcut icon" href="img/Contents_Logo.png" type="img/x-icon">
+<link rel="icon" href="img/Contents_Logo.png" type="img/x-icon">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<style>
-
-        body { padding-top: 3%; }
-      	.navbar-fixed-top { background-color: white; }
-        .page-header{
-            font-family: 'Playfair Display', serif;
-            text-align: left;
-        }  
-        
+</head>
+<style> 
+#logo{
+	float:left;
+}
+.input-group-btn{float: left;}
+#up{float: right;}
+span{color:black}
+.form-control{
+	border-color:#3dab4a;
+	background-color:#3dab4a;
+	border-radius: 10px;
+}
+.input-group-addon{
+	border-color:#3dab4a;
+	background-color:#3dab4a;
+	color:white;
+	border-radius: 10px;
+}
+#k::placeholder {
+  color: white;
+}
 </style>
 
-</head>
-	<body>
+<body>
+<nav class="navbar">
+  <div class="container">
 
-		 <%
-			String userID=null;
-			if(session.getAttribute("userID")!=null){
-				userID=(String)session.getAttribute("userID");
-			}
-		%>
-
-<nav class="navbar-fixed-top navbar-default">
-<div class="container">
-  <div class="row">
-    	<div class="container-fluid">
-    		<form class="navbar-form navbar-right" role="search" action="Search.jsp">
-          		<div class="form-group">
-          			<input type="text" class="form-control" placeholder="Search" name="userName">
-        		</div>
-        		<button type="submit" class="btn btn-success">SEARCH</button>
-      	  	</form>
-			<div class="navbar-header"> 
-        		<img alt="Brand" src="img/잔디공작소 logo.png">
-			</div>
-          	
-      		
-            <%
-            	if(userID==null){
-            %>
-	            <ul class="nav navbar-nav navbar-right">
-	              <li><a href="Login.jsp">LOGIN</a></li>
-	              <li><a href="Join.jsp">JOIN</a></li>
-	            </ul>
-            <%
-            	}else{
-            %>
-	            <ul class="nav navbar-nav navbar-right">
-	              <li><a href="LogoutAction.jsp">LOGOUT</a></li>
-	            </ul>
-            <%
-            	}
-            %>
-            
-			
-            <ul class="nav navbar-nav">
-             	<li><a href="Write.jsp">WRITE</a></li>
-              	<li><a href="Repo.jsp">REPO</a></li>
-              	<li><a href="User.jsp">USER</a></li>
-         	</ul>
-         	
-             
-            
-        
-        </div><!-- /.container-fluid -->
-        </div>
-       
+    <div class="navbar-header">
+        <img src="img/Header_Logo.png" id="logo" alt="로고 : Header_Logo" >
     </div>
-    </nav>
-   
+			
+    <div class="collapse navbar-collapse">      
+      <form class="nav navbar-form " role="search" action="Search.jsp">      		    	
+      		<div class="form-group" style="float : 0px auto">
+        		<div class="input-group">
+  					<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+  					<input type="text" id="k" class="form-control" name="search" placeholder="|     검색" size=50required="required">
+				</div>
+        	</div>
+      		
+        	
+	            <ul id="up" class="nav navbar-nav">	 
+	    			<li><a href="Write.jsp"><span class="glyphicon glyphicon-plus"></span></a></li>
+	    			<li><a href="Repo.jsp"><span class="glyphicon glyphicon-folder-open"></span></a></li>
+	    			<li><a href="User.jsp"><span class="glyphicon glyphicon-user"></span></a></li>
+	              <!-- <li><a href="Login.jsp">LOGIN</a></li>
+	              <li><a href="Join.jsp">JOIN</a></li> -->
+	              <!-- <li><a href="LogoutAction.jsp">LOGOUT</a></li> -->
+	            </ul>
+           
+            
+      </form>
+      
+        
+    </div>
+  </div>
+</nav>
+ 
 </body>
 </html>

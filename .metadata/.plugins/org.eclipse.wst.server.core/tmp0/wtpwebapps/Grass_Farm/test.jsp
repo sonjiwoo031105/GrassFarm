@@ -7,14 +7,13 @@
 <meta http-equiv="Content-Type" content="text/html">
 <script src="https://apis.google.com/js/platform.js" async defer></script>
 <meta name="google-signin-client_id" content="529393072584-snmlihbn3psu2a9buc9kobgrs924aqsn.apps.googleusercontent.com">
-<script src="//developers.kakao.com/sdk/js/kakao.min.js"></script>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>잔디공작소</title>
 </head>
 <style>
 
 body {
-  background-image: url('./img/로그인 배경.png');
+  background-image: url('./img/Index_bg.png');
 }
 #box{
 	background-color: white;
@@ -110,6 +109,16 @@ body {
 	margin-left: 20%;
 	margin-right: 20%;
 	margin-top: 0%;
+}
+#two{
+	float: left;
+	width: 60%;
+	border: 0px;
+	height: 1px;
+	background-color: #3dab4a;
+	margin-left: 20%;
+	margin-right: 20%;
+	margin-top: 5%;
 	margin-bottom: 6%;
 }
 #inputstyle{
@@ -138,6 +147,10 @@ body {
 	margin-left: 20%;
 	margin-right: 20%;
 	background-color:#3dab4a;
+	margin-top: 3%;
+}
+#btnstyle:hover{
+	border: none;	
 }
 #find{
 	float: right;
@@ -145,6 +158,7 @@ body {
 	font-family: 'regular';
 	color: #3dab4a;
 	text-decoration: underline;
+	font-size: 10pt;
 }
 #find:hover{
 	color:#77db65;
@@ -155,6 +169,7 @@ body {
 	margin-left: 43%;	
 	color: #3dab4a;
 	text-decoration: underline;
+	font-size: 10pt;
 }
 #gojoin:hover{
 	color:#77db65;
@@ -196,7 +211,7 @@ body {
        	<div id="box2">
        		<p id="welcome">Welcome</p>       		
        		<div id="googlelogin" class="g-signin2" data-onsuccess="onSignIn"></div>
-       		<!-- <a href="#" onclick="signOut();">Sign out</a> --> 
+       		<a href="#" onclick="signOut();">Sign out</a> 
        		<hr id="one">
        		<form action="LoginAction.jsp" method="post">
     			<input type="text" class="form-control" id="inputstyle" name="userID" placeholder="아이디" required="required">  			
@@ -204,7 +219,7 @@ body {
        		<a id="find" href="Join.jsp">아이디/비밀번호 찾기</a>
        		<button type="submit" id="btnstyle" class="btn btn-success login-btn btn-block">로그인하기</button>
        		</form>
-       		<hr id="one">
+       		<hr id="two">
        		<a id="gojoin" href="Join.jsp">회원가입하기</a>
        	</div>
        </div>         
