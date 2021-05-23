@@ -11,13 +11,10 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width" initial-scale="1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
    <style>
-        body { padding-top: 4%; 
-        text-align : center;}
       	.navbar-fixed-top{
       		background-color: white;
       	}
@@ -37,11 +34,6 @@
 </style>
 </head>
 <body>
-	<%
-        if(userID==null){
-    %>
-       <div class="alert alert-success" role="alert">로그인 해주세요.</div>
-    <%}else{ %>
     <div class="container">
     <div class="row">
      
@@ -77,6 +69,7 @@
             		<td>삭제</td>
         		</tr>
     		<%
+    			String userID=(String)session.getAttribute("userID");
 				BbsDAO bbsDAO=new BbsDAO();
     			ArrayList<Bbs> getrepo= bbsDAO.getrepo(userID);
         		for(int i=0; i<getrepo.size(); i++){
@@ -94,11 +87,6 @@
         		}
 			%>
 		</table>
-		
-	
-     <%
-        }
-	%>
 	</div>
 	<!--col-sm 끝~~ -->
 	</div>

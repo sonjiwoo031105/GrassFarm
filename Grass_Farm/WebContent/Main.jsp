@@ -1,6 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
-    <%@ page import="bbs.BbsDAO" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
+<%@ page import="bbs.BbsDAO" %>
 <%@ page import="bbs.Bbs" %>
 <%@ page import="follow.FollowDAO" %>
 <%@ page import="follow.Follow" %>
@@ -10,47 +9,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
+<title>ìž”ë””ê³µìž‘ì†Œ</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/hybrid.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-
+<script src="js/bootstrap.js"></script>
+<script src="js/highlight.pack.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-
-        <script src="js/bootstrap.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> <!-- activate highlight.js --> <script>hljs.initHighlightingOnLoad();</script>
-		<script src="js/highlight.pack.js"></script>  
-		
-<title>Insert title here</title>
 </head>
 <body>
 <div class="container">
-    <div class="row">
-      <!-- Blog Entries Column -->
-      <div class="col-md-8 col-md-offset-2" style="max-width:100%;">
-        <div style="float:left" class="col-md-4"><h1>¿À´ÃÀÇ ÀÜµð</h1></div>
-         <form role="search" action="SearchRepocss.jsp">
-    
-     <div class="input-group" style="margin-top:3%">
-      <div class="input-group-btn">
-         <select style="width:80px" class="form-control" name="catgo" required="required">
-                    <option value=""  selected>¼±ÅÃ</option>
-                    <option value="bbsTitle">Á¦¸ñ</option>
-                    <option value="bbsContent">³»¿ë</option>
-                    <option value="bbsLanguage">¾ð¾î</option>
-         </select>
-      </div><!-- /btn-group -->
-      <input type="text" name="search" class="form-control" required="required">
-       <span class="input-group-btn">
-        <button class="btn btn-default" type="submit"><i class="glyphicon glyphicon-search"></i></button>
-      </span>
-    </div><!-- /input-group -->
-     </form> 
-         </div>
-     
+    <div class="row">     
       <div class="col-md-8 col-md-offset-2" style="max-width:100%;">
      
         <%
+        String userID=(String)session.getAttribute("userID");
+    	
 			FollowDAO followDAO = new FollowDAO();
         	BbsDAO bbsDAO = new BbsDAO();
         	
@@ -77,19 +53,11 @@
 		<%
         		}
         	}
-  	}
+  	
 		%>
       </div>
     </div>
-    <!-- /.row -->
   </div>
-  <!-- /.container -->
-        <!-- ¾Ö´Ï¸ÅÀÌ¼Ç ´ã´ç JQUERY -->
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <!-- ºÎÆ®½ºÆ®·¦ JS  -->
-        <script src="js/bootstrap.js"></script>
-        <script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.8.0/highlight.min.js"></script> <!-- activate highlight.js --> <script>hljs.initHighlightingOnLoad();</script>
-		<script src="js/highlight.pack.js"></script>  
  
 </body>
 </html>

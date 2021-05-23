@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="user.UserDAO"%>
 <%@ page import="java.io.PrintWriter"%>
 <% request.setCharacterEncoding("UTF-8");%>
@@ -8,42 +7,30 @@
 <jsp:setProperty property="userPass" name="user"/>
 <!DOCTYPE html>
 <html>
-<head>
-<meta http-equiv="Content-Type" content="text/html"; charset-UTF-8">
-<title></title>
-</head>
 <body>
-	<%
-	
+	<%	
 		UserDAO userDAO=new UserDAO();
 		int result=userDAO.login(user.getUserID(),user.getUserPass());
-		if(result==1){
-			PrintWriter script=response.getWriter();
+		PrintWriter script=response.getWriter();
+		script.println("<script>");
+		switch(result){
+		case 0:
+			script.println("alert('ë¹„ë°€ë²ˆí˜¸ê°€ í‹€ë¦½ë‹ˆë‹¤.')");
+			script.println("history.back()");
+			break;
+		case 1:
 			session.setAttribute("userID", user.getUserID());
-			script.println("<script>");
-			script.println("location.href='Index.jsp'");
-			script.println("</script>");
-		}
-		if(result==0){
-			PrintWriter script=response.getWriter();
-			script.println("<script>");
-			script.println("alert('ºñ¹Ğ¹øÈ£°¡ Æ²¸³´Ï´Ù.')");
+			script.println("location.href='Main.jsp'");
+			break;
+		case -1:
+			script.println("alert('ì¡´ì¬í•˜ì§€ ì•ŠëŠ” ì•„ì´ë””ì…ë‹ˆë‹¤.')");
 			script.println("history.back()");
-			script.println("</script>");
+			break;
+		case -2:
+			script.println("alert('ë””ë¹„ë¬¸ì œ')");			
+			break;
 		}
-		if(result==-1){
-			PrintWriter script=response.getWriter();
-			script.println("<script>");
-			script.println("alert('Á¸ÀçÇÏÁö ¾Ê´Â ¾ÆÀÌµğÀÔ´Ï´Ù.')");
-			script.println("history.back()");
-			script.println("</script>");
-		}
-		if(result==-2){
-			PrintWriter script=response.getWriter();
-			script.println("<script>");
-			script.println("alert('µğºñ¹®Á¦')");
-			script.println("</script>");
-		}
+		script.println("</script>");
 	%>
 </body>
 </html>

@@ -1,5 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
 <%@ include file="navbar.jsp" %>
 <!DOCTYPE html>
@@ -7,10 +6,9 @@
 <head>
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<meta name="viewport" content="width=device-width" initial-scale="1">
-<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
 <style>
-        body { padding-top: 4%; }
       	.navbar-fixed-top{
       		background-color: white;
       	}
@@ -32,13 +30,7 @@
     		text-align: center;
         }
 </style>
-</head>
 <body>
-<%
-    if(userID==null){
-%>
-<div class="alert alert-success" role="alert" style="text-align:center">로그인 해주세요.</div>
-<%}else{ %>
 <div class="container">
 <div class="row">
   <div class="col-md-6 col-md-offset-3" style="max-width:100%;">
@@ -72,7 +64,6 @@
 	<button type="submit" style="margin-right:1%" class="btn btn-sm btn-success" id="btnSave">저장</button>
 	<button type="reset" class="btn btn-sm btn-success" id="btnSave">취소</button>
 	</form> 
-	<% } %>
   </div>
 </div>
 </div>
