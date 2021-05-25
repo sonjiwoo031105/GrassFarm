@@ -11,7 +11,7 @@
 </head>
 <style> 
 #undershadow{
-	box-shadow: 0 3px 3px -3px rgba(0,0,0,0.12), 0 6px 6px -6px rgba(0,0,0,0.14), 0 6px 6px -6px rgba(0,0,0,0.16);
+	box-shadow: 0 3px 3px -3px rgba(0,0,0,0.10), 0 6px 6px -6px rgba(0,0,0,0.12), 0 6px 6px -6px rgba(0,0,0,0.14);
 	border-radius: 0px;
 }
 .nav.navbar-form{
@@ -41,7 +41,8 @@
 	background-color:#3dab4a;
 	color:white;
 	border-top-left-radius: 7px;
-	border-bottom-left-radius: 7px;	
+	border-bottom-left-radius: 7px;
+	border-right: 2px solid #ffffff;	
 }
 #inputstyle{
 	font-family: 'regular';
@@ -61,12 +62,13 @@
 	outline: 0;
 	-webkit-box-shadow: none;
 	box-shadow: none;
-	/* -webkit-box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #3dab4a;
-	box-shadow:inset 0 1px 1px rgba(0,0,0,.075),0 0 6px #3dab4a; */
 }
-#up{float: right;}
-#up a{
-	padding: 5px 10px;
+#up{
+	float: right;
+}
+#up img{
+	width: 100%;
+	height: 100%;
 }
 
 </style>
@@ -87,9 +89,9 @@
 				</div>         		
         	</div>       	
 	        <ul id="up" class="nav navbar-nav">	 
-	    		<li><a href="Write.jsp"><span class="glyphicon glyphicon-plus"></span></a></li>
-	    		<li><a href="Repo.jsp"><span class="glyphicon glyphicon-folder-open"></span></a></li>
-	    		<li><a href="User.jsp"><span class="glyphicon glyphicon-user"></span></a></li>
+	    		<li><a href="Write.jsp"><img src="img/Header_plus.png"></a></li>
+	    		<li><a href="Repo.jsp"><img src="img/Header_repo.png"></a></li>
+	    		<li><a href="User.jsp"><img src="img/Header_profile.png"></a></li>	   		
 	        </ul>
       		</form>	
   		</div>

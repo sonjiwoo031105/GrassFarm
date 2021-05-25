@@ -35,12 +35,24 @@
     <script src="dist/jquery.calmosaic.min.js"></script>
     
 </head>
-
+<style>
+#test{
+	float: left;
+	border: 1px solid black;
+	width : 20%;
+	height : 300px;
+}
+#heatmap-1{
+	float: left;
+	width : 200px;
+}
+</style>
 <body>
 		
 			
     <div class="container">
-        <div class="col-md-12">
+        <div class="col-md-18">
+        	<div id="test"></div>
             <div id="heatmap-1"></div>
         </div>
     </div>

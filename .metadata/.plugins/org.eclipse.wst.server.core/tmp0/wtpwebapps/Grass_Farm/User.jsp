@@ -11,7 +11,7 @@
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <meta name="viewport" content="width=device-width" initial-scale="1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/bootstrap.min.css">
 		<title>잔디공작소</title>
         <style>
@@ -58,7 +58,7 @@
 			
   			 <div class="container">
   			 	<div class="card" style="width:25%;margin-top:40px;display: inline-block;">
-  			 		<image class="card-img-top" src="./img/grass.png" id="img_click" style="width:100%">
+  			 		<img class="card-img-top" src="./img/grass.png" id="img_click" style="width:100%">
    			 			<div class="card-body">
   			 				<h4 class="card-title"><%=(String)session.getAttribute("userID")%></h4>
   			 				<span class="glyphicon glyphicon-user" aria-hidden="true"></span>

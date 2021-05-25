@@ -18,18 +18,49 @@
 <script>hljs.initHighlightingOnLoad();</script>
 </head>
 <style>
-#border{
+#card_main{
 	border-radius: 1px;
-	border: solid 1px lightgray;
+	border: solid 1px #d9d9d9;
 	padding: 20px 20px;
+	margin-bottom: 6%;
 }
 #title{
 	margin: 0px 0px 0px;
-	font-family: 'medium';
+	font-family: 'bold';
+	color: #484848;
+}
+#userid{
+	float: left;
+	font-family: 'regular';
+	border-right: 1px solid #c2c2c2;
+	padding-right: 1%;
+	margin-top : 1%;
+	margin-bottom: 1%;
+	color : #0e0e0e;
+}
+#date{
+	float: left;
+	font-family: 'regular';
+	padding-left: 1%;
+	margin-top : 1%;
+	margin-bottom: 1%;
+	color : #0e0e0e;
+}
+@font-face {
+	font-family: 'bold';
+    src: url('./fonts/NotoSansCJKkr-Bold.otf');
+    font-weight: normal;
+    font-style: normal;
 }
 @font-face {
 	font-family: 'medium';
     src: url('./fonts/NotoSansCJKkr-Medium.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'regular';
+    src: url('./fonts/NotoSansCJKkr-Regular.otf');
     font-weight: normal;
     font-style: normal;
 }
@@ -48,21 +79,19 @@
         		ArrayList<Bbs> list=bbsDAO.getList(Follow.get(i).getFollow());
         		for(int j=0; j<list.size(); j++){
 		%>		
-       	<div class="card" id="border"> 
+       	<div class="card" id="card_main"> 
           <div class="card-body">
             <h3 class="card-title" id="title"><%=list.get(j).getBbsTitle()%></h3>
-            <%=list.get(j).getUserID()%>          
-            <%= list.get(j).getBbsDate()%>  
-          </div>
-          <pre><code class="<%= list.get(j).getBbsLanguage()%>">
+            <p id="userid"><%=list.get(j).getUserID()%></p> 
+            <p id="date"><%= list.get(j).getBbsDate()%></p>                 
+          </div> <br><br>
+          <pre id="code"><code>
          	<%=list.get(j).getBbsSource()%>
-         	
          	</code></pre>
           <div class="card-footer text-muted"> 
           <a href="Show.jsp?bbsID=<%=list.get(j).getBbsID()%>" class="btn btn-primary">Read More &rarr;</a>
           </div>
         </div>
-		<br>
 		<%
         		}
         	}
