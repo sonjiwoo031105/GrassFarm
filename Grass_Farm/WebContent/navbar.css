@@ -1,0 +1,84 @@
+@charset "UTF-8";
+
+#undershadow{
+	box-shadow: 0 3px 3px -3px rgba(0,0,0,0.10), 0 6px 6px -6px rgba(0,0,0,0.12), 0 6px 6px -6px rgba(0,0,0,0.14);
+	border-radius: 0px;
+}
+.nav.navbar-form{
+	padding: 0px 0px;
+}
+.navbar-header{
+	margin: 0px;
+	padding: 0px 0px;
+}
+
+#logo{
+	float: left;
+	width: 30px;
+}
+@font-face {
+	font-family: 'regular';
+    src: url('./fonts/NotoSansCJKkr-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+#wich{
+	float: left;
+	margin-left:8%;
+}
+#iconstyle{
+	border: none;
+	background-color:#3dab4a;
+	color:white;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+}
+#inputstyle{
+	font-family: 'regular';
+	border-color:#3dab4a; 
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+	line-height:100%;
+  	font-size: 11pt;
+  	width: 85%;
+}
+#inputstyle::placeholder{
+	color: #3dab4a;
+	font-size: 11pt;
+}
+#inputstyle:focus{
+	outline: 0;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+#up{
+	float: right;
+}
+#write{
+	padding: 0;
+	background-color: #ffffff;
+	
+}
+#repo{
+	padding: 0;
+	background-color: #ffffff;
+}
+#user{
+	padding: 0;	
+	background-color: #ffffff;
+}
+#writei{
+	max-width:100%;
+	max-height:100%;
+	margin-right: 30px;
+}
+#repoi{
+	max-width:100%;
+	max-height:100%;
+	margin-right: 30px;
+}  
+#useri{
+	max-width:100%;
+	max-height:100%;
+	
+}
