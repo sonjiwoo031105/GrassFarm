@@ -16,17 +16,18 @@
 }
 .nav.navbar-form{
 	padding: 0px 0px;
+	margin-top: 8px;
+	margin-bottom: 0px;
 }
 .navbar-header{
 	float: left;
-	width: 20%;	
+	width: 30%;	
 	margin: 0px;
 	padding: 0px 0px;
 }
 #logo{
 	float:left;
-	width: 90%;
-	margin-top: 8px;
+	height: 50px;
 }
 @font-face {
 	font-family: 'regular';
@@ -34,9 +35,9 @@
     font-weight: normal;
     font-style: normal;
 }
-#wich{
+#search{
 	float: left;
-	margin-left:8%;
+	margin-left: 10%;
 }
 #iconstyle{
 	border: none;
@@ -63,31 +64,36 @@
 	-webkit-box-shadow: none;
 	box-shadow: none;
 }
-#up{
-	float: right;
-}
 #write{
+	float: right;
 	padding: 0;
-	background-color: #ffffff;
-	
+	background-color: #ffffff;	
+	width: 26px;
+	margin-right: 5%;
+	margin-top: 4px;
 }
 #repo{
+	float: right;
 	padding: 0;
-	background-color: #ffffff;
+	background-color: #ffffff;	
+	width: 26px;
+	margin-right: 5%;
+	margin-top: 4px;
 }
 #user{
+	float: right;
 	padding: 0;	
-	background-color: #ffffff;
+	background-color: #ffffff;	
+	width: 26px;
+	margin-top: 4px;
 }
 #writei{
 	max-width:100%;
 	max-height:100%;
-	margin-right: 30px;
 }
 #repoi{
 	max-width:100%;
 	max-height:100%;
-	margin-right: 30px;
 }  
 #useri{
 	max-width:100%;
@@ -104,18 +110,16 @@
         		<a href="Main.jsp"><img src="img/Header_Logo.png" id="logo" alt="로고 : Header_Logo" ></a>
     		</div>	 		
     		<form class="nav navbar-form" role="search" action="Search.jsp">  			     		
-  			<div class="form-group" id="wich">
+  			<div class="form-group" id="search">
   		    	<div class="input-group">
   					<span class="input-group-addon" id="iconstyle"><i class="glyphicon glyphicon-search"></i></span>
   					<input type="text" id="inputstyle" class="form-control" name="search" placeholder="검색" required="required">
 				</div>         		
         	</div>       	
-	        <ul id="up" class="nav navbar-nav">	 
-	    		<li><a id="write" href="Write.jsp"><img id="writei" src="img/Header_plus.png"></a></li>
-	    		<li><a id="repo" href="Repo.jsp"><img id="repoi" src="img/Header_repo.png"></a></li>
-	    		<li><a id="user" href="User.jsp"><img id="useri" src="img/Header_profile.png"></a></li>	   		
-	        </ul>
-      		</form>	
+        	<a id="user" href="User.jsp"><img id="useri" src="img/Header_profile.png"></a>
+      		<a id="repo" href="Repo.jsp"><img id="repoi" src="img/Header_repo.png"></a>
+	    	<a id="write" href="Write.jsp"><img id="writei" src="img/Header_plus.png"></a>	    		
+	    	</form>		
   		</div>
   	</div>
   </div>
