@@ -25,9 +25,9 @@
   					<input type="text" id="inputstyle" class="form-control" name="search" placeholder="검색" required="required">
 				</div>         		
         	</div>       	
-        	<a id="user" href="User.jsp"><img id="useri" src="img/Header_profile.png"></a>
-      		<a id="repo" href="Repo.jsp"><img id="repoi" src="img/Header_repo.png"></a>
-	    	<a id="write" href="Write.jsp"><img id="writei" src="img/Header_plus.png"></a>	    		
+        	<a id="user" href="User.jsp"><img id="useri" src="img/Header_profil.png"></a>
+      		<a id="repo" href="Repo.jsp"><img id="repoi" src="img/Header_rep.png"></a>
+	    	<a id="write" href="Write.jsp"><img id="writei" src="img/Header_plu.png"></a>	    		
 	    	</form>		
   		</div>
   	</div>
