@@ -7,6 +7,7 @@ public class User {
 	private String userName;
 	private String userEmail;
 	private String userDate;
+	private String userPicture;
 	
 	public String getUserID() {
 		return userID;
@@ -44,5 +45,11 @@ public class User {
 	}
 	public void setUserDate(String userDate) {
 		this.userDate = userDate;
+	}
+	public String getUserPicture() {
+		return userPicture;
+	}
+	public void setUserPicture(String userPicture) {
+		this.userPicture = userPicture;
 	}	
 }
