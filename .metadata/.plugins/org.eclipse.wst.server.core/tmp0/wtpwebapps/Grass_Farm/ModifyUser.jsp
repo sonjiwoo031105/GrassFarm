@@ -67,6 +67,7 @@ h1{
     </head>
     <body>
 <% 
+			String userID = (String)session.getAttribute("userID");
  			UserDAO userDAO=new UserDAO();
   			ArrayList<User> user=userDAO.user(userID);
     		for(int i=0; i<user.size(); i++){
