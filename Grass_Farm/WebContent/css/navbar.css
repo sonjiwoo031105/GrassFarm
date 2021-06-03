@@ -16,7 +16,7 @@
 }
 @font-face {
 	font-family: 'regular';
-    src: url('./fonts/NotoSansCJKkr-Regular.otf');
+    src: url('../fonts/NotoSansCJKkr-Regular.otf');
     font-weight: normal;
     font-style: normal;
 }

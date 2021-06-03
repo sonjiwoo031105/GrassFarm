@@ -1,0 +1,48 @@
+@charset "UTF-8";
+
+#card_main{
+	border-radius: 1px;
+	border: solid 1px #d9d9d9;
+	padding: 20px 20px;
+	margin-bottom: 6%;
+}
+#title{
+	margin: 0px 0px 0px;
+	font-family: 'bold';
+	color: #484848;
+}
+#userid{
+	float: left;
+	font-family: 'regular';
+	border-right: 1px solid #c2c2c2;
+	padding-right: 1%;
+	margin-top : 1%;
+	margin-bottom: 1%;
+	color : #0e0e0e;
+}
+#date{
+	float: left;
+	font-family: 'regular';
+	padding-left: 1%;
+	margin-top : 1%;
+	margin-bottom: 1%;
+	color : #0e0e0e;
+}
+@font-face {
+	font-family: 'bold';
+    src: url('../fonts/NotoSansCJKkr-Bold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'medium';
+    src: url('../fonts/NotoSansCJKkr-Medium.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'regular';
+    src: url('../fonts/NotoSansCJKkr-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}

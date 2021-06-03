@@ -1,8 +1,5 @@
 @charset "UTF-8";
 
-body {
-  background-image: url('./img/Index_bg.png');
-}
 #box{
 	background-color: white;
 	border-radius: 15px;
@@ -35,7 +32,7 @@ body {
 
 @font-face {
 	font-family: 'bold';
-    src: url('./fonts/NotoSansCJKkr-Bold.otf');
+    src: url('../fonts/NotoSansCJKkr-Bold.otf');
     font-weight: normal;
     font-style: normal;
 }
@@ -55,7 +52,7 @@ body {
 
 @font-face {
 	font-family: 'regular';
-    src: url('./fonts/NotoSansCJKkr-Regular.otf');
+    src: url('../fonts/NotoSansCJKkr-Regular.otf');
     font-weight: normal;
     font-style: normal;
 }
@@ -84,7 +81,7 @@ body {
 }
 @font-face {
 	font-family: 'medium';
-    src: url('./fonts/NotoSansCJKkr-Medium.otf');
+    src: url('../fonts/NotoSansCJKkr-Medium.otf');
     font-weight: normal;
     font-style: normal;
 }

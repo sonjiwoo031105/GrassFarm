@@ -11,60 +11,13 @@
 <head>
 <title>잔디공작소</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="css/Main.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/hybrid.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
 </head>
-<style>
-#card_main{
-	border-radius: 1px;
-	border: solid 1px #d9d9d9;
-	padding: 20px 20px;
-	margin-bottom: 6%;
-}
-#title{
-	margin: 0px 0px 0px;
-	font-family: 'bold';
-	color: #484848;
-}
-#userid{
-	float: left;
-	font-family: 'regular';
-	border-right: 1px solid #c2c2c2;
-	padding-right: 1%;
-	margin-top : 1%;
-	margin-bottom: 1%;
-	color : #0e0e0e;
-}
-#date{
-	float: left;
-	font-family: 'regular';
-	padding-left: 1%;
-	margin-top : 1%;
-	margin-bottom: 1%;
-	color : #0e0e0e;
-}
-@font-face {
-	font-family: 'bold';
-    src: url('./fonts/NotoSansCJKkr-Bold.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-	font-family: 'medium';
-    src: url('./fonts/NotoSansCJKkr-Medium.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-	font-family: 'regular';
-    src: url('./fonts/NotoSansCJKkr-Regular.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-</style>
 <body>
 <div class="container">
     <div class="row">     
@@ -84,12 +37,18 @@
             <h3 class="card-title" id="title"><%=list.get(j).getBbsTitle()%></h3>
             <p id="userid"><%=list.get(j).getUserID()%></p> 
             <p id="date"><%= list.get(j).getBbsDate()%></p>                 
-          </div> <br><br>
+          </div> <br><br> 
+            
+          <div id="content">
+          	&nbsp;<%= list.get(j).getBbsContent() %>
+          </div>       
+		  
           <pre id="code"><code>
          	<%=list.get(j).getBbsSource()%>
          	</code></pre>
           <div class="card-footer text-muted"> 
-          <a href="Show.jsp?bbsID=<%=list.get(j).getBbsID()%>" class="btn btn-primary">Read More &rarr;</a>
+          <!-- 만약 넣는다면 여기다가 하트, 댓글, 저장 등등.. -->
+          <%-- <a href="Show.jsp?bbsID=<%=list.get(j).getBbsID()%>" class="btn btn-primary">Read More &rarr;</a> --%>
           </div>
         </div>
 		<%

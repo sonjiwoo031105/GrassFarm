@@ -7,10 +7,10 @@
 <title>잔디공작소</title>
 <link rel="shortcut icon" href="img/Contents_Logo.png" type="img/x-icon">
 <link rel="icon" href="img/Contents_Logo.png" type="img/x-icon">
-<link rel="stylesheet" href="./css/navbar.css">
+<link rel="stylesheet" href="css/navbar.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
-<body>
+<header>
 <nav class="navbar" id="undershadow">
   <div class="container">
   	<div class="row">
@@ -34,5 +34,5 @@
   </div>
 </nav>
 
-</body>
+</header>
 </html>

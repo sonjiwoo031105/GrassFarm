@@ -7,7 +7,7 @@
 }
 @font-face {
 	font-family: 'medium';
-    src: url('./fonts/NotoSansCJKkr-Medium.otf');
+    src: url('../fonts/NotoSansCJKkr-Medium.otf');
     font-weight: normal;
     font-style: normal;
 }
@@ -38,7 +38,7 @@
 }
 @font-face {
 	font-family: 'regular';
-    src: url('./fonts/NotoSansCJKkr-Regular.otf');
+    src: url('../fonts/NotoSansCJKkr-Regular.otf');
     font-weight: normal;
     font-style: normal;
 }

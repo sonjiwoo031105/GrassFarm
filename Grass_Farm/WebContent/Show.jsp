@@ -17,7 +17,6 @@
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 
  <style>
-        body { padding-top: 70px; }
       	.navbar-fixed-top{
       		background-color: white;
       		overflow : auto;

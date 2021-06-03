@@ -4,7 +4,7 @@
 <html>
 <head>
 <title>잔디공작소</title>
-<link rel="stylesheet" href="Index.css">
+<link rel="stylesheet" href="css/Index.css">
 <link rel="shortcut icon" href="img/Contents_Logo.png" type="img/x-icon">
 <link rel="icon" href="img/Contents_Logo.png" type="img/x-icon">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -13,6 +13,11 @@
 <meta name="google-signin-client_id" content="529393072584-snmlihbn3psu2a9buc9kobgrs924aqsn.apps.googleusercontent.com">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
+<style>
+body {
+	background-image: url('./img/Index_bg.png');
+}
+</style>
 <script type='text/javascript'>        
         function onSignIn(googleUser) {
         	  var profile = googleUser.getBasicProfile();
