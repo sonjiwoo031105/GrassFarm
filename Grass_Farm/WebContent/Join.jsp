@@ -1,119 +1,60 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-<%@ include file="navbar.jsp" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
-    <head>
-        <meta
-        http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <!-- 뷰포트 -->
-        <meta
-        name="viewport" content="width=device-width" initial-scale="1">
-        <!-- 스타일시트 참조  -->
-        <link rel="stylesheet" href="css/bootstrap.min.css">
-        <title>Join</title>
+<head>
+<link rel="stylesheet" href="css/Join.css">
+<link rel="shortcut icon" href="img/Contents_Logo.png" type="img/x-icon">
+<link rel="icon" href="img/Contents_Logo.png" type="img/x-icon">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<title>잔디공작소</title>
 <style>
-h1{ font-family: 'ImcreSoojin'}
-#jandi{ font-family: 'ImcreSoojin'; font-size:18pt; margin-top:4%;}
-body { padding-top: 3%; }
-.navbar-fixed-top{
-   background-color: white;
-}
-.page-header{
-    font-family: 'Playfair Display', serif;
-    text-align: left;
-}  
-h1{
-    font-family: 'ImcreSoojin';
-}
-@font-face {
-    font-family: 'ImcreSoojin';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-04@2.3/ImcreSoojin.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
-}
-.login-form {
-    width: 23%;
-    margin: 7% auto;
-}
-.login-form form {        
-    margin-bottom: 15px;
-    background: #f7f7f7;
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.3);
-    padding: 30px;
-}
-.login-form h2 {
-    margin: 0 0 15px;
-}
-.form-control, .login-btn {
-    border-radius: 2px;
-}
-.input-group-prepend .fa {
-    font-size: 18px;
-}
-.login-btn {
-    font-size: 15px;
-    font-weight: bold;
-  	min-height: 40px;
-}
-.form-control{
-	float: right;
-	width:90%;
-	margin-bottom:3%;
-}
+body { background-image: url('./img/Index_bg.png'); }
 </style>
-    </head>
-    <body>
-   
-<!-- 회원가입폼 -->
-<div class="login-form">
-    <form action="JoinAction.jsp" method="post">
-        <h2 class="text-center" style="padding-bottom:2%"><b>Join</b></h2>  
-        
-        <div class="form-group">
-        	<div class="input-group">
-  				<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-  				<input type="text" class="form-control" name="userID" placeholder="UserID" required="required">
+</head>
+<body>
+<div class="container">
+	<div class="row">
+       <div class="col-md-10.offset-md-1" style="max-width:100%;">
+       <div id="box">
+       	<div id="box1">
+       		<img id="logostyle" src="./img/Contents_Logo.png">
+       		<div id="hello">
+       		<p>안녕하세요. <br> 잔디공작소입니다.</p>
+       		</div>
+       		<p id="loginhe">회원 서비스 이용을 위해 회원가입하세요.</p>
+       		<img id="bannerstyle" src="./img/banner.png">       		
+       	</div>
+       	<div id="box2">
+       	<p id="welcome">Join</p> 
+       	<form action="JoinAction.jsp" method="post">
+       		<div class="input-group" id="inputstyle">        
+  				<span class="input-group-addon" id="spanstyle"><i class="glyphicon glyphicon-user" id="icolor"></i></span>
+  				<input type="text" id="input" class="form-control" name="userID" placeholder="아이디" required="required">
 			</div>
-        </div>
-        
-        <div class="form-group">
-        	<div class="input-group">
-  				<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-  				<input type="password" class="form-control" name="userPass" placeholder="Password" required="required">
+			<div class="input-group" id="inputstyle">  
+  				<span class="input-group-addon" id="spanstyle"><i class="glyphicon glyphicon-lock" id="icolor"></i></span>
+  				<input type="password" id="input" class="form-control" name="userPass" placeholder="비밀번호" required="required">
 			</div>
-        </div>
-        
-        <div class="form-group">
-        	<div class="input-group">
-  				<span class="input-group-addon"><i class="glyphicon glyphicon-ok"></i></span>
-  				<input type="password" class="form-control" name="userPassCheck" placeholder="PasswordCheck" required="required">
+			<div class="input-group" id="inputstyle">  
+  				<span class="input-group-addon" id="spanstyle"><i class="glyphicon glyphicon-ok" id="icolor"></i></span>
+  				<input type="password" id="input" class="form-control" name="userPassCheck" placeholder="비밀번호확인" required="required">
 			</div>
-        </div>
-        
-        <div class="form-group">
-        	<div class="input-group">
-  				<span class="input-group-addon"><span class="glyphicon glyphicon-user"></span></span>
-  				<input type="text" class="form-control" name="userName" placeholder="UserName" required="required">
+			<div class="input-group" id="inputstyle">  
+  				<span class="input-group-addon" id="spanstyle"><span class="glyphicon glyphicon-user" id="icolor"></span></span>
+  				<input type="text" id="input" class="form-control" name="userName" placeholder="이름" required="required">
 			</div>
-        </div>
-        
-        <div class="form-group">
-        	<div class="input-group">
-  				<span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
-  				<input type="text" class="form-control" name="userEmail" placeholder="UserEmail" required="required">
+        	<div class="input-group" id="inputstyle">  
+  				<span class="input-group-addon" id="spanstyle"><i class="glyphicon glyphicon-envelope" id="icolor"></i></span>
+  				<input type="email" id="input" class="form-control" name="userEmail" placeholder="이메일" required="required">
 			</div>
-        </div>
-              
-        <div class="form-group">
-            <button type="submit" class="btn btn-success login-btn btn-block">Sign up</button>
-        </div>
-    </form>
-</div>        
-        
-        <!-- 애니매이션 담당 JQUERY -->
-        <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-        <!-- 부트스트랩 JS  -->
-        <script src="js/bootstrap.js"></script>
-    </body>
+            	<button type="submit" id="btnstyle" class="btn btn-success login-btn btn-block">회원가입하기</button>
+    	</form>    		
+       	</div>
+       </div>         
+	   </div>
+     </div>
+</div>    
+</body>
 </html>

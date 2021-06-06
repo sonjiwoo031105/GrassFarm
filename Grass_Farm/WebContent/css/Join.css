@@ -68,10 +68,11 @@
 #welcome{
 	float: left;
 	font-family: 'medium';
-	margin-left: 190.45px;
+	margin-left: 228.67px;
 	margin-top:13%;
 	color: #3dab4a;
 	font-size: 25pt;
+	margin-bottom: 3%;
 }
 @font-face {
 	font-family: 'medium';
@@ -79,38 +80,30 @@
     font-weight: normal;
     font-style: normal;
 }
-#one{
-	float: left;
-	width: 60%;
-	border: 0px;
-	height: 0.5px;
-	background-color: #3dab4a;
-	margin-left: 20%;
-	margin-right: 20%;
-	margin-top: 5%;
+#spanstyle{
+	height: 40px;
+	border-top-left-radius: 7px;
+	border-bottom-left-radius: 7px;
+	background-color: #f8f8f8;
 }
-#two{
-	float: left;
-	width: 60%;
-	border: 0px;
-	height: 0.5px;
-	background-color: #3dab4a;
-	margin-left: 20%;
-	margin-right: 20%;
-	margin-top: 5%;
-	margin-bottom: 6%;
+#icolor{
+	color: #0d0d0d;
 }
 #inputstyle{
 	float: left;
 	font-family: 'regular';
 	width: 60%;
 	height: 40px;
-	border-radius: 7px;
 	margin-left: 20%;
 	margin-right: 20%;
-	margin-top: 2%;
-}
-#inputstyle:focus{
+	margin-top: 4%;
+}   
+#input{
+	height: 40px;
+	border-top-right-radius: 7px;
+	border-bottom-right-radius: 7px;
+}  
+#input:focus{
 	border-color: #3dab4a;
 	-webkit-box-shadow: none;
 	box-shadow: none;
@@ -128,27 +121,5 @@
 }
 #btnstyle:hover{
 	border: none;	
-}
-#find{
-	float: right;
-	margin-right: 20%;	
-	font-family: 'regular';
-	color: #3dab4a;
-	text-decoration: underline;
-	font-size: 10pt;
-}
-#find:hover{
-	color:#77db65;
-}
-#gojoin{
-	float: left;	
-	font-family: 'regular';
-	margin-left: 43%;	
-	color: #3dab4a;
-	text-decoration: underline;
-	font-size: 10pt;
-}
-#gojoin:hover{
-	color:#77db65;
-}
-           
+	background-color:#77db65;
+} 
