@@ -36,12 +36,6 @@
     
 </head>
 <style>
-#test{
-	float: left;
-	border: 1px solid black;
-	width : 20%;
-	height : 300px;
-}
 #heatmap-1{
 	float: left;
 	width : 200px;
@@ -52,7 +46,6 @@
 			
     <div class="container">
         <div class="col-md-18">
-        	<div id="test"></div>
             <div id="heatmap-1"></div>
         </div>
     </div>

@@ -80,12 +80,6 @@
     font-weight: normal;
     font-style: normal;
 }
-#spanstyle{
-	height: 40px;
-	border-top-left-radius: 7px;
-	border-bottom-left-radius: 7px;
-	background-color: #f8f8f8;
-}
 #icolor{
 	color: #0d0d0d;
 }
@@ -100,8 +94,7 @@
 }   
 #input{
 	height: 40px;
-	border-top-right-radius: 7px;
-	border-bottom-right-radius: 7px;
+	border-radius: 7px;
 }  
 #input:focus{
 	border-color: #3dab4a;

@@ -77,7 +77,7 @@ span.icon {
   			</div>
   			<div id="name"></div>
   			<script>startApp();</script>	
-       		<!-- <a href="#" onclick="signOut();">Sign out</a>  -->
+       		<a href="#" onclick="signOut();">Sign out</a>
        		<hr id="one">
        		<form action="LoginAction.jsp" method="post">
     			<input type="text" class="form-control" id="inputstyle" name="userID" placeholder="아이디" required="required">  			

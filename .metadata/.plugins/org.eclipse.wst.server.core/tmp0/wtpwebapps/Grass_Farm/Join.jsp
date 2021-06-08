@@ -30,23 +30,18 @@ body { background-image: url('./img/Index_bg.png'); }
        	<p id="welcome">Join</p> 
        	<form action="JoinAction.jsp" method="post">
        		<div class="input-group" id="inputstyle">        
-  				<span class="input-group-addon" id="spanstyle"><i class="glyphicon glyphicon-user" id="icolor"></i></span>
   				<input type="text" id="input" class="form-control" name="userID" placeholder="아이디" required="required">
 			</div>
 			<div class="input-group" id="inputstyle">  
-  				<span class="input-group-addon" id="spanstyle"><i class="glyphicon glyphicon-lock" id="icolor"></i></span>
   				<input type="password" id="input" class="form-control" name="userPass" placeholder="비밀번호" required="required">
 			</div>
 			<div class="input-group" id="inputstyle">  
-  				<span class="input-group-addon" id="spanstyle"><i class="glyphicon glyphicon-ok" id="icolor"></i></span>
   				<input type="password" id="input" class="form-control" name="userPassCheck" placeholder="비밀번호확인" required="required">
 			</div>
 			<div class="input-group" id="inputstyle">  
-  				<span class="input-group-addon" id="spanstyle"><span class="glyphicon glyphicon-user" id="icolor"></span></span>
   				<input type="text" id="input" class="form-control" name="userName" placeholder="이름" required="required">
 			</div>
         	<div class="input-group" id="inputstyle">  
-  				<span class="input-group-addon" id="spanstyle"><i class="glyphicon glyphicon-envelope" id="icolor"></i></span>
   				<input type="email" id="input" class="form-control" name="userEmail" placeholder="이메일" required="required">
 			</div>
             	<button type="submit" id="btnstyle" class="btn btn-success login-btn btn-block">회원가입하기</button>
