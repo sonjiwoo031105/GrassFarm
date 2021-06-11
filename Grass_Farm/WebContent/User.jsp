@@ -34,7 +34,7 @@ System.out.print(imgurl);
 %>	
 <div class="container">
 	<div class="card" style="width:25%;margin-top:40px;display: inline-block;">
-		<img class="card-img-top" src="./upload/<%out.print(user.get(0).getUserPicture());%>" id="img_click" style="width:100%">
+		<img class="card-img-top" src="./img/<%out.print(user.get(0).getUserPicture());%>" id="img_click" style="width:100%">
    		<div class="card-body">
   			<h4 class="card-title"><%=(String)session.getAttribute("userID")%></h4>
   			<p class="card-text"><%out.print(user.get(0).getUserName());%></p> 	

@@ -42,6 +42,7 @@
     </head>
     <body>
    	<%
+   		String userID = (String)session.getAttribute("userID");
         if(userID==null){
     %>
        <div class="alert alert-success" role="alert" style="text-align:center">로그인 해주세요.</div>

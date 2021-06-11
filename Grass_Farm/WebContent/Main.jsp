@@ -1,3 +1,4 @@
+<%@page import="user.UserDAO"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="bbs.BbsDAO" %>
 <%@ page import="bbs.Bbs" %>
@@ -25,6 +26,7 @@
         <%
         	String userID=(String)session.getAttribute("userID");    	
 			FollowDAO followDAO = new FollowDAO();
+			UserDAO userDAO = new UserDAO();
         	BbsDAO bbsDAO = new BbsDAO();
         	
         	ArrayList<Follow> Follow = followDAO.SearchFollowing(userID);
@@ -34,10 +36,12 @@
 		%>		
        	<div class="card" id="card_main"> 
           <div class="card-body">
-            <h3 class="card-title" id="title"><%=list.get(j).getBbsTitle()%></h3>
-            <p id="userid"><%=list.get(j).getUserID()%></p> 
-            <p id="date"><%= list.get(j).getBbsDate()%></p>                 
-          </div> <br><br> 
+            <div id="circle1"><img src="./img/<%out.print(userDAO.match_profile(list.get(j).getUserID()));%>" style="width:100%"></div> 
+          
+            <h3 id="title"><%=list.get(j).getBbsTitle()%></h3>
+            <p id="userid"><%= list.get(j).getUserID()%></p> 
+            <p id="date"><%= list.get(j).getBbsDate()%></p>  
+          </div> <br><br><br>
             
           <div id="content">
           	&nbsp;<%= list.get(j).getBbsContent() %>

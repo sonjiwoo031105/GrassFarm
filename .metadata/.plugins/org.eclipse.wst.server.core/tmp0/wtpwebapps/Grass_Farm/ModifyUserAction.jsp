@@ -20,7 +20,7 @@
 </head>
 <body>
  <%
-    
+    String userID = (String)session.getAttribute("userID");
         UserDAO userDAO = new UserDAO(); //인스턴스생성
         int result = userDAO.update(user, userID);			
        
@@ -37,9 +37,7 @@
             	script.println("alert('수정되었습니다.')");
              	script.println("location.href = 'User.jsp'");
             	script.println("</script>");
-        	}
-        
-    
+        	}    
  %>
   </body>
  </html>

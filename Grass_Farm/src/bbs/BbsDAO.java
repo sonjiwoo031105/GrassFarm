@@ -76,7 +76,7 @@ public class BbsDAO {
 		return -1; //데이터베이스 오류
 	}
 	
-	//통합 검색에 쓰는 모든 글에서 검색하는 메서드
+	//repo.jsp 가져오는 메소드
 	public ArrayList<Bbs> getrepo(String search) {
 		String SQL="select bbsID,bbsTitle,userID, date_format(bbsDate, '%Y-%m-%d'),bbsContent,bbsSource,bbsLanguage "
 				+ "from bbs where userID=? or bbsTitle like ? OR bbsContent like ? OR bbsSource like ? order by bbsID desc";
@@ -103,6 +103,35 @@ public class BbsDAO {
 			return repo;
 		}
 	
+	//통합 검색에 쓰는 모든 글에서 검색하는 메서드
+		public ArrayList<Bbs> searchrepo(String search) {
+			String SQL="select bbsID,bbsTitle,userID, date_format(bbsDate, '%Y년 %m월 %d일'),bbsContent,bbsSource,bbsLanguage "
+					+ "from bbs where bbsTitle like ? OR bbsContent like ? OR bbsSource like ? order by bbsID desc";
+			
+			ArrayList<Bbs> repo=new ArrayList<>();
+			try {
+				pstmt=conn.prepareStatement(SQL);
+				pstmt.setString(1,"%"+search+"%");
+				pstmt.setString(2,"%"+search+"%");
+				pstmt.setString(3,"%"+search+"%");
+				rs=pstmt.executeQuery();
+				while(rs.next()) {
+					Bbs bbs=new Bbs();
+					bbs.setBbsID(rs.getInt(1));
+					bbs.setBbsTitle(rs.getString(2));
+					bbs.setUserID(rs.getString(3));
+					bbs.setBbsDate(rs.getString(4));
+					bbs.setBbsContent(rs.getString(5));
+					bbs.setBbsSource(rs.getString(6));
+					bbs.setBbsLanguage(rs.getString(7));
+					repo.add(bbs);
+				}
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+				return repo;
+			}
+	
 	//repo에 쓰는 파라미터로 받은 사람이 쓴 글의 개수를 쓰는 메서드
 	public Bbs getBbs(int bbsID) {
 		String SQL = "SELECT * FROM BBS WHERE bbsID = ?";
@@ -127,7 +156,7 @@ public class BbsDAO {
 		return null;
 	}
 
-	//통합 검색에 쓰는 나의 글을 검색하는 메서드
+	//user 페이지에 쓰는 나의 글을 검색하는 메서드
 	public ArrayList<Bbs> getmyrepo(String userid, String search) {
 		String SQL = "SELECT * FROM BBS WHERE userID = ? and (bbsContent like ? or bbsTitle like ? or bbsSource like ?) ";
 		ArrayList<Bbs> repo=new ArrayList<>();

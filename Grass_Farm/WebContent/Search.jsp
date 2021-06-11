@@ -20,94 +20,83 @@
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>잔디공작소</title>
 </head>
-<body>	
+<body>
+<div class="container">
+  <div class="row">     
+    <div class="col-md-8 col-md-offset-2" style="max-width:100%;">
+    <h3 id="title">사람</h3><hr />
+   	</div>
+ </div>
+</div> 
 <%
+	String userID = (String)session.getAttribute("userID");
   	String search = request.getParameter("search");
+
  	UserDAO userDAO=new UserDAO();
  	BbsDAO bbsDAO=new BbsDAO();
  	FollowDAO followDAO=new FollowDAO();
-	ArrayList<User> userlist=userDAO.search(search);
+ 	
+	ArrayList<User> userlist=userDAO.search(search, search);
 	
 	for(int i=0; i<userlist.size(); i++){
-	int follow=followDAO.SearchFollowing((String)session.getAttribute("userID"),userlist.get(i).getUserID()); 
-	System.out.print(follow);
+	int follow=followDAO.SearchFollowing(userID, userlist.get(i).getUserID()); 
 %>
-
- 	<p class="card-text">
- 	<div class="container">
- 		<div class="row">
-		<div class="col-md-8 col-md-offset-2" style="max-width:100%;">
-    		<div class="card b-1 hover-shadow mb-20">
-        		<div class="media card-body"> 
-           			<div class="media-body">
-           				<form method="post" action="Follow.jsp">
-                			<div class="mb-2">
-                				<span class="fs-20 pr-16" type="submit" onclick="location.href='SearchUser.jsp?id=<%=userlist.get(i).getUserID()%>'" ><%=userlist.get(i).getUserName() %></span>
-               				</div>
-               				@<%=userlist.get(i).getUserID()%></input><br>
-               			
-                			<p class="fs-14 text-fade mb-12"><i class="fa fa-map-marker pr-1">
-                			</i><%=userlist.get(i).getUserEmail()%></p>
-            		</div>
-        		</div>
-        		<footer class="card-footer flexbox align-items-center">
-            	<div>
-               		<strong>Applied on:</strong>
-                	<span><%= userlist.get(i).getUserDate()%></span>             
-            	</div>
-            	<div class="media-right text-right d-none d-md-block">
-            		<input type="text" name="id" style="display:none" value=<%=userlist.get(i).getUserID()%>>
-	            		<% if(userlist.get(i).getUserID().equals((String)session.getAttribute("userID"))){%>  
-	                	<%}else if(follow>0){%>
-	                		<a href='Unfollow.jsp?id=<%=userlist.get(i).getUserID()%>' class="btn btn-success" value="UNFOLLOW">UNFOLLOW</a>
-	                	<%}else{%>
-	                		<a href='Follow.jsp?id=<%=userlist.get(i).getUserID()%>' class="btn btn-success" value="FOLLOW">FOLLOW</a>
-	                	<%} %>
-            	</div>
-        		</footer>
-        		</form>
-    		</div>
-		</div>
-		</div>
-	</div>
-	<%user.setUserID(userlist.get(i).getUserID());%>
- 	<%}%>
- 	
- 	<%
-	ArrayList<Bbs> repolist=bbsDAO.getrepo(search);
+<div class="container">
+  <div class="row">     
+    <div class="col-md-8 col-md-offset-2" style="max-width:100%;"> 
+    	<div id="circle1">
+    	  <img src="./img/<%out.print(userlist.get(i).getUserPicture());%>" style="width:100%">
+    	</div>
+    	
+    	<div id="user_info">
+    		<a href="User.jsp?=<%=userlist.get(i).getUserID()%>" id="userID"><%=userlist.get(i).getUserID()%></a>    	
+    		<div id="userName"><%=userlist.get(i).getUserName()%></div>    	
+    		<div id="userEmail"><%=userlist.get(i).getUserEmail()%></div>
+    	</div>
+    	
+    	<% if(userlist.get(i).getUserID().equals(userID)){
+	       }else if(follow>0){%>
+	       <a href='Unfollow.jsp?id=<%=userlist.get(i).getUserID()%>' id="followbtn" class="btn btn-success">Unfollow</a>
+	    <%}else{%>
+	       <a href='Follow.jsp?id=<%=userlist.get(i).getUserID()%>' id="followbtn" class="btn btn-success">Follow</a>
+	    <%} %> 
+    	<br><br><br><br>
+    	<hr />
+    </div>
+  </div>
+</div>
+<%}%>
+<div class="container">
+  <div class="row">     
+    <div class="col-md-8 col-md-offset-2" style="max-width:100%;">
+    <h3 id="title">게시글</h3><hr />
+   	</div>
+ </div>
+</div>  	
+<%
+	ArrayList<Bbs> repolist=bbsDAO.searchrepo(search);
 	for(int i=0; i<repolist.size(); i++){
-	%>
-		<div class="container">
-		<div class="col-md-8 col-md-offset-2" style="max-width:100%;">
-    		<div class="card b-1 hover-shadow mb-20">
-        		<div class="media card-body"> 
-           			<div class="media-body">
-           			
-                			<div class="mb-2">
-                				<span class="fs-20 pr-16" type="submit" onclick="location.href='SearchUser.jsp?id=<%=repolist.get(i).getUserID()%>'" ></span>
-               				</div>
-               				@<%=repolist.get(i).getUserID()%></input><br>
-               			
-                			<p class="fs-14 text-fade mb-12"><i class="fa fa-map-marker pr-1">
-                			</i><%=repolist.get(i).getBbsTitle()%></p>
-            		</div>
-        		</div>
-        		<footer class="card-footer flexbox align-items-center">
-            	<div>
-               		<strong>Applied on:</strong>
-                	<span><%=repolist.get(i).getBbsDate()%></span>             
-            	</div>
-            	<div class="media-right text-right d-none d-md-block">
-            		
-            	</div>
-        		</footer>
-        	
-    		</div>
-		</div>
-	</div>
-	
-	<%
-	}
-	%>
-  </body>
- </html>
+		String picture = userDAO.match_profile(repolist.get(i).getUserID());
+%>
+<div class="container">
+  <div class="row">     
+    <div class="col-md-8 col-md-offset-2" style="max-width:100%;"> 
+    	<div id="circle1">
+    	  <img src="./img/<%out.print(picture);%>" style="width:100%">
+    	</div>
+    	
+    	<div id="user_info">
+    		<div id="userID"><%=repolist.get(i).getUserID()%></div>    	
+    		<div id="userName"><%=repolist.get(i).getBbsDate()%></div>  
+    	</div>
+    	
+    	<div id="content">
+    	<a href="Show.jsp?bbsID=<%=repolist.get(i).getBbsID()%>" id="bbstitle"><%=repolist.get(i).getBbsTitle()%></a><br><br>
+    	&nbsp;<%=repolist.get(i).getBbsContent()%>
+    	</div>
+    </div>
+  </div>
+</div>
+<%}%>
+</body>
+</html>

@@ -15,27 +15,15 @@
  <%
  		String name=request.getParameter("id");
  		String me=(String)session.getAttribute("userID");
- 		out.print(name);
- 		out.print(me);
 		
         FollowDAO followDAO = new FollowDAO(); //인스턴스생성
-        int result = followDAO.unfollow(me,name);		
-        out.print(result);
-        if(result == -1){ // 아이디가 기본키 중복되면 오류.
-        	PrintWriter script = response.getWriter();
-        	script.println("<script>");
+        int result = followDAO.unfollow(me,name);	
+        PrintWriter script = response.getWriter();
+    	script.println("<script>");
+        if(result == -1) // 아이디가 기본키 중복되면 오류.
         	script.println("alert('언팔로우에 실패하였습니다.')");
-        	script.println("history.back()");
-        	script.println("</script>");
-        }
-        
-        else{
-        	PrintWriter script = response.getWriter();
-        	script.println("<script>");
-        	script.println("alert('언팔로우 하였습니다.')");
-        	script.println("history.back()");
-        	script.println("</script>");
-        }
+        script.println("window.location=document.referrer;"); //이전페이지 새로고침해서 호출
+        script.println("</script>");
  %>
   </body>
  </html>

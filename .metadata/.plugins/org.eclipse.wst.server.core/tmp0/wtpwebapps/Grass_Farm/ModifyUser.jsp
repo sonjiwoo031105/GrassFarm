@@ -17,7 +17,6 @@
 <style>
 h1{ font-family: 'ImcreSoojin'}
 #jandi{ font-family: 'ImcreSoojin'; font-size:18pt; margin-top:4%;}
-body { padding-top: 3%; }
 .navbar-fixed-top{
    background-color: white;
 }
