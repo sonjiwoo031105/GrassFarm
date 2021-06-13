@@ -249,3 +249,74 @@
 6월 05, 2021 16:39:19.663 [17244:19724:0605/163919.661:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
 6월 05, 2021 16:39:19.665 [17244:19724:0605/163919.663:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
 6월 05, 2021 16:39:19.666 [17244:19724:0605/163919.664:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+
+6월 13, 2021 12:17:42.74 NEW SESSION
+6월 13, 2021 12:17:42.74 [15968:19104:0613/121742.070:ERROR:device_event_log_impl.cc(214)] [12:17:42.070] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 13, 2021 12:17:42.77 [15968:19104:0613/121742.070:ERROR:device_event_log_impl.cc(214)] [12:17:42.071] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 13, 2021 17:29:29.581 [15968:16124:0613/172929.580:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+6월 13, 2021 17:29:35.31 [15968:16124:0613/172935.031:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+6월 13, 2021 20:48:51.583 [15968:16124:0613/204851.583:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+6월 13, 2021 20:48:51.606 [15968:17160:0613/204851.605:ERROR:get_updates_processor.cc(255)] PostClientToServerMessage() failed during GetUpdates with error 2
+6월 13, 2021 20:48:54.648 [15968:16124:0613/204854.647:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+6월 13, 2021 20:48:54.650 [15968:17160:0613/204854.648:ERROR:get_updates_processor.cc(255)] PostClientToServerMessage() failed during GetUpdates with error 2
+6월 13, 2021 20:49:00.468 [15968:16124:0613/204900.467:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+6월 13, 2021 20:49:00.470 [15968:3784:0613/204900.468:ERROR:get_updates_processor.cc(255)] PostClientToServerMessage() failed during GetUpdates with error 2
+6월 13, 2021 20:49:25.339 [15968:19104:0613/204925.337:ERROR:account_info_fetcher.cc(62)] OnGetTokenFailure: Connection failed (-105).
+6월 13, 2021 20:49:26.581 [15968:19104:0613/204926.581:ERROR:account_info_fetcher.cc(62)] OnGetTokenFailure: Connection failed (-105).
+6월 13, 2021 20:49:36.611 [15968:2160:0613/204936.611:ERROR:get_updates_processor.cc(255)] PostClientToServerMessage() failed during GetUpdates with error 2
+6월 13, 2021 20:50:00.570 [15968:16124:0613/205000.570:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+6월 13, 2021 20:50:00.572 [15968:10876:0613/205000.571:ERROR:get_updates_processor.cc(255)] PostClientToServerMessage() failed during GetUpdates with error 2
+
+6월 13, 2021 20:52:40.109 NEW SESSION
+6월 13, 2021 20:52:40.110 [4212:20132:0613/205240.105:ERROR:device_event_log_impl.cc(214)] [20:52:40.105] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 13, 2021 20:52:40.113 [4212:20132:0613/205240.106:ERROR:device_event_log_impl.cc(214)] [20:52:40.106] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 13, 2021 20:52:40.114 [4212:20132:0613/205240.107:ERROR:device_event_log_impl.cc(214)] [20:52:40.107] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 13, 2021 21:42:56.313 [4212:20132:0613/214256.313:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 21:42:56.316 [4212:20132:0613/214256.313:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 21:42:56.318 [4212:20132:0613/214256.313:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 21:43:13.557 [4212:20132:0613/214313.557:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 21:43:13.560 [4212:20132:0613/214313.560:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 21:43:13.562 [4212:20132:0613/214313.560:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 21:51:21.884 [4212:20132:0613/215121.884:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 21:51:21.886 [4212:20132:0613/215121.885:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 21:51:21.888 [4212:20132:0613/215121.885:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 21:52:18.576 [4212:20132:0613/215218.576:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 21:52:18.580 [4212:20132:0613/215218.580:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 21:52:18.583 [4212:20132:0613/215218.580:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 21:54:54.730 [4212:20132:0613/215454.730:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 21:54:54.734 [4212:20132:0613/215454.730:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 21:54:54.734 [4212:20132:0613/215454.730:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 22:00:32.442 [4212:20132:0613/220032.434:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 22:00:32.445 [4212:20132:0613/220032.443:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 22:00:32.445 [4212:20132:0613/220032.445:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 22:00:55.521 [4212:20132:0613/220055.521:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 22:00:55.521 [4212:20132:0613/220055.521:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 22:00:55.521 [4212:20132:0613/220055.521:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 22:01:01.481 [4212:20132:0613/220101.481:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 22:01:01.486 [4212:20132:0613/220101.486:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 22:01:01.486 [4212:20132:0613/220101.486:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 22:01:18.598 [4212:20132:0613/220118.597:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 22:01:18.600 [4212:20132:0613/220118.600:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 22:01:18.600 [4212:20132:0613/220118.600:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 22:01:38.511 [4212:20132:0613/220138.511:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 22:01:38.519 [4212:20132:0613/220138.519:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 22:01:38.519 [4212:20132:0613/220138.519:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 22:03:23.533 [4212:20132:0613/220323.532:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 22:03:23.533 [4212:20132:0613/220323.532:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 22:03:23.533 [4212:20132:0613/220323.533:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 22:20:59.52 [4212:20132:0613/222059.052:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 22:20:59.52 [4212:20132:0613/222059.052:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 22:20:59.52 [4212:20132:0613/222059.052:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 22:27:16.586 [4212:20132:0613/222716.585:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 22:27:16.587 [4212:20132:0613/222716.587:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 22:27:16.589 [4212:20132:0613/222716.588:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 22:28:23.446 [4212:20132:0613/222823.446:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 22:28:23.446 [4212:20132:0613/222823.446:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 22:28:23.446 [4212:20132:0613/222823.446:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 22:29:16.828 [4212:20132:0613/222916.828:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 22:29:16.832 [4212:20132:0613/222916.831:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 22:29:16.833 [4212:20132:0613/222916.833:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 22:30:35.720 [4212:20132:0613/223035.720:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 13, 2021 22:30:35.720 [4212:20132:0613/223035.720:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 13, 2021 22:30:35.729 [4212:20132:0613/223035.729:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 13, 2021 22:49:12.360 [4212:6184:0613/224912.360:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105

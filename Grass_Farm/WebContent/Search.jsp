@@ -15,8 +15,8 @@
 <!DOCTYPE html>
 <html>
 <head>
-<link rel="stylesheet" href="css/Search.css">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<link rel="stylesheet" href="css/Search.css">
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <title>잔디공작소</title>
 </head>
