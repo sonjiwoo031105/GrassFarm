@@ -37,8 +37,7 @@
        	<div class="card" id="card_main"> 
           <div class="card-body">
             <div id="circle1"><img src="./img/<%out.print(userDAO.match_profile(list.get(j).getUserID()));%>" style="width:100%"></div> 
-          
-            <h3 id="title"><%=list.get(j).getBbsTitle()%></h3>
+          	<a id="title" href="Show.jsp?bbsID=<%=list.get(j).getBbsID()%>"><%=list.get(j).getBbsTitle()%></a><br>          	
             <p id="userid"><%= list.get(j).getUserID()%></p> 
             <p id="date"><%= list.get(j).getBbsDate()%></p>  
           </div> <br><br><br>
@@ -52,7 +51,7 @@
          	</code></pre>
           <div class="card-footer text-muted"> 
           <!-- 만약 넣는다면 여기다가 하트, 댓글, 저장 등등.. -->
-          <%-- <a href="Show.jsp?bbsID=<%=list.get(j).getBbsID()%>" class="btn btn-primary">Read More &rarr;</a> --%>
+         
           </div>
         </div>
 		<%

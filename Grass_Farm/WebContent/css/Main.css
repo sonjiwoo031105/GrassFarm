@@ -9,8 +9,13 @@
 #title{
 	margin: 0px 0px 0px;
 	font-family: 'bold';
+	font-size: 24px;
 	color: #484848;
-	margin-left: 12%;
+	margin-left: 2%;
+}
+#title:hover{
+	color: #3dab4a;
+	text-decoration: none;
 }
 #userid{
 	float: left;

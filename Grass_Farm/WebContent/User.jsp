@@ -79,13 +79,13 @@ System.out.print(imgurl);
   	
   	<%
     ArrayList<Bbs> getrepo= bbsDAO.getrepo(userID);
-    for(int i=0; i<5; i++){
+    for(int i=0; i<6; i++){
       if(getrepo.size()==i)
         break;
 	%>			
 	<div id="repo_box">
-	  <h4><%=getrepo.get(i).getBbsTitle() %></h4>
-	  <p><%=getrepo.get(i).getBbsLanguage() %></p>
+	  <a id="repobbstitle" style="font-size:18px;"href="Show.jsp?bbsID=<%=getrepo.get(i).getBbsID()%>"><%=getrepo.get(i).getBbsTitle()%></a><br>
+	  <p id="lang"><%=getrepo.get(i).getBbsLanguage() %></p>
 	</div>
      <%
      }
