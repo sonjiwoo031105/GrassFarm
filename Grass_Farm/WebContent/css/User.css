@@ -1,0 +1,134 @@
+@charset "UTF-8";
+
+#box1{
+	max-width: 100%;
+	padding: 0;
+	margin-top:30px;
+}
+.card{
+	display: inline-block;
+}
+#img_click{
+	float:left;
+	width: 100%;
+	cursor: pointer;
+	border-radius:140px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+}
+#userid{
+	float:left;
+	font-family: 'bold';
+	font-size: 25pt;
+	margin-bottom: 0px;
+	margin-right: 97.52px;
+}
+#modifyuser{
+	float: left;
+	color : #767676;
+	margin-top: 14px;
+	border-radius: 0;
+	border: solid 1px #c2c2c2;
+	font-family: 'regular';
+	padding: 4px 10px;
+	text-decoration: none;
+}
+#modifyuser:hover{
+	color: #3dab4a;
+}
+#username{
+	float:left;
+	font-family: 'regular';
+	font-size: 13pt;
+	margin-top: 5px;
+	margin-right: 188.41px;
+}
+#follow{
+	float:left;
+	font-family: 'regular';
+	color: #767676;
+	font-size: 13pt;
+	margin-right: 5px;
+}
+#follownum{
+	float:left;
+	font-family: 'bold';
+	font-size: 13pt;
+	color : #0e0e0e;
+}
+#follow:hover{
+	color: #3dab4a;
+}
+#follownum:hover{
+	color: #3dab4a;
+}
+#email{
+	float: left;
+	font-family: 'regular';
+	font-size: 13pt;
+	color: #767676;
+}
+#box2{
+	max-width: 100%;
+	padding-left: 5%;
+	margin-top:30px;
+}
+#overview{
+	float: left;
+	font-family: 'medium';
+	width: 20%;
+	margin: 10px 5px;
+	pointer-events: none;
+	font-size: 11pt;
+	color : #3dab4a;
+	margin-bottom: 0;
+}
+#user_nav{
+	float: left;
+	font-family: 'medium';
+	width: 20%;
+	margin: 10px 5px;
+	font-size: 11pt;
+	color: #767676;
+	margin-bottom: 0;
+}
+#user_nav:hover{
+	text-decoration:none;
+	color : #3dab4a;
+}
+#navlow{
+	border-top: 2px solid #c2c2c2;
+}
+#repo_box{
+	float: left;
+	font-family: 'regular';
+	border: solid 1px #c2c2c2;
+	border-radius: 10px;
+	width: 30%;
+	padding: 5px 10px;
+	margin: 10px;
+}
+.ch-graph{
+	margin: 30px 31.5px;
+}
+@font-face {
+	font-family: 'bold';
+    src: url('../fonts/NotoSansCJKkr-Bold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'medium';
+    src: url('../fonts/NotoSansCJKkr-Medium.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'regular';
+    src: url('../fonts/NotoSansCJKkr-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}

@@ -19,6 +19,7 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+<link rel="stylesheet" href="css/User.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="dist/jquery.calmosaic.min.css">
@@ -28,61 +29,6 @@
 <script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
 <script src="dist/jquery.calmosaic.min.js"></script>
 </head>
-<style>
-.card{
-	float:left;
-	margin-top:30px;
-	display: inline-block;
-}
-#img_click{
-	float:left;
-	width: 100%;
-	cursor: pointer;
-	border-radius:140px;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border: 1px solid rgba(0, 0, 0, 0.11);
-}
-#userid{
-	float:left;
-	font-family: 'bold';
-	font-size: 20pt;
-	margin-bottom: 5px;
-}
-#modifyuser{
-	float:right;
-	color : #0e0e0e;
-	margin-top: 10px;
-	
-}
-#username{
-	float:left;
-	font-family: 'regular';
-	font-size: 11pt;
-}
-
-@font-face {
-	font-family: 'bold';
-    src: url('./fonts/NotoSansCJKkr-Bold.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-	font-family: 'medium';
-    src: url('./fonts/NotoSansCJKkr-Medium.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-@font-face {
-	font-family: 'regular';
-    src: url('./fonts/NotoSansCJKkr-Regular.otf');
-    font-weight: normal;
-    font-style: normal;
-}
-
-</style>
 <body>	
 <% 
 String userID = (String)session.getAttribute("userID");
@@ -99,45 +45,56 @@ System.out.print(imgurl);
   <div class="row">     
     <div class="col-md-10 col-md-offset-1" style="max-width:100%;"> 
     
-    <div class="col-md-3" style="max-width:100%;padding:0;"> 
+    <div class="col-md-3" id="box1"> 
 	  <div class="card">
 	  	<img class="card-img-top" id="img_click" src="./img/<%=user.get(0).getUserPicture()%>">	  	
    		<div class="card-body">
   			<h4 class="card-title" id="userid"><%=userID%></h4>
-  			<a href="ModifyUser.jsp" id="modifyuser" class="btn btn-success">프로필 편집</a>
+  			<a href="ModifyUser.jsp" id="modifyuser">프로필 편집</a>
   			<p class="card-text" id="username"><%=user.get(0).getUserName()%></p> 	
-  			<span class="glyphicon glyphicon-envelope" aria-hidden="true">
-  			<%out.print(user.get(0).getUserEmail());%>
-  			</span>
-  			<span class="glyphicon glyphicon-user" aria-hidden="true">
-  			<a href="GetFollowList.jsp">팔로우<%out.print(followDAO.getFollow((String)session.getAttribute("userID")));%></a> º
-  			<a href="GetFollowingList.jsp">팔로잉<%out.print(followDAO.getFollowing((String)session.getAttribute("userID")));%></a>
-  			</span>
   			
+  			<img src="img/follow_icon.png" width="25" height="25" style="float:left;">
+  			<a href="GetFollowList.jsp">
+  			
+  			  <p id="follow">&nbsp;팔로워</p>
+  			  <p id="follownum"><%=followDAO.getFollowing(userID)%></p>
+  			</a>
+  			<a href="GetFollowingList.jsp">
+  			  <p id="follow">&nbsp;&nbsp;팔로잉</p>
+  			  <p id="follownum"><%=followDAO.getFollow(userID)%></p>
+  			</a>
+  			<span id="email" class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;<%=user.get(0).getUserEmail()%></span>
+  			  			
   		</div>	
   	  </div>
   	</div>
-  	  
-  	  <div class="col-md-9" style="max-width:100%; padding:0;"> 
-  	  <%
-    	ArrayList<Bbs> getrepo= bbsDAO.getrepo(userID);
-        for(int i=0; i<6; i++){
-        	if(getrepo.size()==i)
-        		break;
-      %>			
-		<div class="row marketing">
-			<div class="col-lg-4">
-			 <h4><%=getrepo.get(i).getBbsTitle() %></h4>
-			 <p><%=getrepo.get(i).getBbsLanguage() %></p>
-		</div>
+  	  <!-- pointer-events: none; 링크 비활성화  -->
+  	 
+  	<div class="col-md-9" id="box2"> 
+  	
+  	<a href="User.jsp" id="overview"><img src="img/overview.png" width="25" height="25" />&nbsp;Overview</a>
+  	<a href="Repo.jsp" id="user_nav"><img src="img/Repositories.png" width="25" height="25" />&nbsp;Repositories</a>
+  	<a href="#" id="user_nav"><img src="img/setting.png" width="25" height="25" />&nbsp;Settings</a><br>
+  	<hr id="navlow">
+  	
+  	<%
+    ArrayList<Bbs> getrepo= bbsDAO.getrepo(userID);
+    for(int i=0; i<5; i++){
+      if(getrepo.size()==i)
+        break;
+	%>			
+	<div id="repo_box">
+	  <h4><%=getrepo.get(i).getBbsTitle() %></h4>
+	  <p><%=getrepo.get(i).getBbsLanguage() %></p>
 	</div>
      <%
      }
-     %>
-  	  
-  	  </div>
+     %> 
   	  
   	</div>
+  	
+  	</div>
+  	<div id="heatmap-1"></div>  
   </div>
 </div>
 
@@ -172,7 +129,7 @@ System.out.print(imgurl);
   				
 				
         		
-        		<div id="heatmap-1"></div>
+        		
         		
 
      
@@ -202,7 +159,7 @@ var data=[];
         }
     });
  
-<!-- The Modal -->		
+	
 var modal = document.getElementById('myModal');
 // Get the button that opens the modal
 var btn = document.getElementById("img_click");
