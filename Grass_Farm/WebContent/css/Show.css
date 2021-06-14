@@ -1,0 +1,83 @@
+@charset "UTF-8";
+@font-face {
+	font-family: 'bold';
+    src: url('../fonts/NotoSansCJKkr-Bold.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'medium';
+    src: url('../fonts/NotoSansCJKkr-Medium.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+	font-family: 'regular';
+    src: url('../fonts/NotoSansCJKkr-Regular.otf');
+    font-weight: normal;
+    font-style: normal;
+}
+#circle1 {
+	border-radius:100px;
+    overflow: hidden;
+    display: flex;
+    float: left;
+    align-items: center;
+    justify-content: center;
+    width: 13%;
+    border: 1px solid rgba(0, 0, 0, 0.11);
+    margin-top: 1%;
+}
+#userid{
+	font-family: 'medium';
+	color: black;
+	font-size: 12pt;
+	margin-left: 2%;
+}
+#date{
+	font-family: 'regular';
+	font-size: 9pt;
+	margin-left: 15%;
+}
+#commentvalue{
+	font-family: 'regular';
+	font-size: 11pt;
+	margin-left: 15%;
+	margin-top: 1%;
+	margin-bottom: 0;
+}
+#division{
+	margin:5px;
+}
+#comment{
+	float: left;
+	width: 100%;
+	border: 1px solid #dedede;
+	font-family: 'regular';
+	border-radius: 1px;
+	font-size: 11pt;
+	resize: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}
+#comment::placeholder {
+	color: #555555;
+	font-size: 11pt;	
+	font-family: 'regular';
+}
+#comment:focus{	
+	-webkit-box-shadow: none;
+	box-shadow: none;
+	border-color: #3dab4a;
+}
+#countbox{
+	float: left;
+	width:100%;
+	border: 1px solid #dedede;
+	font-family: 'regular';
+	border-radius: 1px;
+	font-size: 11pt;
+	resize: none;
+	-webkit-box-shadow: none;
+	box-shadow: none;
+}

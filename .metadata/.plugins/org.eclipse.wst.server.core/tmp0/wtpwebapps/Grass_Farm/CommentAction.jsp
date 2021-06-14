@@ -23,10 +23,10 @@
 	switch(result){
 	case -1:
 		script.println("alert('글쓰기에 실패했습니다')");
-		script.println("history.back()");
+		script.println("window.location=document.referrer;");
 		break;
 	default:
-		script.println("history.back()");
+		script.println("window.location=document.referrer;");
 		break;
 	}		
 	script.println("</script>");

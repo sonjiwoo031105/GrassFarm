@@ -86,6 +86,9 @@
 	color : #3dab4a;
 	margin-bottom: 0;
 }
+#overview:focus{
+	text-decoration:none;
+}
 #user_nav{
 	float: left;
 	font-family: 'medium';
@@ -98,6 +101,9 @@
 #user_nav:hover{
 	text-decoration:none;
 	color : #3dab4a;
+}
+#user_nav:focus{
+	text-decoration:none;
 }
 #navlow{
 	border-top: 2px solid #c2c2c2;
@@ -116,7 +122,7 @@
 	margin-top: 7%;
 }
 .ch-graph{
-	margin: 30px 31.5px;
+	margin: 20px 31.5px;
 }
 @font-face {
 	font-family: 'bold';

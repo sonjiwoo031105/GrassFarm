@@ -9,7 +9,7 @@
 			<attribute name="owner.project.facets" value="jst.web"/>
 		</attributes>
 	</classpathentry>
-	<classpathentry kind="lib" path="C:/Users/jiji4/Project/잔디공작소/download/cos-05Nov2002/lib/cos.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk1.8.0_241"/>
+	<classpathentry kind="lib" path="C:/Users/jiji4/Project/잔디공작소/download/cos.jar"/>
 	<classpathentry kind="output" path="build/classes"/>
 </classpath>

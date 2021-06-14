@@ -26,13 +26,11 @@
 				</div>         		
         	</div>
 	    		<a id="user" href="User.jsp"><img id="useri" src="img/Header_profil.png"></a>
-	    		<a id="repo" href="Repo.jsp"><img id="repoi" src="img/Header_rep.png"></a>   	       	 
 	    		<a id="write" href="Write.jsp"><img id="writei" src="img/Header_plu.png"></a>        
       		</form>	
   		</div>
   	</div>
   </div>
 </nav>
-
 </header>
 </html>

@@ -144,6 +144,12 @@
 #cancle:focus{
 	outline: none;
 }
-.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control{
+#title[readonly]{
+	background-color: white;
+}
+#code[readonly]{
+	background-color: white;
+}
+#writeany[readonly]{
 	background-color: white;
 }

@@ -8,7 +8,7 @@ import java.sql.ResultSet;
 public class FileDAO {
 
 	private Connection conn;
-	private PreparedStatement pstmt,pstmt1;
+	private PreparedStatement pstmt;
 	private ResultSet rs;
 
 	public FileDAO() {
@@ -29,6 +29,7 @@ public class FileDAO {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, fileRealName);
 			pstmt.setString(2, userid);
+
 			return pstmt.executeUpdate();
 		} catch(Exception e) {
 			e.printStackTrace();

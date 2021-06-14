@@ -57,6 +57,7 @@ public class CommentDAO {
 				Comment comment=new Comment();
 				comment.setCommentText(rs.getString(3));
 				comment.setUserID(rs.getString(4));
+				comment.setCommentDate(rs.getString(5));
 				list.add(comment);
 			}
 		}catch(Exception e) {
