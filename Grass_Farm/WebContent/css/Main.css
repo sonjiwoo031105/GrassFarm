@@ -17,6 +17,9 @@
 	color: #3dab4a;
 	text-decoration: none;
 }
+#title:focus{
+	text-decoration: none;
+}
 #userid{
 	float: left;
 	font-family: 'regular';
@@ -44,6 +47,9 @@
 	margin-top : 1%;
 	margin-bottom: 1%;
 	color : #0e0e0e;
+}
+#content{
+	font-family: 'regular';
 }
 @font-face {
 	font-family: 'bold';

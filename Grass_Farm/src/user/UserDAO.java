@@ -67,6 +67,36 @@ public class UserDAO {
 			}
 			return -2;
 		}
+		
+		public int googlelogin(String userId,String userName,String userImage, String userEmail) {
+			String SQL="SELECT * From USER WHERE userID=?";
+			try {
+				pstmt=conn.prepareStatement(SQL);
+				pstmt.setString(1, userId);
+				rs=pstmt.executeQuery();
+				if(rs.next()) {
+					return 1;//로그인 성공
+				}else {
+					//회원가입 시키기
+					SQL="INSERT INTO user(userName, userID, userEmail, userPicture) VALUES (?, ?, ?,?);";
+					try {
+						pstmt = conn.prepareStatement(SQL);	
+						pstmt.setString(1, userName);
+						pstmt.setString(2, userId);
+						pstmt.setString(3, userEmail);
+						pstmt.setString(4, userImage);
+						return pstmt.executeUpdate();
+					}catch(Exception e) {
+						e.printStackTrace();
+					}
+					return -1;
+				}
+				
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+			return -2;
+		}
 
 
 		public int join(User user){	

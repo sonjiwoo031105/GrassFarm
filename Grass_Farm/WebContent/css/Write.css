@@ -144,12 +144,3 @@
 #cancle:focus{
 	outline: none;
 }
-#title[readonly]{
-	background-color: white;
-}
-#code[readonly]{
-	background-color: white;
-}
-#writeany[readonly]{
-	background-color: white;
-}

@@ -15,10 +15,28 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<script src="js/Show.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <link rel="stylesheet" href="css/Show.css">
-<link rel="stylesheet" href="css/Write.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">		
 </head>
+<script>
+$(document).ready(function() {
+	var code = $("#code");
+	var content = $("#writeany");
+
+	if(code) {
+		code.each(function() {
+			$(this).height(this.scrollHeight);
+		});
+	}
+	if(content) {
+		content.each(function() {
+			$(this).height(this.scrollHeight);
+		});
+	}
+});
+</script>
 <body>
 <%		
 	int bbsID = 0;
@@ -36,26 +54,29 @@
   
 	
 	<label for="content">소스코드</label>
-	<textarea class="form-control" id="code" rows="5" name="bbsSource" readonly>
+	<textarea class="form-control" id="code" name="bbsSource" readonly>
 	<%= bbs.getBbsSource() %>
 	</textarea><br>
 	
 	<label for="content">내용</label>
-	<textarea class="form-control" id="writeany" rows="5" name="bbsContent" readonly>
+	<textarea class="form-control" id="writeany" name="bbsContent" readonly>
 	<%= bbs.getBbsContent() %>
 	</textarea><br>
+	
+	<hr id="comment_div">
 	
 	<form action="CommentAction.jsp" method="post">
     	<div id="comment_box">
     	<input type="hidden" class="form-control" name="bbsID" value=<%=bbs.getBbsID()%>>
-    	<textarea class="form-control" id="comment" maxlength="100" rows="6" name="CommentText" onkeyup="counter()" placeholder="댓글을 입력해주세요." required="required"></textarea>
-        <div id="countbox"><span id="counting">0</span>/100</div>
-        <button type="submit" class="btn" id="btnSave">글쓰기</button>
+    	<textarea class="form-control" id="comment" maxlength="100" rows="6" name="CommentText" onkeyup="counter()" placeholder="댓글을 입력하세요." required="required"></textarea>
+        <div id="countbox">
+          <button type="submit" class="btn" id="btnSave">글쓰기</button>
+          <div id="count"><span id="counting">0</span>/100</div>
+        </div>
+        
         </div>
     </form>
-    <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
     
-    <hr id="division">
     <%
     	UserDAO userDAO=new UserDAO();
    	 	CommentDAO CommentDAO=new CommentDAO();
@@ -69,7 +90,7 @@
         <div id="circle1"><img src="./img/<%=userDAO.match_profile(comment.get(j).getUserID())%>" style="width:100%"></div> 
       
           <a href="#" id="userid"><%=comment.get(j).getUserID()%></a>
-          <p id="date"><%=comment.get(j).getCommentDate().substring(5, 7)+"월 " + bbs.getBbsDate().substring(8, 10) + "일 " + bbs.getBbsDate().substring(11, 13) + ":" + bbs.getBbsDate().substring(14, 16) %></p>
+          <p id="date"><%=comment.get(j).getCommentDate().substring(5, 7)+"월 " + comment.get(j).getCommentDate().substring(8, 10) + "일 " + comment.get(j).getCommentDate().substring(11, 13) + ":" + comment.get(j).getCommentDate().substring(14, 16) %></p>
           <p id="commentvalue"><%= comment.get(j).getCommentText()%></p><br>
            
         <hr id="division">
@@ -78,10 +99,6 @@
     %>
 </div>
 </div>
+</div>
 </body>
-<script>
-function counter(){
-	document.getElementById("counting").innerHTML = document.getElementById("comment").value.length;
-}
-</script>
 </html>

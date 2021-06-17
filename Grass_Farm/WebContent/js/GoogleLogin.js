@@ -16,13 +16,20 @@ function attachSignin(element) {
   console.log(element.id);
   auth2.attachClickHandler(element, {},
       function(googleUser) {
-  	var profile = googleUser.getBasicProfile();
-	  	console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
-	  	console.log('Name: ' + profile.getName());
-	  	console.log('Image URL: ' + profile.getImageUrl());
-	  	console.log('Email: ' + profile.getEmail());
-      });
+	  	
+  		var profile = googleUser.getBasicProfile();
+		  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+		  console.log('Name: ' + profile.getName());
+		  console.log('Image URL: ' + profile.getImageUrl());
+		  console.log('Email: ' + profile.getEmail());
+		  
+		  var a=[profile.getId(),profile.getName(),profile.getImageUrl(),profile.getEmail()];
+		  window.location.href = './Google.jsp?info='+a
+      }
+  );
+  
 }
+
 
 function signOut() {
     var auth2 = gapi.auth2.getAuthInstance();
