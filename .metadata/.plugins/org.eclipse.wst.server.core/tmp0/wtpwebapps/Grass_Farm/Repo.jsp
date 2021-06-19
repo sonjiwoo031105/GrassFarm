@@ -80,7 +80,7 @@ System.out.print(imgurl);
   	<hr id="navlow">
  
     <table class="table" id="repo_tb">
-      <tr>
+      <tr style="text-align:center;">
         <td>제목</td>
         <td>언어</td>
         <td>등록일</td>
@@ -91,8 +91,8 @@ System.out.print(imgurl);
       ArrayList<Bbs> getrepo= bbsDAO.getrepo(userID);
       for(int i=0; i<getrepo.size(); i++){
 	%>
-	<tr>
-      <td><a id="repobbstitle" href="Show.jsp?bbsID=<%=getrepo.get(i).getBbsID()%>"><%=getrepo.get(i).getBbsTitle()%></a></td>
+	<tr style="text-align:center;">
+      <td style="text-align:left;"><a id="repobbstitle" href="Show.jsp?bbsID=<%=getrepo.get(i).getBbsID()%>"><%=getrepo.get(i).getBbsTitle()%></a></td>
       <td><%=getrepo.get(i).getBbsLanguage()%></td>
       <td><%=getrepo.get(i).getBbsDate()%></td>
       <td><a href="Modify.jsp?bbsID=<%=getrepo.get(i).getBbsID()%>"  class="btn btn-default">수정</a></td>

@@ -133,7 +133,6 @@
 	border-radius: 0px;
 	font-family: 'regular';
 	width: 10%;
-	margin-top: 0.05%;
 	height: 24.5px;
 	padding: 0;
 }
@@ -151,7 +150,6 @@
 	font-family: 'regular';
 	height: 35px;
 	border: 1px solid #dedede;
-	padding: 8px 16px;
 	border-radius: 1px;
 	margin-bottom: 5%;
 	-webkit-box-shadow: none;

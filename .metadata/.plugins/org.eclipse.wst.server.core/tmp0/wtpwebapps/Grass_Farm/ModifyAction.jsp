@@ -49,7 +49,7 @@
 				} else {
 					PrintWriter script = response.getWriter();
 					script.println("<script>");
-					script.println("alert('수정 완료되었습니다.')");
+					script.println("alert('수정되었습니다.')");
 					script.println("location.href='Repo.jsp'");
 					script.println("</script>");
 				}

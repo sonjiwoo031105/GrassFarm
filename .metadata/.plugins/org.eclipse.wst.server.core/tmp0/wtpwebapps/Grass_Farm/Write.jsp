@@ -6,10 +6,19 @@
 <meta charset="UTF-8">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>잔디공작소</title>
 <link rel="stylesheet" href="css/navbar.css">
 <link rel="stylesheet" href="css/Write.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+<link rel="shortcut icon" href="img/Contents_Logo.png" type="img/x-icon">
+<link rel="icon" href="img/Contents_Logo.png" type="img/x-icon">
 </head>
+<script>
+function resize(obj) {
+    obj.style.height = '1px';
+    obj.style.height = (5 + obj.scrollHeight) + 'px';
+}
+</script>
 <body>
 <nav class="navbar" id="undershadow">
   <div class="container">
@@ -51,8 +60,8 @@
 	  	<option value="CSS">CSS</option>
 	  	<option value="JavaScript">JavaScript</option>
 	</select>
-	<textarea class="form-control" id="code" rows="5" name="bbsSource" placeholder="소스코드" required="required"></textarea><br>
-	<textarea class="form-control" id="writeany" rows="5" name="bbsContent" placeholder="내용 작성" required="required"></textarea><br>
+	<textarea class="form-control" id="code" rows="5" onkeydown="resize(this)" onkeyup="resize(this)" name="bbsSource" placeholder="소스코드" required="required"></textarea><br>
+	<textarea class="form-control" id="writeany" rows="5" onkeydown="resize(this)" onkeyup="resize(this)" name="bbsContent" placeholder="내용 작성" required="required"></textarea><br>
 	<button type="submit" class="btn" id="btnSave">글쓰기</button>
 	<button type="reset" class="btn" id="cancle">취소하기</button>
 	</form> 

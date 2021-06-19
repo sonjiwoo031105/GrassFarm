@@ -49,7 +49,7 @@ $(document).ready(function() {
 <div class="row">
   <div class="col-md-6 col-md-offset-3" style="max-width:100%;">
   <h2 id="name"><%= bbs.getBbsTitle() %></h2>
-  <p><%= bbs.getBbsDate().substring(0,4) + "년" + bbs.getBbsDate().substring(5, 7)+"월 "+ bbs.getBbsDate().substring(8, 10) + "일 " + bbs.getBbsDate().substring(11, 13) + ":" + bbs.getBbsDate().substring(14, 16)%></p><br>  	
+  <p><%= bbs.getBbsDate().substring(0,4) + "년 " + bbs.getBbsDate().substring(5, 7)+"월 "+ bbs.getBbsDate().substring(8, 10) + "일 " + bbs.getBbsDate().substring(11, 13) + ":" + bbs.getBbsDate().substring(14, 16)%></p><br>  	
   <input type="text" class="form-control" id="title" name="bbsTitle" value="<%= bbs.getBbsLanguage() %>" readonly>
   
 	
@@ -68,10 +68,10 @@ $(document).ready(function() {
 	<form action="CommentAction.jsp" method="post">
     	<div id="comment_box">
     	<input type="hidden" class="form-control" name="bbsID" value=<%=bbs.getBbsID()%>>
-    	<textarea class="form-control" id="comment" maxlength="100" rows="6" name="CommentText" onkeyup="counter()" placeholder="댓글을 입력하세요." required="required"></textarea>
+    	<textarea class="form-control" id="comment" maxlength="50" rows="6" name="CommentText" onkeyup="counter()" placeholder="댓글을 입력하세요." required="required"></textarea>
         <div id="countbox">
           <button type="submit" class="btn" id="btnSave">글쓰기</button>
-          <div id="count"><span id="counting">0</span>/100</div>
+          <div id="count"><span id="counting">0</span>/50</div>
         </div>
         
         </div>

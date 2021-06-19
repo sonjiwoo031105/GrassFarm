@@ -1,13 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <section name="Workbench">
 	<section name="org.eclipse.ui.texteditor.FindReplaceDialog">
-		<item key="selection" value="lang"/>
+		<item key="selection" value="Date"/>
 		<item key="wrap" value="true"/>
 		<item key="casesensitive" value="false"/>
 		<item key="wholeword" value="false"/>
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="date"/>
+			<item value="grid-template-columns:auto 1fr;grid-gap:10px;padding:20px;border:1px #e1e4e8"/>
 			<item value="lang"/>
 			<item value="heatmap-1"/>
 			<item value=".ch-months"/>
@@ -21,7 +23,6 @@
 			<item value="fc-button"/>
 			<item value="fc-right"/>
 			<item value="fc"/>
-			<item value="path"/>
 		</list>
 		<list key="replacehistory">
 		</list>

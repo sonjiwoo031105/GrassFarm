@@ -15,10 +15,15 @@
 <link rel="stylesheet" href="css/Main.css">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/styles/hybrid.min.css">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/9.15.10/highlight.min.js"></script>
-<script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+<script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
-</head>
+</head><!-- 
+<script>
+$(window).load(function() { $('#loading').hide(); });
+$('#loading, #loading-image').hide();
+$('#loading, #loading-image').empty(); 
+</script> -->
 <body>
 <div class="container">
     <div class="row">     
@@ -61,6 +66,8 @@
 		%>
       </div>
     </div>
+<!--     <div id="loading"><img id="loading-image" src="img/loading.gif" alt="Loading..." /></div>
+ -->    
   </div>
  
 </body>

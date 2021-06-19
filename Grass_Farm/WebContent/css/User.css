@@ -22,13 +22,14 @@
 #userid{
 	float:left;
 	font-family: 'bold';
-	font-size: 25pt;
+	font-size: 15pt;
 	margin-bottom: 0px;
-	margin-right: 97.52px;
+	margin-top: 15px;
 }
 #modifyuser{
-	float: left;
+	float: right;
 	color : #767676;
+	width: 38.5%;
 	margin-top: 14px;
 	border-radius: 0;
 	border: solid 1px #c2c2c2;
@@ -114,15 +115,13 @@
 	border: solid 1px #c2c2c2;
 	border-radius: 10px;
 	width: 30%;
-	padding: 5px 10px;
+	padding: 10px 10px;
 	margin: 10px;
 }
 #lang{
 	float: right;
-	margin-top: 7%;
-}
-.ch-graph{
-	margin: 20px 31.5px;
+	margin-top: 10%;
+	margin-bottom: 0;
 }
 @font-face {
 	font-family: 'bold';
