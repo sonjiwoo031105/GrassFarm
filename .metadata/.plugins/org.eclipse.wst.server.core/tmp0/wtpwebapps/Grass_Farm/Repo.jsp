@@ -11,7 +11,6 @@
 <%@ page import = "java.util.Calendar" %>
 <%@ page import = "java.util.List" %>
 <%@ page import = "java.text.SimpleDateFormat"%>
-<%@ include file="navbar.jsp" %>
 
 <!DOCTYPE html>
 <html>
@@ -21,9 +20,12 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <link rel="stylesheet" href="css/User.css">
+<link rel="stylesheet" href="css/navbar.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 <link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
 <link rel="stylesheet" type="text/css" href="dist/jquery.calmosaic.min.css">
+<link rel="shortcut icon" href="img/Contents_Logo.png" type="img/x-icon">
+<link rel="icon" href="img/Contents_Logo.png" type="img/x-icon">
 
 <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
 <script src="js/bootstrap.min.js"></script>
@@ -33,6 +35,27 @@
 <script src="js/bootstrap.js"></script>
 </head>
 <body>	
+<nav class="navbar" id="undershadow">
+  <div class="container">
+  	<div class="row">
+  		<div class="col-md-8 col-md-offset-2" style="max-width:100%;">  			
+    		<form class="nav navbar-form" role="search" action="Search.jsp">  
+    		<div class="navbar-header">
+        		<a href="Main.jsp"><img src="img/Header_Log.png" id="logo" alt="로고 : Header_Logo" ></a>
+    		</div>
+  			<div class="form-group" id="wich">
+  		    	<div class="input-group">
+  					<span class="input-group-addon" id="iconstyle"><i class="glyphicon glyphicon-search"></i></span>
+  					<input type="text" id="inputstyle" class="form-control" name="search" placeholder="검색" required="required">
+				</div>         		
+        	</div>
+	    		<a id="user" href="User.jsp" style="pointer-events: none;"><img id="useri" src="img/Profile_Green.png"></a>
+	    		<a id="write" href="Write.jsp"><img id="writei" src="img/Header_plu.png"></a>        
+      		</form>	
+  		</div>
+  	</div>
+  </div>
+</nav>
 <% 
 String userID = (String)session.getAttribute("userID");
 Calendar cal = Calendar.getInstance();
@@ -53,7 +76,7 @@ System.out.print(imgurl);
 	  	<img class="card-img-top" id="img_click" src="./img/<%=user.get(0).getUserPicture()%>">	  	
    		<div class="card-body">
   			<h4 class="card-title" id="userid"><%=userID%></h4>
-  			<a href="ModifyUser.jsp" id="modifyuser">프로필 편집</a>
+  			<a id="modifyuser">프로필 편집</a>
   			<p class="card-text" id="username"><%=user.get(0).getUserName()%></p> 	
   			
   			<img src="img/follow_icon.png" width="25" height="25" style="float:left;">
@@ -76,7 +99,7 @@ System.out.print(imgurl);
   	
   	<a href="User.jsp" id="user_nav"><img src="img/overview.png" width="25" height="25" />&nbsp;Overview</a>
   	<a href="Repo.jsp" id="overview"><img src="img/Repositories.png" width="25" height="25" />&nbsp;Repositories</a>
-  	<a href="#" id="user_nav"><img src="img/setting.png" width="25" height="25" />&nbsp;Settings</a><br>
+  	<a href="SetUser.jsp" id="user_nav"><img src="img/setting.png" width="25" height="25" />&nbsp;Settings</a><br>
   	<hr id="navlow">
  
     <table class="table" id="repo_tb">
@@ -110,7 +133,6 @@ System.out.print(imgurl);
 </div>
 
 
-<!-- 여긴 일단 안건들임 -->
   			 	 <div class="modal" id="myModal" tabindex="-1">
   				 	<div class="modal-dialog">
     					<div class="modal-content">
@@ -148,34 +170,10 @@ System.out.print(imgurl);
      
       	
 <script type="text/javascript">
-var data=[];    
-<% 
-	int count = bbsDAO.getCount(userID);
-	List<String> date=bbsDAO.getalldate(userID);
-	System.out.println(count);
-	for (int i = 0; i <count; i++) {
-		System.out.println(date.get(i).substring(0, 10).toString());%>
-		data.push({count:2, date:"<%=date.get(i).substring(0, 10).toString()%>"});      
-	<%
-	}
-%>
-    $("#heatmap-1").calmosaic(data, {
-        lastMonth: moment().month()+1,
-        coloring: "",
-        legend: {
-            minLabel: "Fewer"
-        },
-        labels: {
-            custom: {
-                monthLabels: "MMM"
-            }
-        }
-    });
- 
 	
 var modal = document.getElementById('myModal');
 // Get the button that opens the modal
-var btn = document.getElementById("img_click");
+var btn = document.getElementById("modifyuser");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];                                          
 // When the user clicks on the button, open the modal 

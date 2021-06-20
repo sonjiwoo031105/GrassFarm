@@ -73,7 +73,7 @@ System.out.print(imgurl);
 	  	<img class="card-img-top" id="img_click" src="./img/<%=user.get(0).getUserPicture()%>">	  	
    		<div class="card-body">
   			<h4 class="card-title" id="userid"><%=userID%></h4>
-  			<a href="ModifyUser.jsp" id="modifyuser">프로필 편집</a>
+  			<a id="modifyuser">프로필 편집</a>
   			<p class="card-text" id="username"><%=user.get(0).getUserName()%></p> 	
   			
   			<img src="img/follow_icon.png" width="25" height="25" style="float:left;">
@@ -97,7 +97,7 @@ System.out.print(imgurl);
   	
   	<a href="User.jsp" id="overview"><img src="img/overview.png" width="25" height="25" />&nbsp;Overview</a>
   	<a href="Repo.jsp" id="user_nav"><img src="img/Repositories.png" width="25" height="25" />&nbsp;Repositories</a>
-  	<a href="#" id="user_nav"><img src="img/setting.png" width="25" height="25" />&nbsp;Settings</a><br>
+  	<a href="SetUser.jsp" id="user_nav"><img src="img/setting.png" width="25" height="25" />&nbsp;Settings</a><br>
   	<hr id="navlow">
   	
   	<%
@@ -185,7 +185,7 @@ var data=[];
 	
 var modal = document.getElementById('myModal');
 // Get the button that opens the modal
-var btn = document.getElementById("img_click");
+var btn = document.getElementById("modifyuser");
 // Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];                                          
 // When the user clicks on the button, open the modal 

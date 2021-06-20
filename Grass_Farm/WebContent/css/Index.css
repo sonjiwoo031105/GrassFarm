@@ -129,6 +129,9 @@
 #btnstyle:hover{
 	border: none;	
 }
+#btnstyle:focus{
+	outline: none;
+}
 #find{
 	float: right;
 	margin-right: 20%;	

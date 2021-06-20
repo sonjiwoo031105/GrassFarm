@@ -18,12 +18,24 @@
 <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
 <script src="js/bootstrap.js"></script>
 <script>hljs.initHighlightingOnLoad();</script>
+<script src="js/readmore.min.js"></script>
 </head><!-- 
 <script>
 $(window).load(function() { $('#loading').hide(); });
 $('#loading, #loading-image').hide();
 $('#loading, #loading-image').empty(); 
 </script> -->
+<script>
+$(function () {
+	$('.readmore').readmore({
+		blockCSS: 'display: block; width: 250px;',
+		collapsedHeight: 18,
+		moreLink: '<a href="#" class="more">더보기 <i class="ion-arrow-down-b"></i></a>',
+		lessLink: '<a href="#" class="more">닫기 <i class="ion-arrow-up-b"></i></a>' 
+		}); 
+	});
+
+</script>
 <body>
 <div class="container">
     <div class="row">     
@@ -47,7 +59,7 @@ $('#loading, #loading-image').empty();
             <p id="date"><%= list.get(j).getBbsDate()%></p>  
           </div> <br><br><br>
             
-          <div id="content">
+          <div class="readmore">
           	&nbsp;<%= list.get(j).getBbsContent() %>
           </div>       
 		  

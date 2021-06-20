@@ -35,7 +35,7 @@
         		PrintWriter script = response.getWriter();
             	script.println("<script>");
             	script.println("alert('수정되었습니다.')");
-             	script.println("location.href = 'User.jsp'");
+             	script.println("location.href = 'SetUser.jsp'");
             	script.println("</script>");
         	}    
  %>

@@ -1,20 +1,13 @@
+<%@page import="java.util.List"%>
+<%@page import="follow.FollowDAO"%>
+<%@page import="bbs.BbsDAO"%>
+<%@page import="java.util.Calendar"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
-<%@page import="java.text.Format"%>
 <%@ page import="user.UserDAO" %>
 <%@ page import="user.User" %>
-<%@ page import="bbs.BbsDAO" %>
-<%@ page import="bbs.Bbs" %>
-<%@ page import="follow.FollowDAO" %>
-<%@ page import="follow.Follow" %>
-<%@ page import="java.io.PrintWriter" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import = "java.util.Calendar" %>
-<%@ page import = "java.util.List" %>
-<%@ page import = "java.text.SimpleDateFormat"%>
-
 <!DOCTYPE html>
 <html>
-<head>
 <title>잔디공작소</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -22,19 +15,11 @@
 <link rel="stylesheet" href="css/User.css">
 <link rel="stylesheet" href="css/navbar.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
-<link href="https://www.jqueryscript.net/css/jquerysctipttop.css" rel="stylesheet" type="text/css">
-<link rel="stylesheet" type="text/css" href="dist/jquery.calmosaic.min.css">
 <link rel="shortcut icon" href="img/Contents_Logo.png" type="img/x-icon">
 <link rel="icon" href="img/Contents_Logo.png" type="img/x-icon">
-
-<script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/moment@2.24.0/moment.min.js"></script>
-<script src="dist/jquery.calmosaic.min.js"></script>
 <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
 </head>
-<body>	
+<body>
 <nav class="navbar" id="undershadow">
   <div class="container">
   	<div class="row">
@@ -64,8 +49,9 @@ BbsDAO bbsDAO = new BbsDAO();
 ArrayList<User> user = userDAO.user(userID);
 FollowDAO followDAO = new FollowDAO();
 int monthcount = bbsDAO.getmonthCount(userID, String.valueOf((cal.get(Calendar.MONTH)+1)));
-String imgurl="./upload/"+user.get(0).getUserPicture();
-System.out.print(imgurl);
+/* String imgurl="./upload/"+user.get(0).getUserPicture(); */
+/* System.out.print(imgurl); */
+for(int i=0; i<user.size(); i++){
 %>	
 <div class="container">
   <div class="row">     
@@ -73,11 +59,11 @@ System.out.print(imgurl);
     
     <div class="col-md-3" id="box1"> 
 	  <div class="card">
-	  	<img class="card-img-top" id="img_click" src="./img/<%=user.get(0).getUserPicture()%>">	  	
+	  	<img class="card-img-top" id="img_click" src="./img/<%= user.get(i).getUserPicture()%>">	  	
    		<div class="card-body">
   			<h4 class="card-title" id="userid"><%=userID%></h4>
   			<a id="modifyuser">프로필 편집</a>
-  			<p class="card-text" id="username"><%=user.get(0).getUserName()%></p> 	
+  			<p class="card-text" id="username"><%=user.get(i).getUserName()%></p> 	
   			
   			<img src="img/follow_icon.png" width="25" height="25" style="float:left;">
   			<a href="GetFollowList.jsp">
@@ -89,42 +75,42 @@ System.out.print(imgurl);
   			  <p id="follow">&nbsp;&nbsp;팔로잉</p>
   			  <p id="follownum"><%=followDAO.getFollow(userID)%></p>
   			</a>
-  			<span id="email" class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;<%=user.get(0).getUserEmail()%></span>
-  			  			
+  			<span id="email" class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;<%=user.get(i).getUserEmail()%></span>
   		</div>	
   	  </div>
   	</div>
+  	<% } %>
   	 
   	<div class="col-md-9" id="box2"> 
   	
   	<a href="User.jsp" id="user_nav"><img src="img/overview.png" width="25" height="25" />&nbsp;Overview</a>
-  	<a href="Repo.jsp" id="overview"><img src="img/Repositories.png" width="25" height="25" />&nbsp;Repositories</a>
-  	<a href="SetUser.jsp" id="user_nav"><img src="img/setting.png" width="25" height="25" />&nbsp;Settings</a><br>
+  	<a href="Repo.jsp" id="user_nav"><img src="img/Repositories.png" width="25" height="25" />&nbsp;Repositories</a>
+  	<a href="SetUser.jsp" id="overview"><img src="img/setting.png" width="25" height="25" />&nbsp;Settings</a><br>
   	<hr id="navlow">
- 
-    <table class="table" id="repo_tb">
-      <tr style="text-align:center;">
-        <td>제목</td>
-        <td>언어</td>
-        <td>등록일</td>
-        <td>수정</td>
-        <td>삭제</td>
-      </tr>
-    <%
-      ArrayList<Bbs> getrepo= bbsDAO.getrepo(userID);
-      for(int i=0; i<getrepo.size(); i++){
-	%>
-	<tr style="text-align:center;">
-      <td style="text-align:left;"><a id="repobbstitle" href="Show.jsp?bbsID=<%=getrepo.get(i).getBbsID()%>"><%=getrepo.get(i).getBbsTitle()%></a></td>
-      <td><%=getrepo.get(i).getBbsLanguage()%></td>
-      <td><%=getrepo.get(i).getBbsDate()%></td>
-      <td><a href="Modify.jsp?bbsID=<%=getrepo.get(i).getBbsID()%>"  class="btn btn-default">수정</a></td>
-      <td><a onclick="return confirm('삭제하시겠습니까?')" href="Delete.jsp?bbsID=<%= getrepo.get(i).getBbsID() %>" class="btn btn-danger">삭제</a></td>
-    </tr>
-	<%
-    }
-	%>
-	</table>  	  
+<% for(int i=0; i<user.size(); i++){ %>
+  <div id="modiform">
+ 	<p class="text-center" id="modify">Modify</p> 
+       	<form action=SetUserAction.jsp method="post">
+       		<div class="input-group" id="inputtstyle">        
+  				<input type="text" id="inputt" class="form-control" name="userID" value="<%=userID%>" disabled>
+			</div>
+			<div class="input-group" id="inputtstyle">  
+  				<input type="password" id="inputt" class="form-control" name="userPass" placeholder="비밀번호" required="required">
+			</div>
+			<div class="input-group" id="inputtstyle">  
+  				<input type="password" id="inputt" class="form-control" name="userPassCheck" placeholder="비밀번호확인" required="required">
+			</div>
+			<div class="input-group" id="inputtstyle">  
+  				<input type="text" id="inputt" class="form-control" name="userName" value="<%= user.get(0).getUserName() %>" required="required">
+			</div>
+        	<div class="input-group" id="inputtstyle">  
+  				<input type="email" id="inputt" class="form-control" name="userEmail" value="<%= user.get(0).getUserEmail() %>" required="required">
+			</div>
+            	<button type="submit" id="btnstyle" class="btn btn-success login-btn btn-block">수정하기</button>
+    	</form> 
+   </div> 
+<%} %>
+    	  
   	</div>
   	
   	</div>
@@ -132,8 +118,7 @@ System.out.print(imgurl);
   </div>
 </div>
 
-
-  			 	 <div class="modal" id="myModal" tabindex="-1">
+<div class="modal" id="myModal" tabindex="-1">
   				 	<div class="modal-dialog">
     					<div class="modal-content">
     					    <div class="modal-header">
@@ -170,7 +155,6 @@ System.out.print(imgurl);
      
       	
 <script type="text/javascript">
-	
 var modal = document.getElementById('myModal');
 // Get the button that opens the modal
 var btn = document.getElementById("modifyuser");
@@ -190,6 +174,5 @@ window.onclick = function(event) {
     	modal.style.display = "none";
 }
 </script>
-
 </body>
 </html>
