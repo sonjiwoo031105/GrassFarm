@@ -67,7 +67,7 @@ public class FollowDAO {
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Follow follow = new Follow();
-				follow.setFollow(rs.getString(2));
+				follow.setFollow(rs.getString(1));
 				list.add(follow);
 			}
 		} catch (Exception e) {

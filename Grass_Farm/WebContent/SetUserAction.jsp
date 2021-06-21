@@ -20,6 +20,8 @@
 </head>
 <body>
  <%
+	//int bbsID = Integer.parseInt(request.getParameter("bbsID"));
+
     String userID = (String)session.getAttribute("userID");
         UserDAO userDAO = new UserDAO(); //인스턴스생성
         int result = userDAO.update(user, userID);			

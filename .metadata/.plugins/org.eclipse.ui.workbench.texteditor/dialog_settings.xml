@@ -8,6 +8,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="&#x09;&#x09;&#x09;int bbsID = Integer.parseInt(request.getParameter(&quot;bbsID&quot;));"/>
 			<item value="date"/>
 			<item value="grid-template-columns:auto 1fr;grid-gap:10px;padding:20px;border:1px #e1e4e8"/>
 			<item value="lang"/>
@@ -22,7 +23,6 @@
 			<item value="class=&quot;form-control&quot; name=&quot;bbsLanguage&quot;"/>
 			<item value="fc-button"/>
 			<item value="fc-right"/>
-			<item value="fc"/>
 		</list>
 		<list key="replacehistory">
 		</list>

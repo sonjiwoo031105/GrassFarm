@@ -80,14 +80,11 @@ System.out.print(imgurl);
   			<p class="card-text" id="username"><%=user.get(0).getUserName()%></p> 	
   			
   			<img src="img/follow_icon.png" width="25" height="25" style="float:left;">
-  			<a href="GetFollowList.jsp">
-  			
-  			  <p id="follow">&nbsp;팔로워</p>
-  			  <p id="follownum"><%=followDAO.getFollowing(userID)%></p>
+  			<a href="GetFollowingList.jsp" id="follow">
+  			  &nbsp;팔로워&nbsp;<span id="follownum"><%=followDAO.getFollowing(userID)%></span>
   			</a>
-  			<a href="GetFollowingList.jsp">
-  			  <p id="follow">&nbsp;&nbsp;팔로잉</p>
-  			  <p id="follownum"><%=followDAO.getFollow(userID)%></p>
+  			<a href="GetFollowList.jsp" id="follow">
+  			  &nbsp;&nbsp;팔로잉&nbsp;<span id="follownum"><%=followDAO.getFollow(userID)%></span>
   			</a>
   			<span id="email" class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;<%=user.get(0).getUserEmail()%></span>
   			  			

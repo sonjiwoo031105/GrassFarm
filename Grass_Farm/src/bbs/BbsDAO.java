@@ -31,7 +31,7 @@ public class BbsDAO {
 		}
 	}
 	
-	//¸ÅÀÎ ÇÇµå¿¡ ¾²´Â ¸Ş¼­µå
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½Çµå¿¡ ï¿½ï¿½ï¿½ï¿½ ï¿½Ş¼ï¿½ï¿½ï¿½
 	public ArrayList<Bbs> getList(String follow) {
 		String SQL="select bbsID,bbsTitle,userID, date_format(bbsDate, '%Y-%m-%d'),bbsContent,bbsSource,bbsLanguage from "
 				+ "bbs where userID=? order by bbsDate desc";
@@ -58,7 +58,7 @@ public class BbsDAO {
 	}
 	
 	
-	//±ÛÀ» ÀÛ¼ºÇÏ´Â ÇÔ¼ö
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½ï¿½Ï´ï¿½ ï¿½Ô¼ï¿½
 	public int write(Bbs bbs) { 
 		String SQL = "INSERT INTO bbs(bbsTitle,userID, bbsSource,bbsContent,bbsLanguage) VALUES (?,?,?,?,?);";
 		try {
@@ -73,10 +73,10 @@ public class BbsDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return -1; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	
-	//repo.jsp °¡Á®¿À´Â ¸Ş¼Òµå
+	//repo.jsp ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ş¼Òµï¿½
 	public ArrayList<Bbs> getrepo(String search) {
 		String SQL="select bbsID,bbsTitle,userID, date_format(bbsDate, '%Y-%m-%d'),bbsContent,bbsSource,bbsLanguage "
 				+ "from bbs where userID=? or bbsTitle like ? OR bbsContent like ? OR bbsSource like ? order by bbsID desc";
@@ -103,9 +103,9 @@ public class BbsDAO {
 			return repo;
 		}
 	
-	//ÅëÇÕ °Ë»ö¿¡ ¾²´Â ¸ğµç ±Û¿¡¼­ °Ë»öÇÏ´Â ¸Ş¼­µå
+	//ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½Û¿ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½Ï´ï¿½ ï¿½Ş¼ï¿½ï¿½ï¿½
 		public ArrayList<Bbs> searchrepo(String search) {
-			String SQL="select bbsID,bbsTitle,userID, date_format(bbsDate, '%Y³â %m¿ù %dÀÏ'),bbsContent,bbsSource,bbsLanguage "
+			String SQL="select bbsID,bbsTitle,userID, date_format(bbsDate, '%Yë…„ %mì›” %dì¼'),bbsContent,bbsSource,bbsLanguage "
 					+ "from bbs where bbsTitle like ? OR bbsContent like ? OR bbsSource like ? order by bbsID desc";
 			
 			ArrayList<Bbs> repo=new ArrayList<>();
@@ -132,7 +132,7 @@ public class BbsDAO {
 				return repo;
 			}
 	
-	//repo¿¡ ¾²´Â ÆÄ¶ó¹ÌÅÍ·Î ¹ŞÀº »ç¶÷ÀÌ ¾´ ±ÛÀÇ °³¼ö¸¦ ¾²´Â ¸Ş¼­µå
+	//repoï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ä¶ï¿½ï¿½ï¿½Í·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ş¼ï¿½ï¿½ï¿½
 	public Bbs getBbs(int bbsID) {
 		String SQL = "SELECT * FROM BBS WHERE bbsID = ?";
 		try {
@@ -156,7 +156,7 @@ public class BbsDAO {
 		return null;
 	}
 
-	//user ÆäÀÌÁö¿¡ ¾²´Â ³ªÀÇ ±ÛÀ» °Ë»öÇÏ´Â ¸Ş¼­µå
+	//user ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ï¿½Ï´ï¿½ ï¿½Ş¼ï¿½ï¿½ï¿½
 	public ArrayList<Bbs> getmyrepo(String userid, String search) {
 		String SQL = "SELECT * FROM BBS WHERE userID = ? and (bbsContent like ? or bbsTitle like ? or bbsSource like ?) ";
 		ArrayList<Bbs> repo=new ArrayList<>();
@@ -184,7 +184,7 @@ public class BbsDAO {
 	}
 	
 		
-	/*Áö±İÀº ¾È¾²´Â °Ë»ö ¸Ş¼­µå
+	/*ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È¾ï¿½ï¿½ï¿½ ï¿½Ë»ï¿½ ï¿½Ş¼ï¿½ï¿½ï¿½
 	 * public ArrayList<Bbs> search(String catgo, String sear) { String
 	 * SQL="select * from bbs where " + catgo + " like ? order by bbsID desc";
 	 * ArrayList<Bbs> search=new ArrayList<>(); try {
@@ -197,7 +197,7 @@ public class BbsDAO {
 	 * search; }
 	 */
 	
-	//repo¿¡¼­ ¾²´Â ±ÛÀ» ¼öÁ¤ÇÏ´Â ¸Ş¼­µå
+	//repoï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ş¼ï¿½ï¿½ï¿½
 	public int update(Bbs bbs, int bbsID) { 
 		String SQL = "UPDATE bbs SET bbsTitle=?, bbsSource=?, bbsContent=?,bbsLanguage=? where bbsID=?;";
 		try {
@@ -212,10 +212,10 @@ public class BbsDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return -1; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	
-	//repo¿¡¼­ ¾²´Â ±ÛÀ» Áö¿ì´Â ¸Ş¼­µå
+	//repoï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ş¼ï¿½ï¿½ï¿½
 	public int delete(int bbsID) {
 		String SQL = "delete from bbs WHERE bbsID = ?";
 		try {
@@ -225,10 +225,10 @@ public class BbsDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; // µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return -1; // ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	
-	//ÆÄ¶ó¹ÌÅÍ·Î ¹ŞÀº »ç¶÷ÀÌ ¾´ ±ÛÀÇ °³¼ö¸¦ ¾²´Â ¸Ş¼­µå Áö±İÀº ¾È¾¸
+	//ï¿½Ä¶ï¿½ï¿½ï¿½Í·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ş¼ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½È¾ï¿½
 	public int getCount(String userId) {
 		String SQL = "select count(*) from bbs where userID=?;";
 		int resultCount = 0;
@@ -248,7 +248,7 @@ public class BbsDAO {
 		
 	}
 	
-	// ´Ş º° Ä¿¹Ô ¼ö¸¦ ±¸ÇÏ´Â ¸Ş¼­µå : Áö±İÀº »ç¿ëÇÏÁö ¾ÊÀ½
+	// ï¿½ï¿½ ï¿½ï¿½ Ä¿ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ï´ï¿½ ï¿½Ş¼ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	public int getmonthCount(String userId,String month) {
 		System.out.println(month);
 		String SQL = "select count(*) from bbs where userID=? and MONTH(bbsDate)=?;";
@@ -270,7 +270,7 @@ public class BbsDAO {
 		
 	}
 	
-	//github calendar¿¡ »ç¿ë : ¸ğµç ³¯Â¥¸¦ °¡Á®¿À´Â ¸Ş¼­µå
+	//github calendarï¿½ï¿½ ï¿½ï¿½ï¿½ : ï¿½ï¿½ï¿½ ï¿½ï¿½Â¥ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ş¼ï¿½ï¿½ï¿½
 	public List<String> getalldate(String userId) {
 		String SQL="select bbsdate from bbs where userID=?;";
 		List<String> resultCount = new ArrayList<String>();
