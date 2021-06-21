@@ -41,11 +41,12 @@ public class FollowDAO {
 	}
 
 	public ArrayList<Follow> SearchFollowing(String userid) {
-		String SQL = "SELECT * FROM follow where me=?;";
+		String SQL = "SELECT * FROM follow where me=? and follow!=?;";
 		ArrayList<Follow> list = new ArrayList<Follow>();
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, userid);
+			pstmt.setString(2, userid);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Follow follow = new Follow();
@@ -59,11 +60,12 @@ public class FollowDAO {
 	}
 	
 	public ArrayList<Follow> SearchFollow(String userid) {
-		String SQL = "SELECT * FROM follow where follow=?;";
+		String SQL = "SELECT * FROM follow where follow=? and me!=?;";
 		ArrayList<Follow> list = new ArrayList<Follow>();
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, userid);
+			pstmt.setString(2, userid);
 			rs = pstmt.executeQuery();
 			while (rs.next()) {
 				Follow follow = new Follow();

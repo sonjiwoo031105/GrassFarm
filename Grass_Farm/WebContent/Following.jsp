@@ -16,7 +16,6 @@
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="css/User.css">
-<link rel="stylesheet" href="css/Search.css">
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
 </head>
 <body>
@@ -44,11 +43,11 @@ System.out.print(imgurl);
   			<p class="card-text" id="username"><%=user.get(0).getUserName()%></p> 	
   			
   			<img src="img/follow_icon.png" width="25" height="25" style="float:left;">
-  			<a href=GetFollowingList.jsp id="follow" style="pointer-events: none;">
-  			  &nbsp;팔로워&nbsp;<span id="follownum"><%=followDAO.getFollowing(userID)%></span>
+  			<a href=Follower.jsp id="follow">
+  			  &nbsp;팔로워&nbsp;<span id="follownum"><%=followDAO.getFollowing(userID)-1%></span>
   			</a>
-  			<a href="GetFollowList.jsp" id="follow">
-  			  &nbsp;&nbsp;팔로잉&nbsp;<span id="follownum"><%=followDAO.getFollow(userID)%></span>
+  			<a href="Following.jsp" id="follow" style="pointer-events: none;">
+  			  &nbsp;&nbsp;팔로잉&nbsp;<span id="follownum"><%=followDAO.getFollow(userID)-1%></span>
   			</a>
   			<span id="email" class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;<%=user.get(0).getUserEmail()%></span>
   			  			
@@ -66,7 +65,7 @@ System.out.print(imgurl);
   	
   	<!-- 팔로우리스트가져오기 -->
   	<%
-	ArrayList<Follow> list=followDAO.SearchFollow(userID);
+	ArrayList<Follow> list=followDAO.SearchFollowing(userID);
 
 	for(int i=0; i<list.size(); i++){
       int follow=followDAO.SearchFollowing(userID,list.get(i).getFollow()); 
@@ -82,41 +81,15 @@ System.out.print(imgurl);
     		<div id="userEmail"><%=userlist.getUserEmail()%></div>
     	</div>
     	
-    	<%-- <% if(userlist.get(i).getUserID().equals(userID)){
+    	<% if(userlist.getUserID().equals(userID)){
 	       }else if(follow>0){%>
-	       <a href='Unfollow.jsp?id=<%=userlist.get(i).getUserID()%>' id="followbtn" class="btn btn-success">Unfollow</a>
+	       <a href='Unfollow.jsp?id=<%=userlist.getUserID()%>' id="followbtn" class="btn btn-success">Unfollow</a>
 	    <%}else{%>
-	       <a href='Follow.jsp?id=<%=userlist.get(i).getUserID()%>' id="followbtn" class="btn btn-success">Follow</a>
-	    <%} %> --%> 
-    	<br><br><br><br>
+	       <a href='Follow.jsp?id=<%=userlist.getUserID()%>' id="followbtn" class="btn btn-success">Follow</a>
+	    <%} %> 
+    	<br><br><br>
     	<hr />
 <%}%>
-
-           			<%-- 	<form method="post" action="Follow.jsp">
-                			<div class="mb-2">
-                				<span class="fs-20 pr-16" onclick="location.href='SearchUser.jsp?id=<%=list.get(i).getFollow()%>'" ><%=list.get(i) %></span>
-                				
-               				</div>
-               			@<%=list.get(i)%><br>
-               			
-                		이거야이거<p><%=list.get(i).getFollow()%></p>
-                		
-           
-        		
-               		<strong>Applied on:</strong>
-                	<span><%= list.get(i)%></span>             
-            	
-            	<div class="media-right text-right d-none d-md-block">
-            	<input type="text" name="id" style="display:none" value=<%=list.get(i)%>>
-            		<% if(getFollowList.get(i).getUserID().equals(userID)){%>  
-                	<%}else if(follow>0){%>
-                	<a href='Unfollow.jsp?id=<%=getFollowList.get(i).getUserID()%>' class="btn btn-success" value="UNFOLLOW">UNFOLLOW</a>
-                	<%}else{%>
-                	<a href='Follow.jsp?id=<%=getFollowList.get(i).getUserID()%>' class="btn btn-success" value="FOLLOW">FOLLOW</a>
-                	<%} %>
-            	</div>
-        		
-        		</form> --%>
   	</div>
   	</div>
   </div>
