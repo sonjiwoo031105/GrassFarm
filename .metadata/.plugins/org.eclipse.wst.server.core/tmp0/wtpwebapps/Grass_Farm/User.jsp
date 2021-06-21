@@ -8,9 +8,9 @@
 <%@ page import="follow.Follow" %>
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import = "java.util.Calendar" %>
-<%@ page import = "java.util.List" %>
-<%@ page import = "java.text.SimpleDateFormat"%>
+<%@ page import="java.util.Calendar" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.text.SimpleDateFormat"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -61,8 +61,7 @@ BbsDAO bbsDAO = new BbsDAO();
 ArrayList<User> user = userDAO.user(userID);
 FollowDAO followDAO = new FollowDAO();
 int monthcount = bbsDAO.getmonthCount(userID, String.valueOf((cal.get(Calendar.MONTH)+1)));
-String imgurl="./upload/"+user.get(0).getUserPicture();
-System.out.print(imgurl);
+String imgurl="upload/"+user.get(0).getUserPicture();
 %>	
 <div class="container">
   <div class="row">     
@@ -70,10 +69,10 @@ System.out.print(imgurl);
     
     <div class="col-md-3" id="box1"> 
 	  <div class="card">
-	  	<img class="card-img-top" id="img_click" src="./img/<%=user.get(0).getUserPicture()%>">	  	
+	  	<img class="card-img-top" id="img_click" src="<%=imgurl%>">	  	
    		<div class="card-body">
   			<h4 class="card-title" id="userid"><%=userID%></h4>
-  			<a id="modifyuser">프로필 편집</a>
+  			<a href="LogoutAction.jsp" id="modifyuser">로그아웃</a>
   			<p class="card-text" id="username"><%=user.get(0).getUserName()%></p> 	
   			
   			<img src="img/follow_icon.png" width="25" height="25" style="float:left;">
@@ -87,9 +86,7 @@ System.out.print(imgurl);
   			  			
   		</div>	
   	  </div>
-  	</div>
-  	  <!-- pointer-events: none; 링크 비활성화  -->
-  	 
+  	</div>  	 
   	<div class="col-md-9" id="box2"> 
   	
   	<a href="User.jsp" id="overview"><img src="img/overview.png" width="25" height="25" />&nbsp;Overview</a>
@@ -103,10 +100,10 @@ System.out.print(imgurl);
       if(getrepo.size()==i)
         break;
 	%>			
-	<div id="repo_box">
-	  <a id="repobbstitle" style="font-size:18px;"href="Show.jsp?bbsID=<%=getrepo.get(i).getBbsID()%>"><%=getrepo.get(i).getBbsTitle()%></a><br>
+	<a id="repo_box" href="Show.jsp?bbsID=<%=getrepo.get(i).getBbsID()%>">
+	  <p id="rtitle"><%=getrepo.get(i).getBbsTitle()%></p>
 	  <p id="lang"><%=getrepo.get(i).getBbsLanguage() %></p>
-	</div>
+	</a>
      <%
      }
      %> 
@@ -117,43 +114,6 @@ System.out.print(imgurl);
   	<div id="heatmap-1"></div>  
   </div>
 </div>
-
-  			 	 <div class="modal" id="myModal" tabindex="-1">
-  				 	<div class="modal-dialog">
-    					<div class="modal-content">
-    					    <div class="modal-header">
-    					    	<h5 class="modal-title">Profile Modify</h5>
-        						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          							<span aria-hidden="true">&times;</span>
-        						</button>
-      						</div>
-  							<div class="modal-body">
-	  							<h5>프로필 사진 수정하기</h5>
-	  							<form method="post" enctype="multipart/form-data" action="Upload.jsp">
-	  								<input type="file" name="file" id="bfile">
-									<input type="submit" value="업로드">
-								</form>
-								<script>
-	    							var fileCheck = document.getElementById("bfile").value;
-	    							if(!fileCheck){
-	        							alert("파일을 첨부해 주세요");
-	        							return false;
-	    							}
-								</script>
-	  							<hr>
-	  							<button type="button" name="basicimg" class="btn btn-success btn-lg btn-block" onclick="location.href='BasicPictureUpload.jsp'">기본 이미지로 변경하기</button>
-							</div>
-						</div>
-    				</div>
-  				</div>
-  				
-				
-        		
-        		
-        		
-
-     
-      	
 <script type="text/javascript">
 var data=[];    
 <% 
@@ -178,27 +138,6 @@ var data=[];
             }
         }
     });
- 
-	
-var modal = document.getElementById('myModal');
-// Get the button that opens the modal
-var btn = document.getElementById("modifyuser");
-// Get the <span> element that closes the modal
-var span = document.getElementsByClassName("close")[0];                                          
-// When the user clicks on the button, open the modal 
-btn.onclick = function() {
-	modal.style.display = "block";
-}
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-	modal.style.display = "none";
-}
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-	if (event.target == modal) 
-    	modal.style.display = "none";
-}
 </script>
-
 </body>
 </html>

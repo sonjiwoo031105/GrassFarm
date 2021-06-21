@@ -17,20 +17,6 @@
 body {
 	background-image: url('./img/Index_bg.png');
 }
-#gSignInWrapper{
-	float: left;
-	width: 60%;
-	height: 40px;
-	margin-left:20%;	
-	margin-right: 20%;
-	margin-top: 5%;
-	border-radius: 7px;
-	white-space: nowrap;
-	box-shadow: 0 3px 6px rgba(0,0,0,0.14), 0 3px 6px -6px rgba(0,0,0,0.12);
-}
-#gSignInWrapper:hover {
-    cursor: pointer;
-}
 span.icon {
  	float: left;
     background: url('img/Google_Logo.png') transparent 5px 50% no-repeat;
@@ -51,7 +37,7 @@ span.icon {
     font-family: 'regular';
     padding-right: 7.5%;
     line-height: 38px;
-}
+} 
 </style>
  
 <body>

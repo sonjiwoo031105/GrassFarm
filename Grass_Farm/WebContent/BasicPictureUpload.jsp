@@ -1,35 +1,31 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="file.FileDAO" %>
 <%@ page import="java.io.File" %>
-<!-- ÆÄÀÏ ÀÌ¸§ÀÌ µ¿ÀÏÇÑ°Ô ³ª¿À¸é ÀÚµ¿À¸·Î ´Ù¸¥°É·Î ¹Ù²ãÁÖ°í ±×·± Çàµ¿ ÇØÁÖ´Â°Í -->
-<%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
-<!-- ½ÇÁ¦·Î ÆÄÀÏ ¾÷·Îµå ÇÏ±â À§ÇÑ Å¬·¡½º -->
-<%@ page import="com.oreilly.servlet.MultipartRequest" %>
 
-<!-- À§¿¡°Íµé head ÅÂ±× À§¿¡ Ãß°¡ÇØÁÙ °Í -->
+<!-- ìœ„ì—ê²ƒë“¤ head íƒœê·¸ ìœ„ì— ì¶”ê°€í•´ì¤„ ê²ƒ -->
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>ì”ë””ê³µì‘ì†Œ</title>
 </head>
 <body>
 <%
-		// µğºñ¿¡ ¾÷·Îµå ¸Ş¼Òµå
-		int result=new FileDAO().upload("Contents_People&Grass.png",(String)session.getAttribute("userID"));
-		PrintWriter script=response.getWriter();
-		script.println("<script>");
-		switch(result){
-		case 1:
-			script.println("location.href='User.jsp'");
-			break;
-		case -1:
-			script.println("alert('»çÁø¹Ù²Ù±â¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.')");
-			script.println("history.back()");
-			break;
-		}
-		script.println("</script>");
-	%>
+String userID = (String)session.getAttribute("userID");
+int result=new FileDAO().upload("Contents_People&Grass.png",userID);
+PrintWriter script=response.getWriter();
+script.println("<script>");
+switch(result){
+case 1:
+	script.println("location.href='User.jsp'");
+	break;
+case -1:
+	script.println("alert('ì‚¬ì§„ë°”ê¾¸ê¸°ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.')");
+	script.println("history.back()");
+	break;
+}
+script.println("</script>");
+%>
 </body>
 </html>

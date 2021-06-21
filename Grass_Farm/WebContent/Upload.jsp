@@ -1,35 +1,36 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ page import="java.io.PrintWriter"%>
 <%@ page import="file.FileDAO" %>
 <%@ page import="java.io.File" %>
-<!-- ÆÄÀÏ ÀÌ¸§ÀÌ µ¿ÀÏÇÑ°Ô ³ª¿À¸é ÀÚµ¿À¸·Î ´Ù¸¥°É·Î ¹Ù²ãÁÖ°í ±×·± Çàµ¿ ÇØÁÖ´Â°Í -->
+<!-- íŒŒì¼ ì´ë¦„ì´ ë™ì¼í•œê²Œ ë‚˜ì˜¤ë©´ ìë™ìœ¼ë¡œ ë‹¤ë¥¸ê±¸ë¡œ ë°”ê¿”ì£¼ê³  ê·¸ëŸ° í–‰ë™ í•´ì£¼ëŠ”ê²ƒ -->
 <%@ page import="com.oreilly.servlet.multipart.DefaultFileRenamePolicy" %>
-<!-- ½ÇÁ¦·Î ÆÄÀÏ ¾÷·Îµå ÇÏ±â À§ÇÑ Å¬·¡½º -->
+<!-- ì‹¤ì œë¡œ íŒŒì¼ ì—…ë¡œë“œ í•˜ê¸° ìœ„í•œ í´ë˜ìŠ¤ -->
 <%@ page import="com.oreilly.servlet.MultipartRequest" %>
 
-<!-- À§¿¡°Íµé head ÅÂ±× À§¿¡ Ãß°¡ÇØÁÙ °Í -->
+<!-- ìœ„ì—ê²ƒë“¤ head íƒœê·¸ ìœ„ì— ì¶”ê°€í•´ì¤„ ê²ƒ -->
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+<meta charset="UTF-8">
+<title>ì”ë””ê³µì‘ì†Œ</title>
 </head>
 <body>
 <%
-		 // ÇØ´ç Æú´õ¿¡ ÀÌ¹ÌÁö¸¦ ÀúÀå½ÃÅ²´Ù
+		 // í•´ë‹¹ í´ë”ì— ì´ë¯¸ì§€ë¥¼ ì €ì¥ì‹œí‚¨ë‹¤
   	 	 String uploadDir =this.getClass().getResource("").getPath();
 		 uploadDir = uploadDir.substring(1,uploadDir.indexOf(".metadata"))+"Grass_Farm/WebContent/upload";
-		 out.println("Àı´ë°æ·Î : " + uploadDir + "<br/>"); 
-		// ÃÑ 100M ±îÁö ÀúÀå °¡´ÉÇÏ°Ô ÇÔ
+		 out.println("ì ˆëŒ€ê²½ë¡œ : " + uploadDir + "<br/>"); 
+		// ì´ 100M ê¹Œì§€ ì €ì¥ ê°€ëŠ¥í•˜ê²Œ í•¨
 		int maxSize = 1024 * 1024 * 100;
 		String encoding = "UTF-8";
-		// »ç¿ëÀÚ°¡ Àü¼ÛÇÑ ÆÄÀÏÁ¤º¸ Åä´ë·Î ¾÷·Îµå Àå¼Ò¿¡ ÆÄÀÏ ¾÷·Îµå ¼öÇàÇÒ ¼ö ÀÖ°Ô ÇÔ
+		// ì‚¬ìš©ìê°€ ì „ì†¡í•œ íŒŒì¼ì •ë³´ í† ëŒ€ë¡œ ì—…ë¡œë“œ ì¥ì†Œì— íŒŒì¼ ì—…ë¡œë“œ ìˆ˜í–‰í•  ìˆ˜ ìˆê²Œ í•¨
 		MultipartRequest multipartRequest = new MultipartRequest(request, uploadDir, maxSize, encoding,new DefaultFileRenamePolicy());
-        // Áßº¹µÈ ÆÄÀÏÀÌ¸§ÀÌ ÀÖ±â¿¡ fileRealNameÀÌ ½ÇÁ¦·Î ¼­¹ö¿¡ ÀúÀåµÈ °æ·ÎÀÌÀÚ ÆÄÀÏ
-		// ½ÇÁ¦ ¼­¹ö¿¡ ¾÷·Îµå µÈ ÆÄÀÏ½Ã½ºÅÛ ³×ÀÓ
+        // ì¤‘ë³µëœ íŒŒì¼ì´ë¦„ì´ ìˆê¸°ì— fileRealNameì´ ì‹¤ì œë¡œ ì„œë²„ì— ì €ì¥ëœ ê²½ë¡œì´ì íŒŒì¼
+		// ì‹¤ì œ ì„œë²„ì— ì—…ë¡œë“œ ëœ íŒŒì¼ì‹œìŠ¤í…œ ë„¤ì„
 		String fileRealName = multipartRequest.getFilesystemName("file");
-		// µğºñ¿¡ ¾÷·Îµå ¸Ş¼Òµå
-		int result=new FileDAO().upload(fileRealName,(String)session.getAttribute("userID"));
+		// ë””ë¹„ì— ì—…ë¡œë“œ ë©”ì†Œë“œ
+		String userID = (String)session.getAttribute("userID");
+		int result=new FileDAO().upload(fileRealName, userID);
 		PrintWriter script=response.getWriter();
 		script.println("<script>");
 		switch(result){
@@ -37,7 +38,7 @@
 			script.println("location.href='User.jsp'");
 			break;
 		case -1:
-			script.println("alert('»çÁø¹Ù²Ù±â¿¡ ½ÇÆĞÇÏ¿´½À´Ï´Ù.')");
+			script.println("alert('ì‚¬ì§„ë°”ê¾¸ê¸°ì— ì‹¤íŒ¨í•˜ì˜€ìŠµë‹ˆë‹¤.')");
 			script.println("history.back()");
 			break;
 		}

@@ -344,3 +344,34 @@
 6월 14, 2021 02:23:24.607 [4212:20132:0614/022324.607:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
 6월 14, 2021 02:23:24.613 [4212:20132:0614/022324.607:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
 6월 14, 2021 02:23:24.614 [4212:20132:0614/022324.607:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+
+6월 21, 2021 13:14:32.367 NEW SESSION
+6월 21, 2021 13:14:32.367 [21272:21260:0621/131432.365:ERROR:device_event_log_impl.cc(214)] [13:14:32.364] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 21, 2021 13:14:32.369 [21272:21260:0621/131432.367:ERROR:device_event_log_impl.cc(214)] [13:14:32.366] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 21, 2021 13:19:27.383 [21272:21260:0621/131927.383:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 21, 2021 13:19:27.385 [21272:21260:0621/131927.384:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 21, 2021 13:19:27.387 [21272:21260:0621/131927.385:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 21, 2021 13:24:05.225 [21272:13612:0621/132405.223:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+6월 21, 2021 13:24:26.939 [21272:13612:0621/132426.938:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+6월 21, 2021 13:24:56.412 [4984:12708:0621/132456.411:ERROR:device_event_log_impl.cc(214)] [13:24:56.411] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 21, 2021 13:24:56.415 [4984:12708:0621/132456.411:ERROR:device_event_log_impl.cc(214)] [13:24:56.411] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 21, 2021 13:24:56.416 [4984:12708:0621/132456.411:ERROR:device_event_log_impl.cc(214)] [13:24:56.411] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 21, 2021 13:24:56.423 [4984:12236:0621/132456.423:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+6월 21, 2021 13:25:02.803 [4984:12708:0621/132502.802:ERROR:CONSOLE(1)] "Request Runtime.evaluate failed. {"code":-32602,"message":"uniqueContextId not found"}", source: devtools://devtools/bundled/core/protocol_client/protocol_client.js (1)
+6월 21, 2021 13:25:02.819 [4984:12708:0621/132502.803:ERROR:CONSOLE(1)] "uniqueContextId not found", source: devtools://devtools/bundled/core/sdk/sdk.js (1)
+6월 21, 2021 13:25:02.822 [4984:12708:0621/132502.804:ERROR:CONSOLE(1)] "Extension server error: Inspector protocol error: uniqueContextId not found", source: devtools://devtools/bundled/models/extensions/extensions.js (1)
+6월 21, 2021 13:25:19.05 [7864:19680:0621/132519.005:ERROR:device_event_log_impl.cc(214)] [13:25:19.005] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 21, 2021 13:25:19.07 [7864:19680:0621/132519.005:ERROR:device_event_log_impl.cc(214)] [13:25:19.005] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 21, 2021 13:25:19.08 [7864:7384:0621/132519.006:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+6월 21, 2021 13:25:47.401 [7864:7384:0621/132547.400:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+
+6월 21, 2021 13:26:49.519 NEW SESSION
+6월 21, 2021 13:26:49.519 [11192:19916:0621/132649.514:ERROR:device_event_log_impl.cc(214)] [13:26:49.511] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 21, 2021 13:26:49.521 [11192:19916:0621/132649.517:ERROR:device_event_log_impl.cc(214)] [13:26:49.514] USB: usb_device_handle_win.cc:1058 Failed to read descriptor from node connection: 시스템에 부착된 장치가 작동하지 않습니다. (0x1F)
+6월 21, 2021 13:26:49.523 [11192:15300:0621/132649.522:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+6월 21, 2021 14:20:48.308 [11192:15300:0621/142048.307:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+6월 21, 2021 14:21:12.464 [11192:15300:0621/142112.463:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+6월 21, 2021 14:22:08.757 [11192:15300:0621/142208.756:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+6월 21, 2021 14:23:29.320 [11192:15300:0621/142329.319:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105
+6월 21, 2021 15:46:25.638 [11192:19916:0621/154625.636:ERROR:bad_message.cc(28)] Terminating renderer for bad IPC message, reason 2
+6월 21, 2021 18:11:25.703 [11192:15300:0621/181125.702:ERROR:connection_factory_impl.cc(429)] Failed to connect to MCS endpoint with error -105

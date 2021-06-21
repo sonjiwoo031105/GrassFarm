@@ -46,7 +46,7 @@ $(function () {
 			UserDAO userDAO = new UserDAO();
         	BbsDAO bbsDAO = new BbsDAO();
         	
-        	ArrayList<Follow> Follow = followDAO.SearchFollowing(userID);
+        	ArrayList<Follow> Follow = followDAO.MainFollowList(userID);
         	for(int i=0; i<Follow.size(); i++){
         		ArrayList<Bbs> list=bbsDAO.getList(Follow.get(i).getFollow());
         		for(int j=0; j<list.size(); j++){

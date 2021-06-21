@@ -154,4 +154,17 @@
 #gojoin:hover{
 	color:#77db65;
 }
-           
+#gSignInWrapper{
+	float: left;
+	width: 60%;
+	height: 40px;
+	margin-left:20%;	
+	margin-right: 20%;
+	margin-top: 5%;
+	border-radius: 7px;
+	white-space: nowrap;
+	box-shadow: 0 3px 6px rgba(0,0,0,0.14), 0 3px 6px -6px rgba(0,0,0,0.12);
+}
+#gSignInWrapper:hover {
+    cursor: pointer;
+}         

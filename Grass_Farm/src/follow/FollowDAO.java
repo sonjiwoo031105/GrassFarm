@@ -39,6 +39,24 @@ public class FollowDAO {
 		}
 		return -1; // DB ¿À·ù
 	}
+	
+	public ArrayList<Follow> MainFollowList(String userid) {
+		String SQL = "SELECT * FROM follow where me=?";
+		ArrayList<Follow> list = new ArrayList<Follow>();
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userid);
+			rs = pstmt.executeQuery();
+			while (rs.next()) {
+				Follow follow = new Follow();
+				follow.setFollow(rs.getString(2));
+				list.add(follow);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
 
 	public ArrayList<Follow> SearchFollowing(String userid) {
 		String SQL = "SELECT * FROM follow where me=? and follow!=?;";
