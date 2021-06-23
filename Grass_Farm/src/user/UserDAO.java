@@ -17,9 +17,9 @@ public class UserDAO {
 	
 		public UserDAO() {
 			try{	
-				String dbURL="jdbc:mysql://localhost:3306/grass_farm";
-				String dbID="ziu";
-				String dbPassword="1105";
+				String dbURL="jdbc:mysql://34.236.159.90:3306/grassfarm?serverTimezone=Asia/Seoul&useSSL=false";
+				String dbID="test";
+				String dbPassword="1111";
 				Class.forName("com.mysql.jdbc.Driver");
 				conn=DriverManager.getConnection(dbURL,dbID,dbPassword);
 			}catch(Exception e) {
@@ -48,7 +48,7 @@ public class UserDAO {
 		}
 	
 		public int login(String userId,String userPassword) {
-			String SQL="SELECT userPass From USER WHERE userID=?";
+			String SQL="SELECT userPass From user WHERE userID=?";
 			try {
 				pstmt=conn.prepareStatement(SQL);
 				pstmt.setString(1, userId);
@@ -69,7 +69,7 @@ public class UserDAO {
 		}
 		
 		public int googlelogin(String userId,String userName,String userImage, String userEmail) {
-			String SQL="SELECT * From USER WHERE userID=?";
+			String SQL="SELECT * From user WHERE userID=?";
 			try {
 				pstmt=conn.prepareStatement(SQL);
 				pstmt.setString(1, userId);
@@ -196,7 +196,7 @@ public class UserDAO {
 		}
 	
 	public User getUser(String userID) {
-		String SQL = "SELECT * FROM USER WHERE userID = ?";
+		String SQL = "SELECT * FROM user WHERE userID = ?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setString(1, userID);

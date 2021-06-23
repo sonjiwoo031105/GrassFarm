@@ -20,9 +20,9 @@ public class CommentDAO {
 	
 	public CommentDAO() {
 		try{
-			String dbURL="jdbc:mysql://localhost:3306/grass_farm?useUnicode=true&characterEncoding=UTF-8";
-			String dbID="ziu";
-			String dbPassword="1105";
+			String dbURL="jdbc:mysql://34.236.159.90:3306/grassfarm?serverTimezone=Asia/Seoul&useSSL=false";
+			String dbID="test";
+			String dbPassword="1111";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn=DriverManager.getConnection(dbURL,dbID,dbPassword);
 		}catch(Exception e) {
@@ -30,7 +30,7 @@ public class CommentDAO {
 		}
 	}
 
-	//´ñ±ÛÀ» ÀÛ¼ºÇÏ´Â ¸Þ¼­µå
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Û¼ï¿½ï¿½Ï´ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 	public int write(Comment comment) { 
 		String SQL = "INSERT INTO comment(bbsID,commentText,userID) VALUES (?,?,?);";
 		try {
@@ -42,10 +42,10 @@ public class CommentDAO {
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		return -1; //µ¥ÀÌÅÍº£ÀÌ½º ¿À·ù
+		return -1; //ï¿½ï¿½ï¿½ï¿½ï¿½Íºï¿½ï¿½Ì½ï¿½ ï¿½ï¿½ï¿½ï¿½
 	}
 	
-	//´ñ±ÛÀ» °¡Á®¿À´Â ¸Þ¼­µå
+	//ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ¼ï¿½ï¿½ï¿½
 	public ArrayList<Comment> getList(int bbsID) {
 		String SQL="select * from comment where bbsID=? order by commentDate desc";
 		ArrayList<Comment> list=new ArrayList<Comment>();

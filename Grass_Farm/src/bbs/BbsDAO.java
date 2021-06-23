@@ -21,9 +21,9 @@ public class BbsDAO {
 	
 	public BbsDAO() {
 		try{
-			String dbURL="jdbc:mysql://localhost:3306/grass_farm?useUnicode=true&characterEncoding=UTF-8";
-			String dbID="ziu";
-			String dbPassword="1105";
+			String dbURL="jdbc:mysql://34.236.159.90:3306/grassfarm?serverTimezone=Asia/Seoul&useSSL=false";
+			String dbID="test";
+			String dbPassword="1111";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn=DriverManager.getConnection(dbURL,dbID,dbPassword);
 		}catch(Exception e) {
@@ -134,7 +134,7 @@ public class BbsDAO {
 	
 	//repo�� ���� �Ķ���ͷ� ���� ����� �� ���� ������ ���� �޼���
 	public Bbs getBbs(int bbsID) {
-		String SQL = "SELECT * FROM BBS WHERE bbsID = ?";
+		String SQL = "SELECT * FROM bbs WHERE bbsID = ?";
 		try {
 			pstmt = conn.prepareStatement(SQL);
 			pstmt.setInt(1, bbsID);
@@ -158,7 +158,7 @@ public class BbsDAO {
 
 	//user �������� ���� ���� ���� �˻��ϴ� �޼���
 	public ArrayList<Bbs> getmyrepo(String userid, String search) {
-		String SQL = "SELECT * FROM BBS WHERE userID = ? and (bbsContent like ? or bbsTitle like ? or bbsSource like ?) ";
+		String SQL = "SELECT * FROM bbs WHERE userID = ? and (bbsContent like ? or bbsTitle like ? or bbsSource like ?) ";
 		ArrayList<Bbs> repo=new ArrayList<>();
 		
 		try {

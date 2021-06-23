@@ -8,6 +8,7 @@
 		<item key="incremental" value="false"/>
 		<item key="isRegEx" value="false"/>
 		<list key="findhistory">
+			<item value="localhost"/>
 			<item value="&#x09;&#x09;&#x09;int bbsID = Integer.parseInt(request.getParameter(&quot;bbsID&quot;));"/>
 			<item value="date"/>
 			<item value="grid-template-columns:auto 1fr;grid-gap:10px;padding:20px;border:1px #e1e4e8"/>
@@ -22,7 +23,6 @@
 			<item value="Search1"/>
 			<item value="class=&quot;form-control&quot; name=&quot;bbsLanguage&quot;"/>
 			<item value="fc-button"/>
-			<item value="fc-right"/>
 		</list>
 		<list key="replacehistory">
 		</list>
@@ -32,6 +32,6 @@
 		<item key="DIALOG_Y_ORIGIN" value="227"/>
 		<item key="DIALOG_WIDTH" value="340"/>
 		<item key="DIALOG_HEIGHT" value="454"/>
-		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|0|0|맑은 고딕"/>
+		<item key="DIALOG_FONT_NAME" value="1|맑은 고딕|9.0|0|WINDOWS|1|-15|0|0|0|400|0|0|0|1|0|0|5|0|맑은 고딕"/>
 	</section>
 </section>

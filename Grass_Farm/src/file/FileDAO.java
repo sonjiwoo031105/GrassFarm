@@ -13,9 +13,9 @@ public class FileDAO {
 
 	public FileDAO() {
 		try{
-			String dbURL="jdbc:mysql://localhost:3306/grass_farm";
-			String dbID="ziu";
-			String dbPassword="1105";
+			String dbURL="jdbc:mysql://34.236.159.90:3306/grassfarm?serverTimezone=Asia/Seoul&useSSL=false";
+			String dbID="test";
+			String dbPassword="1111";
 			Class.forName("com.mysql.jdbc.Driver");
 			conn=DriverManager.getConnection(dbURL,dbID,dbPassword);
 		}catch(Exception e) {
