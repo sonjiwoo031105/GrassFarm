@@ -63,12 +63,12 @@ span.icon {
   			</div>
   			<div id="name"></div>
   			<script>startApp();</script>	
-       		<a href="#" onclick="signOut();">Sign out</a>
+       		<!-- <a href="#" onclick="signOut();">Sign out</a> -->
        		<hr id="one">
        		<form action="LoginAction.jsp" method="post">
     			<input type="text" class="form-control" id="inputstyle" name="userID" placeholder="아이디" required="required">  			
     			<input type="password" class="form-control" id="inputstyle" name="userPass" placeholder="비밀번호" required="required">  			
-       		<a id="find" href="Join.jsp">아이디/비밀번호 찾기</a>
+       		<a id="find" href="#">아이디/비밀번호 찾기</a>
        		<button type="submit" id="btnstyle" class="btn btn-success login-btn btn-block">로그인하기</button>
        		</form>
        		<hr id="two">

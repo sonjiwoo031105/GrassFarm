@@ -75,14 +75,14 @@ String imgurl="upload/"+user.get(0).getUserPicture();
   			<a href="LogoutAction.jsp" id="modifyuser">로그아웃</a>
   			<p class="card-text" id="username"><%=user.get(0).getUserName()%></p> 	
   			
-  			<img src="img/follow_icon.png" width="25" height="25" style="float:left;">
+  			<img src="img/follow_icon.png" width="24" height="24" id="follow_icon">
   			<a href="Follower.jsp" id="follow">
   			  &nbsp;팔로워&nbsp;<span id="follownum"><%=followDAO.getFollowing(userID)-1%></span>
   			</a>
   			<a href="Following.jsp" id="follow">
   			  &nbsp;&nbsp;팔로잉&nbsp;<span id="follownum"><%=followDAO.getFollow(userID)-1%></span>
   			</a>
-  			<span id="email" class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;<%=user.get(0).getUserEmail()%></span>
+  			<span id="email" class="glyphicon glyphicon-envelope">&nbsp;<%=user.get(0).getUserEmail()%></span>
   			  			
   		</div>	
   	  </div>
@@ -119,7 +119,6 @@ var data=[];
 <% 
 	int count = bbsDAO.getCount(userID);
 	List<String> date=bbsDAO.getalldate(userID);
-	System.out.println(count);
 	for (int i = 0; i <count; i++) {
 		System.out.println(date.get(i).substring(0, 10).toString());%>
 		data.push({count:2, date:"<%=date.get(i).substring(0, 10).toString()%>"});      

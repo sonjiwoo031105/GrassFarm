@@ -25,17 +25,6 @@ $(window).load(function() { $('#loading').hide(); });
 $('#loading, #loading-image').hide();
 $('#loading, #loading-image').empty(); 
 </script> -->
-<script>
-$(function () {
-	$('.readmore').readmore({
-		blockCSS: 'display: block; width: 250px;',
-		collapsedHeight: 18,
-		moreLink: '<a href="#" class="more">더보기 <i class="ion-arrow-down-b"></i></a>',
-		lessLink: '<a href="#" class="more">닫기 <i class="ion-arrow-up-b"></i></a>' 
-		}); 
-	});
-
-</script>
 <body>
 <div class="container">
     <div class="row">     
@@ -58,10 +47,11 @@ $(function () {
             <p id="userid"><%= list.get(j).getUserID()%></p> 
             <p id="date"><%= list.get(j).getBbsDate()%></p>  
           </div> <br><br><br>
-            
-          <div class="readmore">
+          
+		 <details>
+		  <summary>자세히 보기</summary>
           	&nbsp;<%= list.get(j).getBbsContent() %>
-          </div>       
+         </details>
 		  
           <pre id="code"><code>
          	<%=list.get(j).getBbsSource()%>

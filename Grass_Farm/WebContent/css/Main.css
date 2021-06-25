@@ -87,5 +87,15 @@
 	left: 50%; 
 	z-index: 100; 
 }
+summary{
+	cursor: pointer;
+	outline: none;
+	display: list-item
+}
+summary:hover{
+	text-decoration:underline;
+}
+
+
 
 

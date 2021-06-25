@@ -155,6 +155,29 @@ public class BbsDAO {
 		}
 		return null;
 	}
+	
+	public Bbs getbbs(String userID) {
+		String SQL = "SELECT bbsID,bbsTitle,userID, date_format(bbsDate, '%Y-%m-%d'),bbsContent,bbsSource,bbsLanguage FROM bbs WHERE userID = ?";
+		try {
+			pstmt = conn.prepareStatement(SQL);
+			pstmt.setString(1, userID);
+			rs = pstmt.executeQuery();
+			if (rs.next()) {
+				Bbs bbs = new Bbs();
+				bbs.setBbsID(rs.getInt(1));
+				bbs.setBbsTitle(rs.getString(2));
+				bbs.setUserID(rs.getString(3));
+				bbs.setBbsDate(rs.getString(4));
+				bbs.setBbsContent(rs.getString(5));
+				bbs.setBbsSource(rs.getString(6));
+				bbs.setBbsLanguage(rs.getString(7));
+				return bbs;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return null;
+	}
 
 	//user �������� ���� ���� ���� �˻��ϴ� �޼���
 	public ArrayList<Bbs> getmyrepo(String userid, String search) {

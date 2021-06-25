@@ -3,8 +3,8 @@
 #box{
 	background-color: white;
 	border-radius: 15px;
-	margin-top: 5%;
-	height : 600px;
+	margin-top: 15%;
+	height : 700px;
 	box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 3px 6px rgba(0,0,0,0.23);
 }
 #box1{
@@ -12,14 +12,14 @@
 	background-color: #f8f8f8;
 	border-top-left-radius: 15px;
 	border-bottom-left-radius: 15px;
-	height : 600px;
+	height : 700px;
 	width: 55%;
 }
 #logostyle{
 	width:100px; 
 	height:100px;
 	margin-left: 4%;
-	margin-top: 4%;
+	margin-top: 8%;
 	margin-bottom: 3%;
 }
 #hello{
@@ -45,9 +45,9 @@
 #bannerstyle{
 	float: right;
 	margin-right: 8%;
-	margin-top: 6%;
+	margin-top: 14%;
 	width: 70%; 
-	height: 44%;
+	height: 38%;
 }
 
 @font-face {
@@ -62,14 +62,14 @@
 	background-color: #ffffff;
 	border-top-right-radius: 15px;
 	border-bottom-right-radius: 15px;
-	height: 600px;
+	height: 700px;
 	width: 45%;
 }
 #welcome{
 	float: left;
 	font-family: 'medium';
 	margin-left: 228.67px;
-	margin-top:13%;
+	margin-top:25%;
 	color: #3dab4a;
 	font-size: 25pt;
 	margin-bottom: 3%;
@@ -116,3 +116,7 @@
 	border: none;	
 	background-color:#77db65;
 } 
+#btnstyle:focus{
+	outline: none;
+	border:none;
+}

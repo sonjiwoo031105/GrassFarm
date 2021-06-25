@@ -103,7 +103,7 @@ public class UserDAO {
 			if(!user.getUserPass().equals(user.getUserPassCheck())) {
 				return -2;
 			}else {
-			String SQL = "INSERT INTO user(userName, userID, userPass, userEmail, userPicture) VALUES (?, ?, ?, ?, ?);";
+			String SQL = "insert into user(userName, userID, userPass, userEmail, userPicture) values (?, ?, ?, ?, ?);";
 			try {
 				pstmt = conn.prepareStatement(SQL);	
 				pstmt.setString(1, user.getUserName());
@@ -214,6 +214,19 @@ public class UserDAO {
 			e.printStackTrace();
 		}
 		return null;
+	}
+	
+	public int googlefollow(String userId) {
+		String SQL="INSERT INTO follow(me, follow) VALUES (?,?);";
+			try {
+				pstmt = conn.prepareStatement(SQL);	
+				pstmt.setString(1, userId);
+				pstmt.setString(2, userId);
+					return pstmt.executeUpdate();
+				}catch(Exception e) {
+					e.printStackTrace();
+				}
+				return -1;
 	}
 	
 	

@@ -78,7 +78,7 @@ String imgurl="upload/"+user.get(0).getUserPicture();
   			<a href="LogoutAction.jsp" id="modifyuser">로그아웃</a>
   			<p class="card-text" id="username"><%=user.get(0).getUserName()%></p> 	
   			
-  			<img src="img/follow_icon.png" width="25" height="25" style="float:left;">
+  			<img src="img/follow_icon.png" width="24" height="24" style="float:left;">
   			<a href="Follower.jsp" id="follow">
   			  &nbsp;팔로워&nbsp;<span id="follownum"><%=followDAO.getFollowing(userID)-1%></span>
   			</a>

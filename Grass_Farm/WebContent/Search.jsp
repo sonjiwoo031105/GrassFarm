@@ -45,11 +45,11 @@
   <div class="row">     
     <div class="col-md-8 col-md-offset-2" style="max-width:100%;"> 
     	<div id="circle1">
-    	  <img src="./img/<%out.print(userlist.get(i).getUserPicture());%>" style="width:100%">
+    	  <img src="./upload/<%=userlist.get(i).getUserPicture()%>" style="width:100%">
     	</div>
     	
     	<div id="user_info">
-    		<a href="User.jsp?=<%=userlist.get(i).getUserID()%>" id="userID"><%=userlist.get(i).getUserID()%></a>    	
+    		<a href="SearchUser.jsp?userID=<%=userlist.get(i).getUserID()%>" id="userID"><%=userlist.get(i).getUserID()%></a>    	
     		<div id="userName"><%=userlist.get(i).getUserName()%></div>    	
     		<div id="userEmail"><%=userlist.get(i).getUserEmail()%></div>
     	</div>
@@ -82,11 +82,11 @@
   <div class="row">     
     <div class="col-md-8 col-md-offset-2" style="max-width:100%;"> 
     	<div id="circle1">
-    	  <img src="./img/<%out.print(picture);%>" style="width:100%">
+    	  <img src="./img/<%=picture%>" style="width:100%">
     	</div>
     	
     	<div id="user_info">
-    		<div id="userID"><%=repolist.get(i).getUserID()%></div>    	
+    		<a href="SearchUser.jsp?userID=<%=repolist.get(i).getUserID()%>" id="userID"><%=repolist.get(i).getUserID()%></a>    	
     		<div id="userName"><%=repolist.get(i).getBbsDate()%></div>  
     	</div>
     	

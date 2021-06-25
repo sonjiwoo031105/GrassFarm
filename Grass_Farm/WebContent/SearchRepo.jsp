@@ -8,9 +8,10 @@
 <%@ page import="follow.Follow" %>
 <%@ page import="java.io.PrintWriter" %>
 <%@ page import="java.util.ArrayList" %>
-<%@ page import = "java.util.Calendar" %>
-<%@ page import = "java.util.List" %>
-<%@ page import = "java.text.SimpleDateFormat"%>
+<%@ page import="java.util.Calendar" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.text.SimpleDateFormat"%>
+<%@ include file="navbar.jsp" %>
 
 <!DOCTYPE html>
 <html>
@@ -35,37 +36,20 @@
 <script src="js/bootstrap.js"></script>
 </head>
 <body>	
-<nav class="navbar" id="undershadow">
-  <div class="container">
-  	<div class="row">
-  		<div class="col-md-8 col-md-offset-2" style="max-width:100%;">  			
-    		<form class="nav navbar-form" role="search" action="Search.jsp">  
-    		<div class="navbar-header">
-        		<a href="Main.jsp"><img src="img/Header_Log.png" id="logo" alt="로고 : Header_Logo" ></a>
-    		</div>
-  			<div class="form-group" id="wich">
-  		    	<div class="input-group">
-  					<span class="input-group-addon" id="iconstyle"><i class="glyphicon glyphicon-search"></i></span>
-  					<input type="text" id="inputstyle" class="form-control" name="search" placeholder="검색" required="required">
-				</div>         		
-        	</div>
-	    		<a id="user" href="User.jsp" style="pointer-events: none;"><img id="useri" src="img/Profile_Green.png"></a>
-	    		<a id="write" href="Write.jsp"><img id="writei" src="img/Header_plu.png"></a>        
-      		</form>	
-  		</div>
-  	</div>
-  </div>
-</nav>
 <% 
-String userID = (String)session.getAttribute("userID");
+String userID = "";
+if (request.getParameter("userID") != null) {
+	userID = request.getParameter("userID");
+}
 Calendar cal = Calendar.getInstance();
 UserDAO userDAO = new UserDAO();
 BbsDAO bbsDAO = new BbsDAO();
-ArrayList<User> user = userDAO.user(userID);
+User user = userDAO.getUser(userID);
 FollowDAO followDAO = new FollowDAO();
 int monthcount = bbsDAO.getmonthCount(userID, String.valueOf((cal.get(Calendar.MONTH)+1)));
-String imgurl="upload/"+user.get(0).getUserPicture();
+String imgurl="upload/"+user.getUserPicture();
 %>	
+			
 <div class="container">
   <div class="row">     
     <div class="col-md-10 col-md-offset-1" style="max-width:100%;"> 
@@ -75,27 +59,25 @@ String imgurl="upload/"+user.get(0).getUserPicture();
 	  	<img class="card-img-top" id="img_click" src="<%=imgurl%>">	  	
    		<div class="card-body">
   			<h4 class="card-title" id="userid"><%=userID%></h4>
-  			<a href="LogoutAction.jsp" id="modifyuser">로그아웃</a>
-  			<p class="card-text" id="username"><%=user.get(0).getUserName()%></p> 	
+  			<a href="LogoutAction.jsp" id="modifyuser">로그아웃</a>  			
+  			<p class="card-text" id="username"><%=user.getUserName()%></p> 	
   			
-  			<img src="img/follow_icon.png" width="24" height="24" style="float:left;">
+  			<img src="img/follow_icon.png" width="24" height="24" id="follow_icon">
   			<a href="Follower.jsp" id="follow">
   			  &nbsp;팔로워&nbsp;<span id="follownum"><%=followDAO.getFollowing(userID)-1%></span>
   			</a>
   			<a href="Following.jsp" id="follow">
   			  &nbsp;&nbsp;팔로잉&nbsp;<span id="follownum"><%=followDAO.getFollow(userID)-1%></span>
   			</a>
-  			<span id="email" class="glyphicon glyphicon-envelope" aria-hidden="true">&nbsp;<%=user.get(0).getUserEmail()%></span>
-  			  			
+  			<span id="email" class="glyphicon glyphicon-envelope">&nbsp;<%=user.getUserEmail()%></span>
   		</div>	
   	  </div>
   	</div>
   	 
   	<div class="col-md-9" id="box2"> 
   	
-  	<a href="User.jsp" id="user_nav"><img src="img/overview.png" width="25" height="25" />&nbsp;Overview</a>
-  	<a href="Repo.jsp" id="overview"><img src="img/Repositories.png" width="25" height="25" />&nbsp;Repositories</a>
-  	<a href="SetUser.jsp" id="user_nav"><img src="img/setting.png" width="25" height="25" />&nbsp;Settings</a><br>
+  	<a href="SearchUser.jsp" id="user_nav"><img src="img/overview.png" width="25" height="25" />&nbsp;Overview</a>
+  	<a href="SearchRepo.jsp?userID=<%=userID%>" id="overview"><img src="img/Repositories.png" width="25" height="25" />&nbsp;Repositories</a><br>
   	<hr id="navlow">
  
     <table class="table" id="repo_tb">
@@ -103,28 +85,18 @@ String imgurl="upload/"+user.get(0).getUserPicture();
         <td>제목</td>
         <td>언어</td>
         <td>등록일</td>
-        <td>수정</td>
-        <td>삭제</td>
       </tr>
     <%
-      ArrayList<Bbs> getrepo= bbsDAO.getrepo(userID);
-      for(int i=0; i<getrepo.size(); i++){
+      Bbs getrepo= bbsDAO.getbbs(userID);
 	%>
-	<tr style="text-align:center;">
-      <td style="text-align:left;"><a id="repobbstitle" href="Show.jsp?bbsID=<%=getrepo.get(i).getBbsID()%>"><%=getrepo.get(i).getBbsTitle()%></a></td>
-      <td><%=getrepo.get(i).getBbsLanguage()%></td>
-      <td><%=getrepo.get(i).getBbsDate()%></td>
-      <td><a href="Modify.jsp?bbsID=<%=getrepo.get(i).getBbsID()%>"  class="btn btn-default">수정</a></td>
-      <td><a onclick="return confirm('삭제하시겠습니까?')" href="Delete.jsp?bbsID=<%= getrepo.get(i).getBbsID() %>" class="btn btn-danger">삭제</a></td>
-    </tr>
-	<%
-    }
-	%>
+	<tr style="text-align: center;">
+      <td style="text-align:left;"><a id="repobbstitle" href="Show.jsp?bbsID=<%=getrepo.getBbsID()%>"><%=getrepo.getBbsTitle()%></a></td>
+      <td><%=getrepo.getBbsLanguage()%></td>
+      <td><%=getrepo.getBbsDate()%></td>
 	</table>  	  
   	</div>
   	
   	</div>
-  	<div id="heatmap-1"></div>  
   </div>
 </div>
 </body>

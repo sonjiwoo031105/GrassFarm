@@ -44,17 +44,23 @@
 	font-size: 13pt;
 	margin-right: 188.41px;
 }
+#follow_icon{
+	float: left;
+	margin-bottom:1%;
+}
 #follow{
 	float:left;
 	font-family: 'regular';
 	color: #767676;
 	font-size: 13pt;
 	margin-right: 5px;
+	margin-bottom:1%;
 }
 #follownum{
 	font-family: 'bold';
 	font-size: 13pt;
 	color : #0e0e0e;
+	margin-bottom:1%;
 }
 #follow:hover{
 	text-decoration: none;
@@ -113,6 +119,7 @@
 	width: 30%;
 	padding: 10px 10px;
 	margin: 10px;
+	text-decoration: none;
 }
 #repo_box:hover{
 	border: solid 1px #3dab4a;
@@ -123,8 +130,12 @@
 	color: black;
 	font-family: 'regular';
 	font-size: 17px;
+	text-decoration: none;
 }
 #rtitle:hover{
+	text-decoration: none;
+}
+#rtitle:focus{
 	text-decoration: none;
 }
 #lang{

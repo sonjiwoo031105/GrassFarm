@@ -64,7 +64,7 @@ for(int i=0; i<user.size(); i++){
   			<a href="LogoutAction.jsp" id="modifyuser">로그아웃</a>
   			<p class="card-text" id="username"><%=user.get(i).getUserName()%></p> 	
   			
-  			<img src="img/follow_icon.png" width="25" height="25" style="float:left;">
+  			<img src="img/follow_icon.png" width="24" height="24" style="float:left;">
   			<a href="Follower.jsp" id="follow">
   			  &nbsp;팔로워&nbsp;<span id="follownum"><%=followDAO.getFollowing(userID)-1%></span>
   			</a>
@@ -102,22 +102,13 @@ for(int i=0; i<user.size(); i++){
   	  <button type="submit" id="btnstyle" class="btn btn-primary">Update</button>
   	</form>
   	
-  	<p id="public">Profile picture</p><br>
+  	<!-- <p id="public">Profile picture</p><br>
   	<hr>
 	<form method="post" enctype="multipart/form-data" action="Upload.jsp">
 	  <input type="file" name="file" id="bfile">
 	  <input type="submit" value="변경">
 	</form>
-	<script>
-
-
-	    							/* var fileCheck = document.getElementById("bfile").value;
-	    							if(!fileCheck){
-	        							alert("파일을 첨부해 주세요");
-	        							return false;
-	    							} */
-	</script>
-	<button type="button" name="basicimg" class="btn btn-success btn-lg btn-block" onclick="location.href='BasicPictureUpload.jsp'">기본 이미지로 변경하기</button>
+	<button type="button" name="basicimg" class="btn btn-success btn-lg btn-block" onclick="location.href='BasicPictureUpload.jsp'">기본 이미지로 변경하기</button> -->
   	</div>
   	</div>  
   </div>
